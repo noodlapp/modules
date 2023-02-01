@@ -20,6 +20,28 @@ export function findContext(contextName, nodeScope) {
     return window.data_context_context[contextName][id];
   }
 
+  // Inside Popup (Supported after 2.8.1 ?)
+  if (nodeScope.componentOwner.popupParentId) {
+    let rootNodeScope = nodeScope;
+    while (rootNodeScope.componentOwner.parent) {
+      rootNodeScope = rootNodeScope.componentOwner.parent.nodeScope;
+    }
+
+    const nodes = rootNodeScope.getNodesWithIdRecursive(nodeScope.componentOwner.popupParentId);
+    if (nodes.length > 0) {
+      if (window.data_context_context[contextName][nodes[0].id]) {
+        return window.data_context_context[contextName][nodes[0].id];
+      }
+
+      return findContext(contextName, nodes[0].nodeScope);
+    }
+  }
+
+  // Popup function?
+  if (nodeScope.componentOwner.parentNodeScope) {
+    return findContext(contextName, nodeScope.componentOwner.parentNodeScope);
+  }
+
   // Check if the context exists on the parent component.
   if (nodeScope.componentOwner.parent) {
     return findContext(contextName, nodeScope.componentOwner.parent.nodeScope);
@@ -41,6 +63,22 @@ function createContext(contextName, nodeScope, initialState) {
 
   const id = nodeScope.componentOwner.id;
   window.data_context_context[contextName][id] = create(() => initialState);
+}
+
+function safeInspect(value) {
+  const output = {}
+  Object.keys(value).map((key) => {
+    try {
+      output[key] = JSON.stringify(value[key])
+    } catch (error) {
+      if (error.toString().includes("circular structure")) {
+        output[key] = "Error: [Circular structure]";
+      } else {
+        output[key] = "Error: " + error;
+      }
+    }
+  });
+  return output;
 }
 
 export default defineNode({
@@ -85,7 +123,7 @@ export default defineNode({
     const contextName = this._inputValues.contextName;
     const store = findContext(contextName, this.nodeScope);
     if (store) {
-      return [{ type: 'value', value: store.getState() }]
+      return [{ type: 'value', value: safeInspect(store.getState()) }]
     }
 
     return "[No value set]";
