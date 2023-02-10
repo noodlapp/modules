@@ -20,21 +20,14 @@ export function findContext(contextName, nodeScope) {
     return window.data_context_context[contextName][id];
   }
 
-  // Inside Popup (Supported after 2.8.1 ?)
-  if (nodeScope.componentOwner.popupParentId) {
-    let rootNodeScope = nodeScope;
-    while (rootNodeScope.componentOwner.parent) {
-      rootNodeScope = rootNodeScope.componentOwner.parent.nodeScope;
+  // Inside Popup (Supported after 2.8.1)
+  const popupParent = nodeScope.componentOwner.popupParent;
+  if (popupParent) {
+    if (window.data_context_context[contextName][popupParent.id]) {
+      return window.data_context_context[contextName][popupParent.id];
     }
 
-    const nodes = rootNodeScope.getNodesWithIdRecursive(nodeScope.componentOwner.popupParentId);
-    if (nodes.length > 0) {
-      if (window.data_context_context[contextName][nodes[0].id]) {
-        return window.data_context_context[contextName][nodes[0].id];
-      }
-
-      return findContext(contextName, nodes[0].nodeScope);
-    }
+    return findContext(contextName, popupParent.nodeScope);
   }
 
   // Popup function?
