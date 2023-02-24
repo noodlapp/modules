@@ -1,14 +1,16 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 const MapContext = createContext({
-  map: null
+  map: null,
+  draw: null,
 });
 
-export function MapContextProvider({ children, map }) {
+export function MapContextProvider({ children, map, draw }) {
   return (
     <MapContext.Provider
       value={{
-        map
+        map,
+        draw
       }}
     >
       {children}

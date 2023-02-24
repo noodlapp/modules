@@ -5,61 +5,40 @@ import { MapContextProvider } from '../contexts/MapContext';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-// https://www.npmjs.com/package/@mapbox/mapbox-gl-geocoder
-// https://docs.mapbox.com/help/tutorials/geocode-and-sort-stores/
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import { useFullscreenControl } from './controls/FullscreenControl';
+import { useMapboxGeocoder } from './controls/MapboxGeocoder';
+import { useGeolocateControl } from './controls/GeolocateControl';
+import { useNavigationControl } from './controls/NavigationControl';
+import { useScaleControl } from './controls/ScaleControl';
+import { useMapboxDraw } from './controls/MapboxDraw';
 
-export default function Map({
-  mapboxStyle,
-  interactive,
+export default function Map(props) {
+  const {
+    mapboxStyle,
+    interactive,
 
-  longitude,
-  latitute,
-  zoom,
-  bearing,
-  
-  c_FullscreenControlEnable,
-  c_FullscreenControlPosition,
+    longitude,
+    latitute,
+    zoom,
+    bearing,
 
-  c_GeolocateControlEnable,
-  c_GeolocateControlPosition,
-  c_GeolocateControlShowAccuracyCircle,
-  c_GeolocateControlShowUserHeading,
-  c_GeolocateControlShowUserLocation,
-  c_GeolocateControlTrackUserLocation,
+    outMap,
+    outMapboxDraw,
+    outLongitude,
+    outLatitute,
+    outZoom,
+    outBearing,
 
-  c_NavigationControlEnable,
-  c_NavigationControlPosition,
-  c_NavigationControlShowCompass,
-  c_NavigationControlShowZoom,
-  c_NavigationControlVisualizePitch,
+    onLoaded,
+    onMoved,
+    onClick,
+    onClickLongitude,
+    onClickLatitude,
 
-  c_ScaleControlEnable,
-  c_ScaleControlPosition,
-  c_ScaleControlMaxWidth,
-  c_ScaleControlUnit,
+    style,
+    children,
+  } = props;
 
-  c_GeocoderEnable,
-  c_GeocoderPosition,
-  c_GeocoderPlaceholder,
-  c_GeocoderShowMarker,
-
-  outMap,
-  outLongitude,
-  outLatitute,
-  outZoom,
-  outBearing,
-
-  onLoaded,
-  onMoved,
-  onClick,
-  onClickLongitude,
-  onClickLatitude,
-
-  style,
-  children,
-}) {
   const containerRef = useRef(null);
   const [map, setMap] = useState(null);
 
@@ -138,156 +117,22 @@ export default function Map({
 
   // TODO: There is an issue where the controls will show up in the order they are added.
 
-  //
-  // MapboxGeocoder
-  useEffect(() => {
-    if (!map) return;
-    if (!c_GeocoderEnable) return;
-
-    const control = new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl,
-      placeholder: c_GeocoderPlaceholder,
-      marker: c_GeocoderShowMarker,
-    });
-
-    map.addControl(control, c_GeocoderPosition);
-
-    return function () {
-      // Solve the issue with reseting the input
-      try {
-        map.removeControl(control);
-      } catch {}
-    };
-  }, [
-    map,
-    c_GeocoderEnable,
-    c_GeocoderPosition,
-    c_GeocoderPlaceholder,
-    c_GeocoderShowMarker,
-  ]);
-
-  //
-  // FullscreenControl
-  useEffect(() => {
-    if (!map) return;
-    if (!c_FullscreenControlEnable) return;
-
-    const control = new mapboxgl.FullscreenControl();
-    map.addControl(control, c_FullscreenControlPosition);
-
-    return function () {
-      // Solve the issue with reseting the input
-      try {
-        map.removeControl(control);
-      } catch {}
-    };
-  }, [
-    map,
-    c_FullscreenControlEnable,
-    c_FullscreenControlPosition,
-  ]);
-
-  //
-  // GeolocateControl
-  useEffect(() => {
-    if (!map) return;
-    if (!c_GeolocateControlEnable) return;
-
-    const control = new mapboxgl.GeolocateControl({
-      // fitBoundsOptions:
-      // geolocation:
-      positionOptions: {
-        enableHighAccuracy: true
-      },
-      showAccuracyCircle: c_GeolocateControlShowAccuracyCircle,
-      showUserHeading: c_GeolocateControlShowUserHeading,
-      showUserLocation: c_GeolocateControlShowUserLocation,
-      trackUserLocation: c_GeolocateControlTrackUserLocation,
-    });
-
-    map.addControl(control, c_GeolocateControlPosition);
-
-    return function () {
-      // Solve the issue with reseting the input
-      try {
-        map.removeControl(control);
-      } catch {}
-    };
-  }, [
-    map,
-    c_GeolocateControlEnable,
-    c_GeolocateControlPosition,
-    c_GeolocateControlShowAccuracyCircle,
-    c_GeolocateControlShowUserHeading,
-    c_GeolocateControlShowUserLocation,
-    c_GeolocateControlTrackUserLocation,
-  ]);
-
-  //
-  // NavigationControl
-  useEffect(() => {
-    if (!map) return;
-    if (!c_NavigationControlEnable) return;
-
-    const control = new mapboxgl.NavigationControl({
-      showCompass: c_NavigationControlShowCompass,
-      showZoom: c_NavigationControlShowZoom,
-      visualizePitch: c_NavigationControlVisualizePitch
-    });
-
-    map.addControl(control, c_NavigationControlPosition);
-
-    return function () {
-      // Solve the issue with reseting the input
-      try {
-        map.removeControl(control);
-      } catch {}
-    };
-  }, [
-    map,
-    c_NavigationControlEnable,
-    c_NavigationControlPosition,
-    c_NavigationControlShowCompass,
-    c_NavigationControlShowZoom,
-    c_NavigationControlVisualizePitch,
-  ]);
-
-  //
-  // ScaleControl
-  useEffect(() => {
-    if (!map) return;
-    if (!c_ScaleControlEnable) return;
-
-    const control = new mapboxgl.ScaleControl({
-      maxWidth: c_ScaleControlMaxWidth,
-      unit: c_ScaleControlUnit,
-    });
-
-    map.addControl(control, c_ScaleControlPosition);
-
-    return function () {
-      // Solve the issue with reseting the input
-      try {
-        map.removeControl(control);
-      } catch {}
-    };
-  }, [
-    map,
-    c_ScaleControlEnable,
-    c_ScaleControlPosition,
-    c_ScaleControlMaxWidth,
-    c_ScaleControlUnit,
-  ]);
+  // Add controls
+  useMapboxGeocoder(map, props);
+  useFullscreenControl(map, props);
+  useGeolocateControl(map, props);
+  useNavigationControl(map, props);
+  useScaleControl(map, props);
+  const { draw } = useMapboxDraw(map, props);
 
   return (
-      <div style={{...{width: '100%', height: '100%'}, ...style}}>
-        <div style={{width: '100%', height: '100%'}} ref={containerRef} />
-        {containerRef && map && (
-          <MapContextProvider map={map}>
-            <div style={{width: '100%', height: '100%'}}>{children}</div>
-          </MapContextProvider>
-        )}
-      </div>
+    <div style={{...{width: '100%', height: '100%'}, ...style}}>
+      <div style={{width: '100%', height: '100%'}} ref={containerRef} />
+      {containerRef && map && (
+        <MapContextProvider map={map} draw={draw}>
+          <div style={{width: '100%', height: '100%'}}>{children}</div>
+        </MapContextProvider>
+      )}
+    </div>
   );
 }

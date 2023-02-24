@@ -11,8 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mapbox/mapbox-gl-draw": "^1.4.1",
     "@mapbox/mapbox-gl-geocoder": "^5.0.1",
     "@noodl/noodl-sdk": "^0.5.4",
+    "@turf/turf": "^6.5.0",
+    "@types/mapbox__mapbox-gl-draw": "^1.3.3",
     "mapbox-gl": "^2.12.1"
   },
   "devDependencies": {
