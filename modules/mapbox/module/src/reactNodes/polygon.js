@@ -5,7 +5,6 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useMapContext } from '../contexts/MapContext';
 
 import mapboxgl from 'mapbox-gl';
-import * as turf from '@turf/turf';
 
 function guid() {
   function s4() {
@@ -79,28 +78,12 @@ export default defineReactNode({
           }
         }
 
-        function updateOutputs(feature) {
-          try {
-            const center = turf.center(feature);
-            const centroid = turf.centroid(feature);
-            const area = turf.area(feature);
-                
-            outCenter(center.geometry.coordinates);
-            outCentroid(centroid);
-            outArea(area);
-          } catch (_) {
-            // noop
-          }
-
-          onUpdated();
-        }
-
         function onUpdate(e) {
           const features = e.features.filter((x) => x.id === id);
           if (features.length > 0) {
             const updated = features[0];
             outCoordinates(updated.geometry.coordinates);
-            updateOutputs(updated);
+            onUpdated();
           }
         }
 
@@ -118,8 +101,6 @@ export default defineReactNode({
         mapContext.draw.add(feature);
         outFeatureId(id);
         setFeatureId(id);
-        
-        updateOutputs(feature);
 
         // Register the events
         const onselectionchange = (e) => onSelectionChange(e);

@@ -1,0 +1,7 @@
+{
+    "name": "geospatial-analysis",
+    "label": "Geospatial Analysis Module Template",
+    "desc": "Template for a Geospatial Analysis Module",
+    "docs": "https://github.com/noodlapp/modules",
+    "_id": "f1f56ef6-turf"
+}

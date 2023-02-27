@@ -77,6 +77,10 @@ export function useScaleControl(
 
     map.addControl(control, c_ScaleControlPosition);
 
+    // TODO:
+    // - Add custom id
+    // - Add all events
+
     return function () {
       // Solve the issue with reseting the input
       try {

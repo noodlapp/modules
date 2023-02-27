@@ -2,9 +2,9 @@ import {
   defineModule
 } from '@noodl/noodl-sdk';
 
-import MapboxNode from './nodes/map';
-import MapboxMarker from './nodes/marker';
-import MapboxPolygon from './nodes/polygon';
+import MapboxNode from './reactNodes/map';
+import MapboxMarker from './reactNodes/marker';
+import MapboxPolygon from './reactNodes/polygon';
 
 Noodl.defineModule({
   reactNodes: [
