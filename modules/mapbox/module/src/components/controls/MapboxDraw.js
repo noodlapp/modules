@@ -21,11 +21,66 @@ export const Inputs = {
     group: 'Controls - Mapbox Draw',
     default: 'top-right'
   },
-  c_MapboxDrawDisplayControls: {
-    displayName: 'Display Mapbox Draw Controls',
+  c_MapboxDrawKeybindings: {
+    displayName: 'Enable Draw Keybindings',
     type: 'boolean',
     group: 'Controls - Mapbox Draw',
     default: true
+  },
+  c_MapboxDrawTouch: {
+    displayName: 'Enable Draw Touch',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw',
+    default: true
+  },
+  c_MapboxDrawBoxSelect: {
+    displayName: 'Enable Draw Box Select',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw',
+    default: true
+  },
+  c_MapboxDrawDisplayControls: {
+    displayName: 'Display Draw Controls',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw',
+    default: true
+  },
+
+  c_MapboxDrawControlPoints: {
+    displayName: 'Points',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    default: false
+  },
+  c_MapboxDrawControlLineString: {
+    displayName: 'Line String',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    default: false
+  },
+  c_MapboxDrawControlPloygon: {
+    displayName: 'Polygon',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    default: true
+  },
+  c_MapboxDrawControlTrash: {
+    displayName: 'Trash',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    default: true
+  },
+  c_MapboxDrawControlCombineFeatures: {
+    displayName: 'Combine Features',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    default: false
+  },
+  c_MapboxDrawControlUncombineFeatures: {
+    displayName: 'Uncombine Features',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    default: false
   },
 }
 
@@ -34,8 +89,17 @@ export function useMapboxDraw(
   {
     c_MapboxDrawEnable,
     c_MapboxDrawPosition,
+    c_MapboxDrawKeybindings,
+    c_MapboxDrawTouch,
+    c_MapboxDrawBoxSelect,
     c_MapboxDrawDisplayControls,
-    
+    c_MapboxDrawControlPoints,
+    c_MapboxDrawControlLineString,
+    c_MapboxDrawControlPloygon,
+    c_MapboxDrawControlTrash,
+    c_MapboxDrawControlCombineFeatures,
+    c_MapboxDrawControlUncombineFeatures,
+
     outMapboxDraw,
   }
 ) {
@@ -45,8 +109,21 @@ export function useMapboxDraw(
     if (!map) return;
     if (!c_MapboxDrawEnable) return;
 
+    // https://github.com/mapbox/mapbox-gl-draw/blob/main/docs/API.md#options
     const control = new MapboxDraw({
-      displayControlsDefault: c_MapboxDrawDisplayControls
+      keybindings: c_MapboxDrawKeybindings,
+      touchEnabled: c_MapboxDrawTouch,
+      boxSelect: c_MapboxDrawBoxSelect,
+      controls: {
+        point: c_MapboxDrawControlPoints,
+        line_string: c_MapboxDrawControlLineString,
+        polygon: c_MapboxDrawControlPloygon,
+        trash: c_MapboxDrawControlTrash,
+        combine_features: c_MapboxDrawControlCombineFeatures,
+        uncombine_features: c_MapboxDrawControlUncombineFeatures
+      },
+      displayControlsDefault: c_MapboxDrawDisplayControls,
+      // styles: undefined,
     });
     
     map.addControl(control, c_MapboxDrawPosition);
@@ -63,7 +140,16 @@ export function useMapboxDraw(
   }, [
     map,
     c_MapboxDrawPosition,
+    c_MapboxDrawKeybindings,
+    c_MapboxDrawTouch,
+    c_MapboxDrawBoxSelect,
     c_MapboxDrawDisplayControls,
+    c_MapboxDrawControlPoints,
+    c_MapboxDrawControlLineString,
+    c_MapboxDrawControlPloygon,
+    c_MapboxDrawControlTrash,
+    c_MapboxDrawControlCombineFeatures,
+    c_MapboxDrawControlUncombineFeatures,
   ]);
 
   return { draw }

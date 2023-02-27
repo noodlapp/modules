@@ -11351,17 +11351,80 @@ var Inputs = {
     group: 'Controls - Mapbox Draw',
     "default": 'top-right'
   },
-  c_MapboxDrawDisplayControls: {
-    displayName: 'Display Mapbox Draw Controls',
+  c_MapboxDrawKeybindings: {
+    displayName: 'Enable Draw Keybindings',
     type: 'boolean',
     group: 'Controls - Mapbox Draw',
     "default": true
+  },
+  c_MapboxDrawTouch: {
+    displayName: 'Enable Draw Touch',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw',
+    "default": true
+  },
+  c_MapboxDrawBoxSelect: {
+    displayName: 'Enable Draw Box Select',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw',
+    "default": true
+  },
+  c_MapboxDrawDisplayControls: {
+    displayName: 'Display Draw Controls',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw',
+    "default": true
+  },
+  c_MapboxDrawControlPoints: {
+    displayName: 'Points',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    "default": false
+  },
+  c_MapboxDrawControlLineString: {
+    displayName: 'Line String',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    "default": false
+  },
+  c_MapboxDrawControlPloygon: {
+    displayName: 'Polygon',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    "default": true
+  },
+  c_MapboxDrawControlTrash: {
+    displayName: 'Trash',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    "default": true
+  },
+  c_MapboxDrawControlCombineFeatures: {
+    displayName: 'Combine Features',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    "default": false
+  },
+  c_MapboxDrawControlUncombineFeatures: {
+    displayName: 'Uncombine Features',
+    type: 'boolean',
+    group: 'Controls - Mapbox Draw - Controls',
+    "default": false
   }
 };
 function useMapboxDraw(map, _ref) {
   var c_MapboxDrawEnable = _ref.c_MapboxDrawEnable,
       c_MapboxDrawPosition = _ref.c_MapboxDrawPosition,
+      c_MapboxDrawKeybindings = _ref.c_MapboxDrawKeybindings,
+      c_MapboxDrawTouch = _ref.c_MapboxDrawTouch,
+      c_MapboxDrawBoxSelect = _ref.c_MapboxDrawBoxSelect,
       c_MapboxDrawDisplayControls = _ref.c_MapboxDrawDisplayControls,
+      c_MapboxDrawControlPoints = _ref.c_MapboxDrawControlPoints,
+      c_MapboxDrawControlLineString = _ref.c_MapboxDrawControlLineString,
+      c_MapboxDrawControlPloygon = _ref.c_MapboxDrawControlPloygon,
+      c_MapboxDrawControlTrash = _ref.c_MapboxDrawControlTrash,
+      c_MapboxDrawControlCombineFeatures = _ref.c_MapboxDrawControlCombineFeatures,
+      c_MapboxDrawControlUncombineFeatures = _ref.c_MapboxDrawControlUncombineFeatures,
       outMapboxDraw = _ref.outMapboxDraw;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
@@ -11371,9 +11434,22 @@ function useMapboxDraw(map, _ref) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (!map) return;
-    if (!c_MapboxDrawEnable) return;
+    if (!c_MapboxDrawEnable) return; // https://github.com/mapbox/mapbox-gl-draw/blob/main/docs/API.md#options
+
     var control = new _mapbox_mapbox_gl_draw__WEBPACK_IMPORTED_MODULE_3___default.a({
-      displayControlsDefault: c_MapboxDrawDisplayControls
+      keybindings: c_MapboxDrawKeybindings,
+      touchEnabled: c_MapboxDrawTouch,
+      boxSelect: c_MapboxDrawBoxSelect,
+      controls: {
+        point: c_MapboxDrawControlPoints,
+        line_string: c_MapboxDrawControlLineString,
+        polygon: c_MapboxDrawControlPloygon,
+        trash: c_MapboxDrawControlTrash,
+        combine_features: c_MapboxDrawControlCombineFeatures,
+        uncombine_features: c_MapboxDrawControlUncombineFeatures
+      },
+      displayControlsDefault: c_MapboxDrawDisplayControls // styles: undefined,
+
     });
     map.addControl(control, c_MapboxDrawPosition);
     setDraw(control);
@@ -11384,7 +11460,7 @@ function useMapboxDraw(map, _ref) {
         map.removeControl(control);
       } catch (_unused) {}
     };
-  }, [map, c_MapboxDrawPosition, c_MapboxDrawDisplayControls]);
+  }, [map, c_MapboxDrawPosition, c_MapboxDrawKeybindings, c_MapboxDrawTouch, c_MapboxDrawBoxSelect, c_MapboxDrawDisplayControls, c_MapboxDrawControlPoints, c_MapboxDrawControlLineString, c_MapboxDrawControlPloygon, c_MapboxDrawControlTrash, c_MapboxDrawControlCombineFeatures, c_MapboxDrawControlUncombineFeatures]);
   return {
     draw: draw
   };
@@ -11632,10 +11708,7 @@ function useScaleControl(map, _ref) {
       maxWidth: c_ScaleControlMaxWidth,
       unit: c_ScaleControlUnit
     });
-    map.addControl(control, c_ScaleControlPosition); // TODO:
-    // - Add custom id
-    // - Add all events
-
+    map.addControl(control, c_ScaleControlPosition);
     return function () {
       // Solve the issue with reseting the input
       try {
