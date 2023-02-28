@@ -13,6 +13,7 @@ export default defineReactNode({
   getReactComponent() {
     return function ({
       color,
+      zindex,
       geopoint,
       longitude,
       latitude,
@@ -93,6 +94,11 @@ export default defineReactNode({
         marker.setRotationAlignment(rotationAlignment)
         marker.setPitchAlignment(pitchAlignment)
         marker.setOffset([offsetX, offsetY])
+
+        const element = marker.getElement();
+        if (element) {
+          element.style.zIndex = zindex;
+        }
       }
 
       if (children) {
@@ -114,6 +120,12 @@ export default defineReactNode({
       type: 'color',
       group: 'General',
       default: "#3FB1CE"
+    },
+    zindex: {
+      displayName: 'z-Index',
+      type: 'number',
+      group: 'General',
+      default: 0
     },
     geopoint: {
       displayName: 'Geopoint',
