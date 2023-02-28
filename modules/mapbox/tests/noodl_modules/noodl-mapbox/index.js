@@ -12043,8 +12043,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   getReactComponent: function getReactComponent() {
     return function (_ref) {
       var color = _ref.color,
+          geopoint = _ref.geopoint,
           longitude = _ref.longitude,
-          latitute = _ref.latitute,
+          latitude = _ref.latitude,
           draggable = _ref.draggable,
           rotation = _ref.rotation,
           rotationAlignment = _ref.rotationAlignment,
@@ -12053,7 +12054,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
           offsetY = _ref.offsetY,
           occludedOpacity = _ref.occludedOpacity,
           outLongitude = _ref.outLongitude,
-          outLatitute = _ref.outLatitute,
+          outlatitude = _ref.outlatitude,
           onDragStart = _ref.onDragStart,
           onDrag = _ref.onDrag,
           onDragEnd = _ref.onDragEnd,
@@ -12072,7 +12073,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
           color: color,
           element: containerRef.current
         });
-        newMarker.setLngLat([longitude, latitute]);
+
+        if (geopoint) {
+          newMarker.setLngLat([geopoint.longitude, geopoint.latitude]);
+        } else {
+          newMarker.setLngLat([longitude, latitude]);
+        }
+
         newMarker.addTo(mapContext.map);
 
         function updateLngLat() {
@@ -12081,7 +12088,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
               lat = _newMarker$getLngLat.lat;
 
           outLongitude(lng);
-          outLatitute(lat);
+          outlatitude(lat);
         }
 
         newMarker.on("dragstart", function () {
@@ -12105,7 +12112,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       }, [color, containerRef, children]);
 
       if (marker) {
-        marker.setLngLat([longitude, latitute]);
+        if (geopoint) {
+          marker.setLngLat([geopoint.longitude, geopoint.latitude]);
+        } else {
+          marker.setLngLat([longitude, latitude]);
+        }
+
         marker.setDraggable(draggable);
         marker.setRotation(rotation);
         marker.setRotationAlignment(rotationAlignment);
@@ -12131,13 +12143,19 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       group: 'General',
       "default": "#3FB1CE"
     },
+    geopoint: {
+      displayName: 'Geopoint',
+      type: 'object',
+      group: 'Coordinates',
+      "default": undefined
+    },
     longitude: {
       displayName: 'Longitude',
       type: 'number',
       group: 'Coordinates',
       "default": 0
     },
-    latitute: {
+    latitude: {
       displayName: 'Latitude',
       type: 'number',
       group: 'Coordinates',
@@ -12220,7 +12238,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       type: 'number',
       group: 'Coordinates'
     },
-    outLatitute: {
+    outlatitude: {
       displayName: 'Latitude',
       type: 'number',
       group: 'Coordinates'

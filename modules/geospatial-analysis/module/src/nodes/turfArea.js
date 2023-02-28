@@ -44,6 +44,7 @@ export default defineNode({
 			const polygon = turf.polygon(coordinates);
 			const squareMeters = turf.area(polygon);
 
+			// NOTE: Could look into using turf.convertArea instead
 			this.setOutputs({
 				squareMeters,
 				squareHectares: (squareMeters / 10000).toFixed(2),

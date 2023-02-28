@@ -13,8 +13,9 @@ export default defineReactNode({
   getReactComponent() {
     return function ({
       color,
+      geopoint,
       longitude,
-      latitute,
+      latitude,
       draggable,
       rotation,
       rotationAlignment,
@@ -24,7 +25,7 @@ export default defineReactNode({
       occludedOpacity,
 
       outLongitude,
-      outLatitute,
+      outlatitude,
 
       onDragStart,
       onDrag,
@@ -44,13 +45,17 @@ export default defineReactNode({
           element: containerRef.current
         });
 
-        newMarker.setLngLat([longitude, latitute]);
+        if (geopoint) {
+          newMarker.setLngLat([geopoint.longitude, geopoint.latitude]);
+        } else {
+          newMarker.setLngLat([longitude, latitude]);
+        }
         newMarker.addTo(mapContext.map);
 
         function updateLngLat() {
           const { lng, lat } = newMarker.getLngLat();
           outLongitude(lng);
-          outLatitute(lat);
+          outlatitude(lat);
         }
 
         newMarker.on("dragstart", () => {
@@ -78,7 +83,11 @@ export default defineReactNode({
       }, [color, containerRef, children]);
 
       if (marker) {
-        marker.setLngLat([longitude, latitute])
+        if (geopoint) {
+          marker.setLngLat([geopoint.longitude, geopoint.latitude]);
+        } else {
+          marker.setLngLat([longitude, latitude]);
+        }
         marker.setDraggable(draggable)
         marker.setRotation(rotation)
         marker.setRotationAlignment(rotationAlignment)
@@ -106,13 +115,19 @@ export default defineReactNode({
       group: 'General',
       default: "#3FB1CE"
     },
+    geopoint: {
+      displayName: 'Geopoint',
+      type: 'object',
+      group: 'Coordinates',
+      default: undefined
+    },
     longitude: {
       displayName: 'Longitude',
       type: 'number',
       group: 'Coordinates',
       default: 0
     },
-    latitute: {
+    latitude: {
       displayName: 'Latitude',
       type: 'number',
       group: 'Coordinates',
@@ -207,7 +222,7 @@ export default defineReactNode({
       type: 'number',
       group: 'Coordinates'
     },
-    outLatitute: {
+    outlatitude: {
       displayName: 'Latitude',
       type: 'number',
       group: 'Coordinates'
