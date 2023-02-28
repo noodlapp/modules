@@ -63,6 +63,8 @@ export default function Map(props) {
       style: mapStyle,
       center: [longitude || 0, latitute || 0],
       zoom: zoom || 0,
+      // Allow taking screenshots
+      preserveDrawingBuffer: true,
       bearing,
       interactive
     });
