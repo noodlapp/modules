@@ -108,7 +108,7 @@ export default defineNode({
 				const nodes = graphModel.getNodesWithType('data_context.setState')
 					.filter((x) => x.parameters.contextName === contextName)
 					.forEach((node) => {
-						updatePorts(node, inputs, context)
+						updatePortsFromContext(node, inputs, context)
 					});
 			}
 
