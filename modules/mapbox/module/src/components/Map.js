@@ -17,6 +17,7 @@ export default function Map(props) {
     mapboxStyle,
     interactive,
 
+    geopoint,
     longitude,
     latitute,
     zoom,
@@ -58,10 +59,14 @@ export default function Map(props) {
       }
     }
 
+    const center = geopoint
+      ? [geopoint.longitude, geopoint.latitude]
+      : [longitude || 0, latitute || 0];
+
     const map = new mapboxgl.Map({
       container: containerRef.current,
       style: mapStyle,
-      center: [longitude || 0, latitute || 0],
+      center,
       zoom: zoom || 0,
       // Allow taking screenshots
       preserveDrawingBuffer: true,
@@ -104,8 +109,13 @@ export default function Map(props) {
 
   useEffect(() => {
     if (!map) return;
-    map.flyTo({ center: [longitude || 0, latitute || 0] });
-  }, [map, longitude, latitute]);
+
+    const center = geopoint
+      ? [geopoint.longitude, geopoint.latitude]
+      : [longitude || 0, latitute || 0];
+
+    map.flyTo({ center });
+  }, [map, geopoint, longitude, latitute]);
 
   useEffect(() => {
     if (!map) return;

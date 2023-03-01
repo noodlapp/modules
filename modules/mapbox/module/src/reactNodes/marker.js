@@ -14,9 +14,11 @@ export default defineReactNode({
     return function ({
       color,
       zindex,
+
       geopoint,
       longitude,
       latitude,
+      
       draggable,
       rotation,
       rotationAlignment,

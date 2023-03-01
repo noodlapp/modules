@@ -47,6 +47,12 @@ export default defineReactNode({
     },
 
     //coordinates and zoom
+    geopoint: {
+      displayName: 'Geopoint',
+      type: 'object',
+      group: 'Coordinates',
+      default: undefined
+    },
     longitude: {
       displayName: 'Longitude',
       type: 'number',
