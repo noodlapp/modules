@@ -1,8 +1,7 @@
-import {
-	defineNode
-} from '@noodl/noodl-sdk';
+import { defineNode } from '@noodl/noodl-sdk';
 import { inputTypeEnums } from '../constants';
 import { findContext } from './context';
+import { getContextOutputProperties } from '../utils';
 
 export default defineNode({
 	name: 'data_context.subscriber',
@@ -73,40 +72,69 @@ export default defineNode({
 			return;
 		}
 
-		graphModel.on("nodeAdded.data_context.subscriber", function (contextNode) {
-			const contextName = contextNode.parameters.contextName;
+		// Update the ports when:
+		// - Context properties change
+		// - Context node is deleted
+		// - Get State is created
+		// - Get State context name changed
 
+		// When set state is created
+		graphModel.on("nodeAdded.data_context.subscriber", function (node) {
 			const contextNodes = graphModel.getNodesWithType('data_context.context');
-			const subscriberNodes = graphModel.getNodesWithType('data_context.subscriber');
 
-			for (const node of subscriberNodes) {
-				const dataContext = contextNodes.find((x) => x.parameters.contextName === contextName);
-				if (dataContext) {
-					updatePortsFromContextNode(node, dataContext, context);
-				}
+			// Update this node, if it already have a contextName
+			if (node.parameters.contextName) {
+				const inputs = getContextOutputProperties(contextNodes, node.parameters.contextName);
+				updatePortsFromContext(node, inputs, context);
 			}
+
+			// Listen to when contextName is changed
+			node.on("parameterUpdated", function ({ name, value, state }) {
+				if (name !== "contextName") return;
+				
+				// Get all contexts and update them based on value which is the contextName
+				const contextNodes = graphModel.getNodesWithType('data_context.context');
+				const inputs = getContextOutputProperties(contextNodes, value);
+				updatePortsFromContext(node, inputs, context);
+			})
 		});
-			
-		graphModel.on("nodeAdded.data_context.context", function (contextNode) {
-			contextNode.on("parameterUpdated", function (event) {
-				for (const node of graphModel.getNodesWithType('data_context.subscriber')) {
-					updatePorts(node, contextNode.parameters, context)
-				}
-			});
+
+		// When context is created
+		graphModel.on("nodeAdded.data_context.context", function (node) {
+			function updateAll() {
+				const contextName = node.parameters.contextName;
+
+				// Get all the contexts with the same contextName,
+				// so we combine all the properties into one object
+				const contextNodes = graphModel.getNodesWithType('data_context.context');
+				const inputs = getContextOutputProperties(contextNodes, contextName);
+
+				// Update all set state nodes
+				const nodes = graphModel.getNodesWithType('data_context.subscriber')
+					.filter((x) => x.parameters.contextName === contextName)
+					.forEach((node) => {
+						updatePorts(node, inputs, context)
+					});
+			}
+
+			// Listen to parameters are changed
+			node.on("parameterUpdated", () => updateAll());
+
+			// Listen to when a context is deleted
+			node.on("nodeRemoved", () => updateAll());
 		});
 	}
 });
 
-function updatePortsFromContextNode(node, contextNode, context) {
+function updatePortsFromContext(node, contextParameters, context) {
 	const ports = [];
 
-	const contextInputs = contextNode.parameters.contextInputs || [];
-	for (const prop of contextInputs) {
+	for (const label in contextParameters) {
     // Type for output
     ports.push({
-      name: 'proptype-' + prop.label,
+      name: 'proptype-' + label,
       displayName: 'Type',
-      editorName: prop.label + ' | Type',
+      editorName: label + ' | Type',
       plug: 'input',
       type: {
         name: 'enum',
@@ -115,57 +143,15 @@ function updatePortsFromContextNode(node, contextNode, context) {
       },
       default: 'string',
       parent: 'contextInputs',
-      parentItemId: prop.id
+      parentItemId: contextParameters[label].id
     })
 
     // Value for output
     ports.push({
-      name: 'prop-' + prop.label,
-      displayName: prop.label,
+      name: 'prop-' + label,
+      displayName: label,
       plug: 'output',
-      type: node.parameters['proptype-' + prop.label] || '*',
-      group: 'Properties',
-    })
-	}
-
-	context.editorConnection.sendDynamicPorts(node.id, ports, {
-		detectRenamed: {
-			plug: "output",
-		},
-	});
-}
-
-function updatePorts(node, parameters, context) {
-	if (node.parameters.contextName !== parameters.contextName) {
-		return;
-	}
-
-	const ports = [];
-
-	const contextInputs = parameters.contextInputs || [];
-	for (const prop of contextInputs) {
-    // Type for output
-    ports.push({
-      name: 'proptype-' + prop.label,
-      displayName: 'Type',
-      editorName: prop.label + ' | Type',
-      plug: 'input',
-      type: {
-        name: 'enum',
-        enums: inputTypeEnums,
-        allowEditOnly: true
-      },
-      default: 'string',
-      parent: 'contextInputs',
-      parentItemId: prop.id
-    })
-
-    // Value for output
-    ports.push({
-      name: 'prop-' + prop.label,
-      displayName: prop.label,
-      plug: 'output',
-      type: node.parameters['proptype-' + prop.label] || '*',
+      type: contextParameters[label].type,
       group: 'Properties',
     })
 	}

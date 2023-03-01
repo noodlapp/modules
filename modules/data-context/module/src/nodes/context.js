@@ -1,9 +1,6 @@
-import {
-  defineNode
-} from '@noodl/noodl-sdk';
-import {
-  inputTypeEnums
-} from '../constants';
+import { defineNode } from '@noodl/noodl-sdk';
+import { inputTypeEnums } from '../constants';
+import { getCircularReplacer } from '../utils';
 
 import create from 'zustand/vanilla'
 
@@ -58,22 +55,6 @@ function createContext(contextName, nodeScope, initialState) {
   window.data_context_context[contextName][id] = create(() => initialState);
 }
 
-function safeInspect(value) {
-  const output = {}
-  Object.keys(value).map((key) => {
-    try {
-      output[key] = JSON.stringify(value[key])
-    } catch (error) {
-      if (error.toString().includes("circular structure")) {
-        output[key] = "Error: [Circular structure]";
-      } else {
-        output[key] = "Error: " + error;
-      }
-    }
-  });
-  return output;
-}
-
 export default defineNode({
   name: 'data_context.context',
   displayName: "Context",
@@ -116,7 +97,7 @@ export default defineNode({
     const contextName = this._inputValues.contextName;
     const store = findContext(contextName, this.nodeScope);
     if (store) {
-      return [{ type: 'value', value: safeInspect(store.getState()) }]
+      return [{ type: 'value', value: getCircularReplacer(store.getState()) }]
     }
 
     return "[No value set]";
