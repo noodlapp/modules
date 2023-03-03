@@ -73,51 +73,73 @@ export default defineNode({
 		// - Set State is created
 		// - Set State context name changed
 
-		// When set state is created
-		graphModel.on("nodeAdded.data_context.setState", function (node) {
-			const contextNodes = graphModel.getNodesWithType('data_context.context');
+    graphModel.on("editorImportComplete", function () {
+			function parameterUpdated(node, { name, value, state }) {
+				if (name !== "contextName") return;
 
-			// Update this node, if it already have a contextName
-			if (node.parameters.contextName) {
-				const inputs = getContextInputProperties(contextNodes, node.parameters.contextName);
+				// Get all contexts and update them based on value which is the contextName
+				const contextNodes = graphModel.getNodesWithType(
+					"data_context.context"
+				);
+				const inputs = getContextInputProperties(contextNodes, value);
 				updatePortsFromContext(node, inputs, context);
 			}
 
-			// Listen to when contextName is changed
-			node.on("parameterUpdated", function ({ name, value, state }) {
-				if (name !== "contextName") return;
-				
-				// Get all contexts and update them based on value which is the contextName
-				const contextNodes = graphModel.getNodesWithType('data_context.context');
-				const inputs = getContextInputProperties(contextNodes, value);
-				updatePortsFromContext(node, inputs, context);
-			})
-		});
+      // When set state is created
+      graphModel.on("nodeAdded.data_context.setState", function (node) {
+        const contextNodes = graphModel.getNodesWithType(
+          "data_context.context"
+        );
 
-		// When context is created
-		graphModel.on("nodeAdded.data_context.context", function (node) {
-			function updateAll() {
+        // Update this node, if it already have a contextName
+        if (node.parameters.contextName) {
+          const inputs = getContextInputProperties(
+            contextNodes,
+            node.parameters.contextName
+          );
+          updatePortsFromContext(node, inputs, context);
+        }
+
+        // Listen to when contextName is changed
+        node.on("parameterUpdated", (args) => parameterUpdated(node, args));
+      });
+
+			function updateAll(node) {
 				const contextName = node.parameters.contextName;
 
 				// Get all the contexts with the same contextName,
 				// so we combine all the properties into one object
-				const contextNodes = graphModel.getNodesWithType('data_context.context');
+				const contextNodes = graphModel.getNodesWithType(
+					"data_context.context"
+				);
 				const inputs = getContextInputProperties(contextNodes, contextName);
 
 				// Update all set state nodes
-				const nodes = graphModel.getNodesWithType('data_context.setState')
+				graphModel
+					.getNodesWithType("data_context.setState")
 					.filter((x) => x.parameters.contextName === contextName)
 					.forEach((node) => {
-						updatePortsFromContext(node, inputs, context)
+						updatePortsFromContext(node, inputs, context);
 					});
 			}
 
-			// Listen to parameters are changed
-			node.on("parameterUpdated", () => updateAll());
+      // When context is created
+      graphModel.on("nodeAdded.data_context.context", function (node) {
+        // Listen to parameters are changed
+        node.on("parameterUpdated", () => updateAll(node));
 
-			// Listen to when a context is deleted
-			node.on("nodeRemoved", () => updateAll());
-		});
+        // Listen to when a context is deleted
+        node.on("nodeRemoved", () => updateAll(node));
+      });
+
+			const nodes = graphModel.getNodesWithType(
+				"data_context.setState"
+			);
+			nodes.forEach((node) => {
+				updateAll(node);
+        node.on("parameterUpdated", (args) => parameterUpdated(node, args));
+			});
+    });
 	}
 });
 
