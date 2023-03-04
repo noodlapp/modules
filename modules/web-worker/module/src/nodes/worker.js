@@ -23,6 +23,7 @@ export default defineNode({
     this.setOutputs({ isRunning: false });
 
     this.scheduleAfterInputsHaveUpdated(() => {
+      const workerName = this.inputs.workerName;
       if (workers[workerName]) {
         this.setOutputs({ isRunning: true });
         return;
@@ -84,7 +85,7 @@ export default defineNode({
   },
   methods: {
     startWorker() {
-      const workerName = this._inputValues.workerName;
+      const workerName = this.inputs.workerName;
       
       // Check browser support
       if (!window.Worker) {
@@ -100,7 +101,7 @@ export default defineNode({
         return;
       }
 
-      const workerSource = this._inputValues.workerSource;
+      const workerSource = this.inputs.workerSource;
       const worker = new Worker(workerSource);
       worker.onmessage = (event) => {
         if (typeof event.data !== 'object') {
@@ -124,7 +125,7 @@ export default defineNode({
       this.sendSignalOnOutput("started");
     },
     stopWorker() {
-      const workerName = this._inputValues.workerName;
+      const workerName = this.inputs.workerName;
       if (workers[workerName]) {
         workers[workerName].worker.terminate();
         workers[workerName] = null;
@@ -134,7 +135,7 @@ export default defineNode({
     }
   },
   getInspectInfo() {
-    const workerName = this._inputValues.workerName;
+    const workerName = this.inputs.workerName;
     if (workers[workerName]) {
       const { componentId, componentName } = workers[workerName];
       return [
