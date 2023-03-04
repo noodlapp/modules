@@ -79,7 +79,6 @@ export default defineNode({
   methods: {
     unsubscribe() {
       if (!this._internal.workerName) return;
-      console.log("unsub");
       events.removeEventListener(
         this._internal.workerName,
         this._internal.handler
