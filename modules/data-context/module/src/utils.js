@@ -13,6 +13,48 @@ export function getCircularReplacer() {
   };
 }
 
+export function toJSON(value) {
+  return JSON.stringify(value || {}, getCircularReplacer());
+}
+
+export function toInspect(value) {
+  if (typeof value === 'object') {
+    return Object.keys(value).reduce((result, key) => {
+      const item = value[key];
+      switch (typeof item) {
+        case 'object':
+          if (Object.keys(item).length > 5) {
+            result[key] = "[Object]";
+          } else {
+            result[key] = toJSON(item);
+          }
+          break;
+
+        case 'function':
+          result[key] = "[Function]";
+          break;
+
+        case 'bigint':
+        case 'number':
+          result[key] = item;
+          break;
+
+        case 'string':
+        case 'symbol':
+        case 'undefined':
+          result[key] = item;
+          break;
+
+        default:
+          result[key] = "[Unknown]";
+          break;
+      }
+      return result;
+    }, {})
+  }
+  return JSON.stringify(value || {}, getCircularReplacer());
+}
+
 export function getContextInputProperties(contextNodes, contextName) {
   const dataContexts = contextNodes
     .filter((x) => x.parameters.contextName === contextName);

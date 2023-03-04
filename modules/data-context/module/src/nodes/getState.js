@@ -1,7 +1,7 @@
 import { defineNode } from "@noodl/noodl-sdk";
 import { inputTypeEnums } from "../constants";
 import { findContext } from "./context";
-import { getContextOutputProperties } from "../utils";
+import { toInspect, getContextOutputProperties } from "../utils";
 
 export default defineNode({
   name: "data_context.getState",
@@ -49,7 +49,12 @@ export default defineNode({
 
       try {
         const contextName = this._inputValues.contextName;
-        const store = findContext(contextName, this.nodeScope);
+        const { store, componentId, componentName } = findContext(contextName, this.nodeScope);
+
+        this._internal.context = {
+          componentId,
+          componentName
+        }
 
         const state = store.getState();
         updateState(state);
@@ -76,7 +81,12 @@ export default defineNode({
     },
   },
   getInspectInfo() {
-    return [{ type: "value", value: this._internal.outputValues || {} }];
+    return [
+      { type: "value", value: `Using context:` },
+      { type: "value", value: this._internal.context || {} },
+      { type: "value", value: `Current values:` },
+      { type: "value", value: toInspect(this._internal.outputValues) },
+    ];
   },
   setup(context, graphModel) {
     if (

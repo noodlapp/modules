@@ -1,13 +1,19 @@
 import { defineNode } from '@noodl/noodl-sdk';
 import { inputTypeEnums } from '../constants';
-import { getCircularReplacer } from '../utils';
+import { toInspect } from '../utils';
 
 import create from 'zustand/vanilla'
+
+const emptyContextObject = {
+  store: null,
+  componentId: null,
+  componentName: null,
+};
 
 export function findContext(contextName, nodeScope) {
   if (!window.data_context_context || !window.data_context_context[contextName]) {
     // There is no context created by that name.
-    return null;
+    return emptyContextObject;
   }
 
   const id = nodeScope.componentOwner.id;
@@ -37,7 +43,7 @@ export function findContext(contextName, nodeScope) {
     return findContext(contextName, nodeScope.componentOwner.parent.nodeScope);
   }
 
-  return null;
+  return emptyContextObject;
 }
 
 function createContext(contextName, nodeScope, initialState) {
@@ -52,7 +58,11 @@ function createContext(contextName, nodeScope, initialState) {
   // console.debug(`[state][initial]['${contextName}']`, initialState)
 
   const id = nodeScope.componentOwner.id;
-  window.data_context_context[contextName][id] = create(() => initialState);
+  window.data_context_context[contextName][id] = {
+    store: create(() => initialState),
+    componentId: nodeScope.componentOwner.id,
+    componentName: nodeScope.componentOwner.name,
+  };
 }
 
 export default defineNode({
@@ -95,9 +105,12 @@ export default defineNode({
   },
   getInspectInfo() {
     const contextName = this._inputValues.contextName;
-    const store = findContext(contextName, this.nodeScope);
+    const { store } = findContext(contextName, this.nodeScope);
     if (store) {
-      return [{ type: 'value', value: getCircularReplacer(store.getState()) }]
+      return [
+        { type: "value", value: `Current values:` },
+        { type: 'value', value: toInspect(store.getState()) }
+      ];
     }
 
     return "[No value set]";
