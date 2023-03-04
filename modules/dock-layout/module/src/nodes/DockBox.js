@@ -59,7 +59,6 @@ export default defineReactNode({
                     if (index === -1) {
                       child.tabs.push(newTab.tabs[0])
                     }
-                    // if (newTab.tabs[0].title === "Tab 2") debugger
                   }
                 )
 

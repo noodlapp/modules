@@ -37,17 +37,6 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: 'assets/**/*', transformPath: targetPath => stripStartDirectories(targetPath, 1) },
         ]),
-
-        // Copy the generated module files to the tests project if it exists
-        {
-            apply: (compiler) => {
-                compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => {
-                    if(fs.existsSync(path.resolve(__dirname, '../tests'))) {
-                        fs.copySync(outputPath, path.resolve(__dirname, '../tests/noodl_modules/' + pjson.name));
-                    }
-                })
-            }
-        }
     ],
     module: {
         rules: [

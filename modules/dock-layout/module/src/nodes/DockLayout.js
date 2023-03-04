@@ -40,15 +40,24 @@ function DockLayoutComponent(props) {
     // Create the node
     if (!panels[id] && component) {
       (async () => {
-        const noodlNode = await props.nodeScope.createNode(
+        const noodlNode = await props.noodlNode.nodeScope.createNode(
           component,
           undefined,
           {}
         );
 
-        noodlNode.setInputValue("id", id);
+        // Check to avoid logging: "node doesn't have input id"
+        if (noodlNode.getInput("id")) {
+          noodlNode.setInputValue("id", id);
+        }
+        noodlNode.popupParent = props.noodlNode;
 
         setPanels((prev) => {
+          if (prev[id]) {
+            prev[id].noodlNode._onNodeDeleted();
+            delete prev[id];
+          }
+
           prev[id] = {
             noodlNode,
             content: noodlNode.render()
@@ -122,7 +131,7 @@ export default defineReactNode({
     return DockLayoutComponent;
   },
   initialize() {
-    this.props.nodeScope = this.nodeScope;
+    this.props.noodlNode = this;
   },
   dynamicports: [],
   inputProps: {},
