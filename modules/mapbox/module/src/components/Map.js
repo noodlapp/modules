@@ -16,6 +16,7 @@ export default function Map(props) {
   const {
     mapboxStyle,
     interactive,
+    antialias,
 
     geopoint,
     longitude,
@@ -78,7 +79,8 @@ export default function Map(props) {
       // Allow taking screenshots
       preserveDrawingBuffer: true,
       bearing,
-      interactive
+      interactive,
+      antialias,
     });
 
     const resizeObserver = new ResizeObserver(() => {

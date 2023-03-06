@@ -45,6 +45,11 @@ export default defineReactNode({
       type: 'boolean',
       default: true
     },
+    antialias: {
+      displayName: 'Anti-alias',
+      type: 'boolean',
+      default: false
+    },
 
     //coordinates and zoom
     geopoint: {
