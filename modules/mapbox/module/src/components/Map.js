@@ -49,13 +49,20 @@ export default function Map(props) {
     const accessToken = Noodl.getProjectSettings().mapboxAccessToken;
     mapboxgl.accessToken = accessToken;
 
-    // You can also send in a JSON string for a custom style
-    let mapStyle = mapboxStyle || 'mapbox://styles/mapbox/streets-v12';
-    if (mapStyle.startsWith("{")) {
-      try {
-        mapStyle = JSON.parse(mapStyle);
-      } catch (error) {
-        console.error("Failed to parse Map Style", error);
+    let mapStyle = 'mapbox://styles/mapbox/streets-v12';
+    if (typeof mapboxStyle === 'object') {
+      // Allow sending in the style directly as object
+      mapStyle = mapboxStyle;
+    } else if (typeof mapboxStyle === 'string') {
+      // You can also send in a JSON string for a custom style
+      if (mapboxStyle.startsWith("{")) {
+        try {
+          mapStyle = JSON.parse(mapboxStyle);
+        } catch (error) {
+          console.error("Failed to parse Map Style", error);
+        }
+      } else {
+        mapStyle = mapboxStyle;
       }
     }
 
