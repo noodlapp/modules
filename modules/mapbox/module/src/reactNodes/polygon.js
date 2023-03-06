@@ -29,9 +29,6 @@ export default defineReactNode({
       outMapboxDraw,
       outFeatureId,
       outCoordinates,
-      outCenter,
-      outCentroid,
-      outArea,
 
       onUpdated,
       onSelected,
@@ -169,24 +166,6 @@ export default defineReactNode({
       type: 'array',
       tsdef: '[lat: number, lon: number][]',
       group: 'Data'
-    },
-    outCenter: {
-      displayName: 'Center',
-      type: 'number',
-      group: 'Data',
-      tooltip: 'The absolute center point of all Coordinates.'
-    },
-    outCentroid: {
-      displayName: 'Centroid',
-      type: 'number',
-      group: 'Data',
-      tooltip: 'The centroid of all Coordinates.'
-    },
-    outArea: {
-      displayName: 'Area',
-      type: 'number',
-      group: 'Data',
-      tooltip: 'Area in square meters.'
     },
 
     onUpdated: {

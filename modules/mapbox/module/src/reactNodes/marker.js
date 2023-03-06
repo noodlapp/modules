@@ -1,6 +1,4 @@
-import {
-  defineReactNode
-} from '@noodl/noodl-sdk';
+import { defineReactNode } from '@noodl/noodl-sdk';
 import React, { useState, useRef, useEffect } from 'react';
 import { useMapContext } from '../contexts/MapContext';
 
@@ -25,7 +23,6 @@ export default defineReactNode({
       pitchAlignment,
       offsetX,
       offsetY,
-      occludedOpacity,
 
       outLongitude,
       outlatitude,

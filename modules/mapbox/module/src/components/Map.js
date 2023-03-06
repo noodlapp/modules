@@ -25,7 +25,6 @@ export default function Map(props) {
     bearing,
 
     outMap,
-    outMapboxDraw,
     outLongitude,
     outLatitute,
     outZoom,

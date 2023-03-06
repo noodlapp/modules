@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import mapboxgl from 'mapbox-gl';
 import { AddControlPositionEnumType } from '../../constants';
 
 // https://github.com/mapbox/mapbox-gl-draw/tree/main
