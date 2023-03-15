@@ -146,8 +146,7 @@ export default function Map(props) {
   const { draw } = useMapboxDraw(map, props);
 
   return (
-    <div style={{...{width: '100%', height: '100%'}, ...style}}>
-      <div style={{width: '100%', height: '100%'}} ref={containerRef} />
+    <div ref={containerRef} style={{...{ width: '100%', height: '100%' }, ...style}}>
       {containerRef && map && (
         <MapContextProvider map={map} draw={draw}>
           <div style={{width: '100%', height: '100%'}}>{children}</div>
