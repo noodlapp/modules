@@ -33,7 +33,7 @@ export const Inputs = {
     displayName: 'Show Marker',
     type: 'boolean',
     group: 'Controls - Geocoder',
-    default: true
+    default: false
   },
 }
 

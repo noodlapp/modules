@@ -15,7 +15,7 @@ export const Inputs = {
     default: false
   },
   c_MapboxDrawPosition: {
-    displayName: 'Geolocate Position',
+    displayName: 'Mapbox Draw Position',
     type: AddControlPositionEnumType,
     group: 'Controls - Mapbox Draw',
     default: 'top-right'
@@ -24,7 +24,7 @@ export const Inputs = {
     displayName: 'Enable Draw Keybindings',
     type: 'boolean',
     group: 'Controls - Mapbox Draw',
-    default: true
+    default: false
   },
   c_MapboxDrawTouch: {
     displayName: 'Enable Draw Touch',
@@ -42,7 +42,7 @@ export const Inputs = {
     displayName: 'Display Draw Controls',
     type: 'boolean',
     group: 'Controls - Mapbox Draw',
-    default: true
+    default: false
   },
 
   c_MapboxDrawControlPoints: {
