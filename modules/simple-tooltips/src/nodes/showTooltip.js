@@ -8,7 +8,7 @@ import {
 } from "./_shared";
 
 export default {
-  name: "simple-tooltip.show-tooltip",
+  name: "simple-tooltips.show-tooltip",
   displayName: "Show Tooltip",
   category: "tooltip",
   dynamicports: [{

@@ -24,7 +24,7 @@ import showTooltip from './nodes/showTooltip';
 import tooltip from './nodes/tooltip';
 
 defineModule({
-	name: "simple-tooltip",
+	name: "simple-tooltips",
 	reactNodes: [tooltip],
 	nodes: [showTooltip]
 });

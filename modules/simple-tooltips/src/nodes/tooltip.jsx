@@ -3,7 +3,7 @@ import tippy, { followCursor as tippyFollowCursor } from "tippy.js";
 import { sharedInputProps, sharedInputs, toNumber } from "./_shared";
 
 export default {
-  name: "simple-tooltip.tooltip",
+  name: "simple-tooltips.tooltip",
   displayName: "Tooltip",
   category: "tooltip",
   noodlNodeAsProp: true,
