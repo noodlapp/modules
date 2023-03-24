@@ -6,6 +6,7 @@ export default {
   name: "simple-tooltips.tooltip",
   displayName: "Tooltip",
   category: "tooltip",
+  docs: "https://docs.noodl.net/library/modules/simple-tooltips/nodes/show-tooltip",
   noodlNodeAsProp: true,
   getReactComponent() {
     return function (props) {

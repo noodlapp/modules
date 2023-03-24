@@ -11,6 +11,7 @@ export default {
   name: "simple-tooltips.show-tooltip",
   displayName: "Show Tooltip",
   category: "tooltip",
+  docs: "https://docs.noodl.net/library/modules/simple-tooltips/nodes/tooltip",
   dynamicports: [{
     condition: "boxShadowEnabled = true",
     inputs: [
