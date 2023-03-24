@@ -206,11 +206,15 @@ export default {
           });
 
           if (props.boxShadowEnabled) {
+            const boxShadowOffsetX = props.boxShadowOffsetX.value + props.boxShadowOffsetX.unit;
+            const boxShadowOffsetY = props.boxShadowOffsetY.value + props.boxShadowOffsetY.unit;
+            const boxShadowBlurRadius = props.boxShadowBlurRadius.value + props.boxShadowBlurRadius.unit;
+            const boxShadowSpreadRadius = props.boxShadowSpreadRadius.value + props.boxShadowSpreadRadius.unit;
             boxElem[0].style.boxShadow = `${
               props.boxShadowInset ? "inset " : ""
-            }${props.boxShadowOffsetX} ${props.boxShadowOffsetY} ${
-              props.boxShadowBlurRadius
-            } ${props.boxShadowSpreadRadius} ${props.boxShadowColor}`;
+            }${boxShadowOffsetX} ${boxShadowOffsetY} ${
+              boxShadowBlurRadius
+            } ${boxShadowSpreadRadius} ${props.boxShadowColor}`;
           }
 
           const textStyle = typeof props.textStyle === 'object' ? props.textStyle : {};
