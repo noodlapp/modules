@@ -8,6 +8,9 @@ export function toNumber(value, fallback) {
       return result;
     }
   }
+  if (typeof value === "object" && value.value && value.unit) {
+    return toNumber(`${value.value}${value.unit}`);
+  }
   return fallback;
 }
 
