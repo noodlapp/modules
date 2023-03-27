@@ -378,7 +378,7 @@ export const sharedInputProps = {
       units: ["px"],
       defaultUnit: "px",
     },
-    default: 10,
+    default: 18,
   },
   trigger: {
     index: 201,
@@ -476,7 +476,7 @@ export const sharedInputs = {
   paddingLeft: {
     index: 100,
     group: "Margin and padding",
-    default: 9,
+    default: 20,
     displayName: "Pad Left",
     type: {
       name: "number",
@@ -493,7 +493,7 @@ export const sharedInputs = {
   paddingRight: {
     index: 101,
     group: "Margin and padding",
-    default: 9,
+    default: 20,
     displayName: "Pad Right",
     type: {
       name: "number",
@@ -511,7 +511,7 @@ export const sharedInputs = {
     index: 102,
     group: "Margin and padding",
     displayName: "Pad Top",
-    default: 5,
+    default: 12,
     type: {
       name: "number",
       units: ["px"],
@@ -528,7 +528,7 @@ export const sharedInputs = {
     index: 103,
     group: "Margin and padding",
     displayName: "Pad Bottom",
-    default: 5,
+    default: 12,
     type: {
       name: "number",
       units: ["px"],
