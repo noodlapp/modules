@@ -6,7 +6,7 @@ import MapboxNode from './reactNodes/map';
 import MapboxMarker from './reactNodes/marker';
 import MapboxPolygon from './reactNodes/polygon';
 
-Noodl.defineModule({
+defineModule({
   reactNodes: [
     MapboxNode,
     MapboxMarker,

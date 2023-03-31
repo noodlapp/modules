@@ -12,6 +12,7 @@ export default defineReactNode({
     return function ({
       color,
       zindex,
+      tooltipContent,
 
       geopoint,
       longitude,
@@ -88,6 +89,11 @@ export default defineReactNode({
         } else {
           marker.setLngLat([longitude, latitude]);
         }
+        if (tooltipContent) {
+          marker.setPopup(new mapboxgl.Popup().setHTML(tooltipContent))
+        } else {
+          marker.setPopup(null)
+        }
         marker.setDraggable(draggable)
         marker.setRotation(rotation)
         marker.setRotationAlignment(rotationAlignment)
@@ -125,6 +131,14 @@ export default defineReactNode({
       type: 'number',
       group: 'General',
       default: 0
+    },
+    tooltipContent: {
+      displayName: 'Tooltip',
+      group: 'General',
+      type: {
+        name: 'string',
+        codeeditor: 'html'
+      },
     },
     geopoint: {
       displayName: 'Geopoint',
