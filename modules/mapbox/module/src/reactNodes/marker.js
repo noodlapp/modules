@@ -120,25 +120,11 @@ export default defineReactNode({
   },
   initialize() {},
   inputProps: {
-    color: {
-      displayName: 'Color',
-      type: 'color',
+    draggable: {
+      displayName: 'Draggable',
+      type: 'boolean',
       group: 'General',
-      default: "#3FB1CE"
-    },
-    zindex: {
-      displayName: 'z-Index',
-      type: 'number',
-      group: 'General',
-      default: 0
-    },
-    tooltipContent: {
-      displayName: 'Tooltip',
-      group: 'General',
-      type: {
-        name: 'string',
-        codeeditor: 'html'
-      },
+      default: false
     },
     geopoint: {
       displayName: 'Geopoint',
@@ -158,86 +144,98 @@ export default defineReactNode({
       group: 'Coordinates',
       default: 0
     },
-    draggable: {
-      displayName: 'Draggable',
-      type: 'boolean',
-      group: 'General',
-      default: false
+    color: {
+      displayName: 'Color',
+      type: 'color',
+      group: 'Style',
+      default: "#3FB1CE"
+    },
+    tooltipContent: {
+      displayName: 'Tooltip',
+      group: 'Content',
+      type: {
+        name: 'string',
+        codeeditor: 'html'
+      },
+    },
+    rotationAlignment: {
+      displayName: 'Rotation',
+      editorName: 'Rotation Alignment',
+      type: {
+        name: "enum",
+        enums: [
+          {
+            label: "Auto",
+            value: "auto"
+          },
+          {
+            label: "Viewport",
+            value: "viewport"
+          },
+          {
+            label: "Map",
+            value: "map"
+          },
+          {
+            label: "Horizon",
+            value: "horizon"
+          }
+        ]
+      },
+      group: "Alignment",
+      default: "auto"
+    },
+    pitchAlignment: {
+      displayName: 'Pitch',
+      editorName: 'Pitch Alignment',
+      type: {
+        name: "enum",
+        enums: [
+          {
+            label: "Auto",
+            value: "auto"
+          },
+          {
+            label: "Viewport",
+            value: "viewport"
+          },
+          {
+            label: "Map",
+            value: "map"
+          },
+          {
+            label: "Horizon",
+            value: "horizon"
+          }
+        ]
+      },
+      group: "Alignment",
+      default: "auto"
     },
     rotation: {
       displayName: 'Rotation',
       type: 'number',
-      group: 'General',
-      default: 0
-    },
-    rotationAlignment: {
-      displayName: 'Rotation Alignment',
-      type: {
-        name: "enum",
-        enums: [
-          {
-            label: "Auto",
-            value: "auto"
-          },
-          {
-            label: "Viewport",
-            value: "viewport"
-          },
-          {
-            label: "Map",
-            value: "map"
-          },
-          {
-            label: "Horizon",
-            value: "horizon"
-          }
-        ]
-      },
-      group: "General",
-      default: "auto"
-    },
-    pitchAlignment: {
-      displayName: 'Pitch Alignment',
-      type: {
-        name: "enum",
-        enums: [
-          {
-            label: "Auto",
-            value: "auto"
-          },
-          {
-            label: "Viewport",
-            value: "viewport"
-          },
-          {
-            label: "Map",
-            value: "map"
-          },
-          {
-            label: "Horizon",
-            value: "horizon"
-          }
-        ]
-      },
-      group: "General",
-      default: "auto"
-    },
-    offsetX: {
-      displayName: 'Offset X',
-      type: 'number',
-      group: 'General',
+      group: 'Offset',
       default: 0
     },
     offsetX: {
-      displayName: 'Offset X',
+      displayName: 'X',
+      editorName: 'Offset X',
       type: 'number',
-      group: 'General',
+      group: 'Offset',
       default: 0
     },
     offsetY: {
-      displayName: 'Offset Y',
+      displayName: 'Y',
+      editorName: 'Offset Y',
       type: 'number',
-      group: 'General',
+      group: 'Offset',
+      default: 0
+    },
+    zindex: {
+      displayName: 'z-Index',
+      type: 'number',
+      group: 'Advanced Style',
       default: 0
     },
   },
