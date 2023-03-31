@@ -21,6 +21,18 @@ const globalOptions: Input = {
       type: "boolean",
       transformFrom: () => true,
     },
+    {
+      name: "aspectRatio",
+      displayName: "Aspect Ratio",
+      type: "number",
+      transformFrom: () => undefined,
+    },
+    {
+      name: "resizeDelay",
+      displayName: "Resize Delay",
+      type: "number",
+      transformFrom: () => 0,
+    },
   ],
 };
 
@@ -293,6 +305,68 @@ const legendLabelsFontOptions: Input = {
   ],
 };
 
+const dataDecimationOptions: Input = {
+  group: "Data Decimation",
+  namespace: "plugins.decimation",
+  options: [
+    {
+      name: "enabled",
+      displayName: "Enabled",
+      type: "boolean",
+      transformFrom: () => false,
+    },
+    {
+      name: "algorithm",
+      displayName: "Algorithm",
+      type: generateEnum(["min-max", "lttb"]),
+      transformFrom: () => "min-max",
+    },
+    {
+      name: "samples",
+      displayName: "Samples",
+      type: "number",
+      transformFrom: () => undefined,
+    },
+    {
+      name: "threshold",
+      displayName: "Threshold",
+      type: "number",
+      transformFrom: () => undefined,
+    },
+  ],
+};
+
+const interactionOptions: Input = {
+  group: "Interaction",
+  namespace: "interaction",
+  options: [
+    {
+      name: "intersect",
+      displayName: "Intersect",
+      type: "boolean",
+      transformFrom: () => true,
+    },
+    {
+      name: "mode",
+      displayName: "Mode",
+      type: generateEnum(["point", "nearest", "dataset", "x", "y"]),
+      transformFrom: () => "nearest",
+    },
+    {
+      name: "axis",
+      displayName: "Axis",
+      type: generateEnum(["x", "y"]),
+      transformFrom: () => "x",
+    },
+    {
+      name: "includeInvisible",
+      displayName: "Include Invisible",
+      type: "boolean",
+      transformFrom: () => false,
+    },
+  ],
+};
+
 export const chart_inputs = {
   ...generateInputs(globalOptions),
   ...generateInputs(titleOptions),
@@ -302,6 +376,8 @@ export const chart_inputs = {
   ...generateInputs(legendOptions),
   ...generateInputs(legendLabelsOptions),
   ...generateInputs(legendLabelsFontOptions),
+  ...generateInputs(dataDecimationOptions),
+  ...generateInputs(interactionOptions),
 
   // Allow to set custom plugins
   customPlugins: {
@@ -320,6 +396,8 @@ export const chart_changed = {
   ...generateInputsChanged(legendOptions),
   ...generateInputsChanged(legendLabelsOptions),
   ...generateInputsChanged(legendLabelsFontOptions),
+  ...generateInputsChanged(dataDecimationOptions),
+  ...generateInputsChanged(interactionOptions),
 
   customPlugins(value) {
     if (!this.chart) return;
@@ -343,4 +421,6 @@ export const chart_options = [
   legendOptions,
   legendLabelsOptions,
   legendLabelsFontOptions,
+  dataDecimationOptions,
+  interactionOptions,
 ];

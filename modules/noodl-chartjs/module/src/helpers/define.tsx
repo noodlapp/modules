@@ -27,7 +27,7 @@ export function defineChartReactNode(args: ChartNodeOptions) {
     chart: any;
   }>({
     name: args.name,
-    category: "chart.jsc",
+    category: "chart.js",
     initialize() {
       this.props.onCanvasChanged = (node: HTMLCanvasElement) => {
         if (this.chart) {
