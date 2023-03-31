@@ -56,8 +56,9 @@ export function defineChartReactNode(args: ChartNodeOptions) {
     },
     outputs: {
       chartOptions: {
+        group: "Debug",
         type: "object",
-        displayName: "Chart Options (for debugging)",
+        displayName: "Chart.js Options",
       },
     },
     changed: {
@@ -116,10 +117,18 @@ export function defineChartReactNode(args: ChartNodeOptions) {
           chartOptions: options,
         });
 
+        const haveConnection = (portName: string) => {
+          return this.model.component.connections.findIndex((x) =>
+            x.sourceId === this.id && x.sourcePort === portName ||
+            x.targetId === this.id && x.targetPort === portName
+          ) !== -1;
+        }
+
         const chartConfig: ChartConfiguration<any, any, any> = {
           type: args.type,
           options,
-          data: this.inputs.data || args.defaultData,
+          // Only use default data if there is no connection
+          data: this.inputs.data || haveConnection('data') ? {} : args.defaultData,
         };
 
         this.chart = new Chart(canvas, chartConfig);
