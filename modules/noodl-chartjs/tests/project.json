@@ -1,0 +1,111 @@
+{
+    "name": "ChartJS Test",
+    "components": [
+        {
+            "name": "/My tests",
+            "id": "3936da2d-21f6-20ea-0911-2a4ae18c68bf",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "b6c02400-8d58-77cd-9314-d43eb21eb3a5",
+                        "fromProperty": "data",
+                        "toId": "d04c867e-ca73-3d84-ef21-f167345f1258",
+                        "toProperty": "data"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "e8570140-710c-df7f-2314-faa1656a4f9c",
+                        "type": "Group",
+                        "x": 468.10019333286846,
+                        "y": 497.41437506576483,
+                        "parameters": {
+                            "paddingLeft": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingRight": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingTop": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingBottom": {
+                                "value": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "d04c867e-ca73-3d84-ef21-f167345f1258",
+                                "type": "Pie Chart",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "bodyFontFamily": "Roboto/Roboto-Light.ttf",
+                                    "fontFamily": "Roboto/Roboto-Light.ttf"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "a0c5df70-e343-8e84-29ed-1633bdfa761e",
+                                "type": "Line Chart",
+                                "x": 20,
+                                "y": 128,
+                                "parameters": {
+                                    "mode": "index",
+                                    "intersect": true,
+                                    "bodyFontFamily": "Roboto/Roboto-Light.ttf",
+                                    "fontFamily": "Roboto/Roboto-Light.ttf",
+                                    "responsive": true,
+                                    "position": "left",
+                                    "tooltips.position": "average",
+                                    "tooltips.mode": "index",
+                                    "legend.display": true,
+                                    "datasets": "dataset1,dataset2"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "b6c02400-8d58-77cd-9314-d43eb21eb3a5",
+                        "type": "Javascript2",
+                        "x": 258.75104059990235,
+                        "y": 515.6153189992327,
+                        "parameters": {
+                            "code": "script({\n\toutputs:{\n\t    data: \"*\"\n\t},\n\tsetup() {\n\t    this.setOutputs({\n\t        data: {\n    \t        datasets: [{\n    \t\t\tdata: [20, 20, 60],\n    \t\t\tbackgroundColor: [\n    \t\t\t\t'#FF5382',\n    \t\t\t\t'#FFCC34',\n    \t\t\t\t'#00A3F1'\n        \t\t\t],\n        \t\t}],\n        \t\tlabels: [\n        \t\t\t'Red',\n        \t\t\t'Yellow',\n        \t\t\t'Blue'\n        \t\t]\n    \t    }\n\t    });\n\t}\n})\n"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "data",
+                                "type": {
+                                    "name": "*"
+                                },
+                                "plug": "output",
+                                "group": "Outputs",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "e8570140-710c-df7f-2314-faa1656a4f9c",
+    "version": "1",
+    "metadata": {
+        "dbCollections": []
+    }
+}
