@@ -55,6 +55,34 @@ export function defineChartReactNode(args: ChartNodeOptions) {
       },
     },
     outputs: {
+      onBeforeEvent: {
+        group: "Before Event",
+        type: "signal",
+        displayName: "Before",
+      },
+      beforeEventChart: {
+        group: "Before Event",
+        type: "*",
+        displayName: "Chart",
+        editorName: "Before Event Chart",
+      },
+      beforeEventArgs: {
+        group: "Before Event",
+        type: "*",
+        displayName: "Args",
+        editorName: "Before Event Args",
+      },
+      onClick: {
+        group: "Click Event",
+        type: "signal",
+        displayName: "Click",
+      },
+      clickEventData: {
+        group: "Click Event",
+        type: "object",
+        displayName: "Data",
+        editorName: "Click Data",
+      },
       chartOptions: {
         group: "Debug",
         type: "object",
@@ -98,7 +126,12 @@ export function defineChartReactNode(args: ChartNodeOptions) {
         });
       },
       initChart(canvas: HTMLCanvasElement) {
-        const options = {};
+        const options = {
+          onClick: (e) => {
+            this.setOutputs({ clickEventData: e });
+            this.sendSignalOnOutput("onClick");
+          },
+        };
 
         // @ts-expect-error
         if (args.options) this.setOptions(options, args.options);
@@ -129,6 +162,22 @@ export function defineChartReactNode(args: ChartNodeOptions) {
           options,
           // Only use default data if there is no connection
           data: this.inputs.data || haveConnection('data') ? {} : args.defaultData,
+          plugins: [
+            {
+              id: 'noodlEventCatcher',
+              beforeEvent: (chart, args, pluginOptions) => {
+                try {
+                  this.setOutputs({
+                    beforeEventChart: chart,
+                    beforeEventArgs: args,
+                  });
+                  this.sendSignalOnOutput("onBeforeEvent");
+                } catch (error) {
+                  /* noop */
+                }
+              },
+            }
+          ]
         };
 
         this.chart = new Chart(canvas, chartConfig);
