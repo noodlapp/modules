@@ -1,7 +1,5 @@
 import { defineReactNode } from '@noodl/noodl-sdk';
 
-import { AddControlPositionEnumType } from '../constants';
-
 import MapComponent from '../components/Map';
 import * as FullscreenControl from '../components/controls/FullscreenControl';
 import * as MapboxGeocoder from '../components/controls/MapboxGeocoder';
@@ -114,11 +112,13 @@ export default defineReactNode({
 
     outLongitude: {
       displayName: 'Longitude',
+      editorName: 'Camera Longitude',
       type: 'number',
       group: 'Coordinates'
     },
     outLatitute: {
       displayName: 'Latitude',
+      editorName: 'Camera Latitude',
       type: 'number',
       group: 'Coordinates'
     },
