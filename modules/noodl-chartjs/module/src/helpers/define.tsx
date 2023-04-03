@@ -6,6 +6,7 @@ import { chart_changed, chart_inputs, chart_options } from "./defaults";
 
 export interface ChartNodeOptions {
   name: string;
+  docs?: string;
 
   type: keyof ChartTypeRegistry;
   options: any;
@@ -27,6 +28,7 @@ export function defineChartReactNode(args: ChartNodeOptions) {
     chart: any;
   }>({
     name: args.name,
+    docs: args.docs,
     category: "chart.js",
     initialize() {
       this.props.onCanvasChanged = (node: HTMLCanvasElement) => {

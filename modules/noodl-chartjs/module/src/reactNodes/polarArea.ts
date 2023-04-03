@@ -26,6 +26,7 @@ const defaultData = {
 export const polarAreaNode = defineChartReactNode({
   name: "Polar Area Chart",
   type: "polarArea",
+  docs: "https://docs.noodl.net/library/modules/chartjs/nodes/polarArea",
   options: {
     options: [],
   },

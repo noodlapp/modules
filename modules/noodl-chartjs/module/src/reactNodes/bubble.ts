@@ -26,6 +26,7 @@ const defaultData = {
 export const bubbleNode = defineChartReactNode({
   name: "Bubble Chart",
   type: "bubble",
+  docs: "https://docs.noodl.net/library/modules/chartjs/nodes/bubble",
   options: {
     options: [],
   },

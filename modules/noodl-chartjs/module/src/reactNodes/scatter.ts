@@ -26,6 +26,7 @@ const defaultData = {
 export const scatterNode = defineChartReactNode({
   name: "Scatter Chart",
   type: "scatter",
+  docs: "https://docs.noodl.net/library/modules/chartjs/nodes/scatter",
   options: {
     options: [],
   },

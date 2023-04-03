@@ -3,6 +3,7 @@ import { defineChartReactNode } from "../helpers/define";
 export const lineNode = defineChartReactNode({
   name: "Line Chart",
   type: "line",
+  docs: "https://docs.noodl.net/library/modules/chartjs/nodes/line",
   options: {
     options: [],
   },

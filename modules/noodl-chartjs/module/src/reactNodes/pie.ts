@@ -12,6 +12,7 @@ function radToDeg(radians: number) {
 export const pieNode = defineChartReactNode({
   name: "Pie Chart",
   type: "pie",
+  docs: "https://docs.noodl.net/library/modules/chartjs/nodes/pie",
   options: {
     defaults: Chart.defaults.get("pie"),
     group: "Pie Options",

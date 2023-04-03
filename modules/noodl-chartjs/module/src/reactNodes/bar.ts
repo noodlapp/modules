@@ -26,6 +26,7 @@ const defaultData = {
 export const barNode = defineChartReactNode({
   name: "Bar Chart",
   type: "bar",
+  docs: "https://docs.noodl.net/library/modules/chartjs/nodes/bar",
   options: {
     options: [
       {

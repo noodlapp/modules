@@ -18,6 +18,7 @@ const defaultData = {
 export const doughnutNode = defineChartReactNode({
   name: "Doughnut Chart",
   type: "doughnut",
+  docs: "https://docs.noodl.net/library/modules/chartjs/nodes/doughnut",
   options: {
     options: [],
   },

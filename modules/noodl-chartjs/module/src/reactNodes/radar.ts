@@ -26,6 +26,7 @@ const defaultData = {
 export const radarNode = defineChartReactNode({
   name: "Radar Chart",
   type: "radar",
+  docs: "https://docs.noodl.net/library/modules/chartjs/nodes/radar",
   options: {
     options: [],
   },
