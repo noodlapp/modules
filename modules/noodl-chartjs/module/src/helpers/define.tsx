@@ -1,7 +1,7 @@
 import * as Noodl from "@noodl/noodl-sdk";
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { Chart, ChartConfiguration, ChartTypeRegistry } from "chart.js";
-import { generateInputs, generateInputsChanged } from "./boilerplate";
+import { generateInputs, generateInputsChanged, Input } from "./boilerplate";
 import { chart_changed, chart_inputs, chart_options } from "./defaults";
 
 export interface ChartNodeOptions {
@@ -9,7 +9,7 @@ export interface ChartNodeOptions {
   docs?: string;
 
   type: keyof ChartTypeRegistry;
-  options: any;
+  options: Input;
   defaultData: any;
 }
 
@@ -18,8 +18,34 @@ function Canvas(props: any): JSX.Element {
   const ref = useCallback((node: HTMLCanvasElement) => {
     props.onCanvasChanged(node);
   }, []);
+  
+  const sizerRef = useRef(null);
+  const fixedSizeRef = useRef(null);
 
-  return <canvas ref={ref} />;
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver((entries) => {
+      const { width, height } = entries[0].target.getBoundingClientRect();
+      fixedSizeRef.current.style.width = `${width}px`;
+      fixedSizeRef.current.style.height = `${height}px`;
+    });
+
+    resizeObserver.observe(sizerRef.current);
+
+    return () => {
+      resizeObserver.unobserve(sizerRef.current);
+    };
+  }, []);
+
+  return (
+    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+      <div ref={sizerRef} style={{ position: "absolute", inset: 0 }}></div>
+      <div style={{ position: "absolute", inset: 0 }}>
+        <div ref={fixedSizeRef} style={{ position: "relative" }}>
+          <canvas ref={ref} />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export function defineChartReactNode(args: ChartNodeOptions) {

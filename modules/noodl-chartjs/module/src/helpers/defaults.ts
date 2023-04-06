@@ -19,7 +19,7 @@ const globalOptions: Input = {
       name: "maintainAspectRatio",
       displayName: "Maintain Aspect Ratio",
       type: "boolean",
-      transformFrom: () => true,
+      transformFrom: () => false,
     },
     {
       name: "aspectRatio",

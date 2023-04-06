@@ -16,9 +16,9 @@ export interface Input {
     transformTo?: (args: any) => any;
     transformFrom?: (args: any) => any;
   }[];
-  group: any;
+  group?: any;
   namespace?: string;
-  defaults?: any;
+  defaults?: Record<string, any>;
 }
 
 //reduces some of the Noodl boiler plate for setting up inputs
@@ -86,7 +86,6 @@ export function generateInputsChanged({ options, namespace }: InputChanged) {
       this.chart.update();
     };
   });
-
   return changed;
 }
 
