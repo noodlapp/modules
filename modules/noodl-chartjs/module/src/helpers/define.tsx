@@ -150,6 +150,11 @@ export function defineChartReactNode(args: ChartNodeOptions) {
               : this.inputs[inputName];
 
             target[name] = newValue;
+          } else {
+            const type = (option.defaults && option.defaults[name]) || "*";
+            target[name] = option.transformFrom
+              ? option.transformFrom(type)
+              : undefined;
           }
         });
       },
@@ -161,9 +166,6 @@ export function defineChartReactNode(args: ChartNodeOptions) {
           },
         };
 
-        // @ts-expect-error
-        if (args.options) this.setOptions(options, args.options);
-
         for (let index = 0; index < chart_options.length; index++) {
           const element = chart_options[index];
 
@@ -173,6 +175,9 @@ export function defineChartReactNode(args: ChartNodeOptions) {
 
         // @ts-expect-error
         options.scales = this.inputs.scales;
+
+        // @ts-expect-error
+        if (args.options) this.setOptions(options, args.options);
 
         this.setOutputs({
           chartOptions: options,
@@ -209,6 +214,9 @@ export function defineChartReactNode(args: ChartNodeOptions) {
         };
 
         this.chart = new Chart(canvas, chartConfig);
+        if (this.inputs.data) {
+          this.chart.data = this.inputs.data;
+        }
       },
     },
   });
