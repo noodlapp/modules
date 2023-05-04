@@ -1,6 +1,7 @@
 import * as Noodl from "@noodl/noodl-sdk";
 import { useCallback, useEffect, useRef } from "react";
 import { Chart, ChartConfiguration, ChartTypeRegistry } from "chart.js";
+import * as ChartHelpers from 'chart.js/helpers';
 import { generateInputs, generateInputsChanged, Input } from "./boilerplate";
 import { chart_changed, chart_inputs, chart_options } from "./defaults";
 
@@ -57,6 +58,9 @@ export function defineChartReactNode(args: ChartNodeOptions) {
     docs: args.docs,
     category: "chart.js",
     initialize() {
+      // Expose the Helper so we can get the Click data etc
+      this.setOutputs({ helpers: ChartHelpers });
+      
       this.props.onCanvasChanged = (node: HTMLCanvasElement) => {
         if (this.chart) {
           this.chart.destroy();
@@ -110,6 +114,11 @@ export function defineChartReactNode(args: ChartNodeOptions) {
         type: "object",
         displayName: "Data",
         editorName: "Click Data",
+      },
+      helpers: {
+        group: "Click Event",
+        type: "object",
+        displayName: "Helpers",
       },
       chartOptions: {
         group: "Debug",
