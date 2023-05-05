@@ -79,6 +79,9 @@ function ChatContainer({
     if (scrollBottomRef.current) {
       scrollBottomRef.current.scrollIntoView({ behavior: "auto" });
     }
+
+    // Set the default "At Bottom" output
+    outAtBottom && outAtBottom(isAtBottom);
   }, []);
 
   useEffect(() => {
