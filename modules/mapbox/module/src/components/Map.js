@@ -23,12 +23,14 @@ export default function Map(props) {
     latitute,
     zoom,
     bearing,
+    pitch,
 
     outMap,
     outLongitude,
     outLatitute,
     outZoom,
     outBearing,
+    outPitch,
 
     onLoaded,
     onMoved,
@@ -78,6 +80,7 @@ export default function Map(props) {
       // Allow taking screenshots
       preserveDrawingBuffer: true,
       bearing,
+      pitch,
       interactive,
       antialias,
     });
@@ -96,6 +99,7 @@ export default function Map(props) {
       outLatitute(lat);
       outZoom(map.getZoom());
       outBearing(map.getBearing());
+      outPitch(map.getPitch());
       onMoved();
     });
 

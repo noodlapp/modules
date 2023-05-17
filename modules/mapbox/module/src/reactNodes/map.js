@@ -80,6 +80,12 @@ export default defineReactNode({
       group: 'Coordinates',
       default: 0
     },
+    pitch: {
+      displayName: 'Pitch',
+      type: 'number',
+      group: 'Coordinates',
+      default: 0
+    },
 
     // Controls
     ...FullscreenControl.Inputs,
@@ -131,7 +137,11 @@ export default defineReactNode({
       displayName: 'Bearing',
       type: 'number',
       group: 'Coordinates',
-      default: 0
+    },
+    outPitch: {
+      displayName: 'Pitch',
+      type: 'number',
+      group: 'Coordinates',
     },
 
     onLoaded: {
