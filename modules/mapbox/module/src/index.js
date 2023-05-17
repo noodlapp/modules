@@ -6,6 +6,11 @@ import MapboxNode from './reactNodes/map';
 import MapboxMarker from './reactNodes/marker';
 import MapboxPolygon from './reactNodes/polygon';
 
+import mapboxgl from 'mapbox-gl';
+// Allow use of any other Mapbox features,
+// like MercatorCoordinate etc
+window.mapboxgl = mapboxgl;
+
 defineModule({
   reactNodes: [
     MapboxNode,
