@@ -16,6 +16,7 @@ export default defineReactNode({
     return MapComponent;
   },
   initialize() {
+    this.props.eventHandler = new EventTarget();
     const accessToken = Noodl.getProjectSettings().mapboxAccessToken;
     if (!accessToken) {
       this.sendWarning('access-token-missing', 'No access token. Please specify one in project settings and reload');
@@ -95,15 +96,15 @@ export default defineReactNode({
     ...ScaleControl.Inputs,
     ...MapboxDraw.Inputs,
   },
-  // signals: {
-  //   centerOnUser: {
-  //     displayName: 'Center on user',
-  //     group: 'Actions',
-  //     signal() {
-  //       this.geolocate && this.geolocate.trigger();
-  //     }
-  //   }
-  // },
+  signals: {
+    centerOnUser: {
+      displayName: 'Center on user',
+      group: 'Geolocate',
+      signal() {
+        this.props.eventHandler.dispatchEvent(new Event("centerOnUser"));
+      }
+    }
+  },
   outputProps: {
     outMap: {
       displayName: 'Mapbox Object',

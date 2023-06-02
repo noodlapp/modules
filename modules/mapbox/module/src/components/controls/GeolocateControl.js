@@ -62,6 +62,7 @@ export const Inputs = {
 export function useGeolocateControl(
   map,
   {
+    eventHandler,
     c_GeolocateControlEnable,
     c_GeolocateControlPosition,
     c_GeolocateControlShowAccuracyCircle,
@@ -88,9 +89,16 @@ export function useGeolocateControl(
 
     map.addControl(control, c_GeolocateControlPosition);
 
+    function centerOnUser() {
+      control?.trigger();
+    }
+
+    eventHandler.addEventListener('centerOnUser', centerOnUser);
+
     return function () {
       // Solve the issue with reseting the input
       try {
+        eventHandler.removeEventListener('centerOnUser', centerOnUser);
         map.removeControl(control);
       } catch {}
     };

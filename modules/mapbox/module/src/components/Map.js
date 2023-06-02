@@ -14,6 +14,8 @@ import { useMapboxDraw } from './controls/MapboxDraw';
 
 export default function Map(props) {
   const {
+    eventHandler,
+
     mapboxStyle,
     interactive,
     antialias,
