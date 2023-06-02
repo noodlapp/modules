@@ -91,7 +91,7 @@ export default defineReactNode({
           properties: {},
           geometry: {
             type: 'Polygon',
-            coordinates: coordinates || [[0, 0]]
+            coordinates: coordinates || [[[0, 0]]]
           }
         }
 
@@ -115,7 +115,7 @@ export default defineReactNode({
             // noop
           }
         }
-      }, [containerRef]);
+      }, [containerRef, mapContext.draw]);
 
       if (mapContext.draw && featureId) {
         const feature = mapContext.draw.get(featureId);

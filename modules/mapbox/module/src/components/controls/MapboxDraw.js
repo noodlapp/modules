@@ -1,5 +1,11 @@
-import { useState, useRef, useEffect } from 'react';
-import { AddControlPositionEnumType } from '../../constants';
+import {
+  useState,
+  useRef,
+  useEffect
+} from 'react';
+import {
+  AddControlPositionEnumType
+} from '../../constants';
 
 // https://github.com/mapbox/mapbox-gl-draw/tree/main
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
@@ -84,8 +90,7 @@ export const Inputs = {
 }
 
 export function useMapboxDraw(
-  map,
-  {
+  map, {
     c_MapboxDrawEnable,
     c_MapboxDrawPosition,
     c_MapboxDrawKeybindings,
@@ -124,7 +129,7 @@ export function useMapboxDraw(
       displayControlsDefault: c_MapboxDrawDisplayControls,
       // styles: undefined,
     });
-    
+
     map.addControl(control, c_MapboxDrawPosition);
 
     setDraw(control);
@@ -134,7 +139,9 @@ export function useMapboxDraw(
       // Solve the issue with reseting the input
       try {
         map.removeControl(control);
-      } catch {}
+      } catch {
+        // noop
+      }
     };
   }, [
     map,
@@ -151,5 +158,7 @@ export function useMapboxDraw(
     c_MapboxDrawControlUncombineFeatures,
   ]);
 
-  return { draw }
+  return {
+    draw
+  }
 }
