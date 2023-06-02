@@ -12,6 +12,18 @@ import { useNavigationControl } from './controls/NavigationControl';
 import { useScaleControl } from './controls/ScaleControl';
 import { useMapboxDraw } from './controls/MapboxDraw';
 
+function isElementInsideMapboxMarker(element) {
+  if (element.classList.contains('mapboxgl-map')) {
+    return null; // Stop searching when encountering mapboxgl-map
+  } else if (element.classList.contains('mapboxgl-marker')) {
+    return element;
+  } else if (element.parentElement) {
+    return isElementInsideMapboxMarker(element.parentElement);
+  } else {
+    return null;
+  }
+}
+
 export default function Map(props) {
   const {
     eventHandler,
@@ -110,9 +122,14 @@ export default function Map(props) {
     })
     
     map.on('click', (e) => {
-      onClickLongitude(e.lngLat.lng);
-      onClickLatitude(e.lngLat.lat);
-      onClick();
+      const markerElement = isElementInsideMapboxMarker(e.originalEvent.target);
+      if (markerElement) {
+        // noop, block click
+      } else {
+        onClickLongitude(e.lngLat.lng);
+        onClickLatitude(e.lngLat.lat);
+        onClick();
+      }
     });
 
     return function () {

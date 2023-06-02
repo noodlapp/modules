@@ -28,6 +28,7 @@ export default defineReactNode({
       outLongitude,
       outlatitude,
 
+      onClick,
       onDragStart,
       onDrag,
       onDragEnd,
@@ -59,6 +60,12 @@ export default defineReactNode({
           outlatitude(lat);
         }
 
+        const handleClick = () => {
+          onClick();
+        }
+
+        newMarker._element.addEventListener("click", handleClick);
+
         newMarker.on("dragstart", () => {
           updateLngLat();
           onDragStart();
@@ -78,6 +85,7 @@ export default defineReactNode({
         setMarker(newMarker);
 
         return function () {
+          newMarker._element.removeEventListener("click", handleClick);
           newMarker.remove();
           setMarker(null);
         }
@@ -251,6 +259,11 @@ export default defineReactNode({
       group: 'Coordinates'
     },
 
+    onClick: {
+      displayName: 'Click',
+      type: 'signal',
+      group: 'Events',
+    },
     onDragStart: {
       displayName: 'Drag Start',
       type: 'signal',
