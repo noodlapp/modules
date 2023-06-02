@@ -71,8 +71,8 @@ export default function Map(props) {
     }
 
     const center = geopoint
-      ? [geopoint.longitude, geopoint.latitude]
-      : [longitude || 0, latitute || 0];
+      ? [geopoint.longitude % 180 % -180, geopoint.latitude % 90 % -90]
+      : [(longitude || 0) % 180 % -180, (latitute || 0) % 90 % -90];
 
     const map = new mapboxgl.Map({
       container: containerRef.current,

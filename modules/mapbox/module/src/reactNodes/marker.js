@@ -47,9 +47,9 @@ export default defineReactNode({
         });
 
         if (geopoint) {
-          newMarker.setLngLat([geopoint.longitude % 90 % -90, geopoint.latitude % 90 % -90]);
+          newMarker.setLngLat([geopoint.longitude % 180 % -180, geopoint.latitude % 90 % -90]);
         } else {
-          newMarker.setLngLat([longitude % 90 % -90, latitude % 90 % -90]);
+          newMarker.setLngLat([longitude % 180 % -180, latitude % 90 % -90]);
         }
         newMarker.addTo(mapContext.map);
 
@@ -85,9 +85,9 @@ export default defineReactNode({
 
       if (marker) {
         if (geopoint) {
-          marker.setLngLat([geopoint.longitude % 90 % -90, geopoint.latitude % 90 % -90]);
+          marker.setLngLat([geopoint.longitude % 180 % -180, geopoint.latitude % 90 % -90]);
         } else {
-          marker.setLngLat([longitude % 90 % -90, latitude % 90 % -90]);
+          marker.setLngLat([longitude % 180 % -180, latitude % 90 % -90]);
         }
         if (tooltipContent) {
           marker.setPopup(new mapboxgl.Popup().setHTML(tooltipContent))
