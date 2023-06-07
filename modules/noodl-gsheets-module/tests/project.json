@@ -1,0 +1,87 @@
+{
+    "name": "Noodl Lib Template Tests",
+    "components": [
+        {
+            "name": "/My tests",
+            "id": "23f49aac-52db-2d08-c030-e10a8da4bb07",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "ff7ed3ef-0798-0405-9960-53dfe9734068",
+                        "fromProperty": "FullName",
+                        "toId": "88a3c7e5-41b6-ecb9-57fc-729ae0de4be3",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "d105553a-d5e1-1d61-fa48-cc676d4e3b7b",
+                        "fromProperty": "savedValue",
+                        "toId": "ff7ed3ef-0798-0405-9960-53dfe9734068",
+                        "toProperty": "FirstName"
+                    },
+                    {
+                        "fromId": "fe165531-1530-d510-aad1-695fde079918",
+                        "fromProperty": "savedValue",
+                        "toId": "ff7ed3ef-0798-0405-9960-53dfe9734068",
+                        "toProperty": "LastName"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "ff7ed3ef-0798-0405-9960-53dfe9734068",
+                        "type": "Full Name",
+                        "x": 178.3018246387346,
+                        "y": 270.18440821012103,
+                        "parameters": {},
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "5ed6a434-8195-8218-bbac-13807b825b3b",
+                        "type": "Group",
+                        "x": 502.4918143826591,
+                        "y": 216.36621626812988,
+                        "parameters": {},
+                        "ports": [],
+                        "children": [
+                            {
+                                "id": "88a3c7e5-41b6-ecb9-57fc-729ae0de4be3",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {},
+                                "ports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "d105553a-d5e1-1d61-fa48-cc676d4e3b7b",
+                        "type": "String",
+                        "x": -74.13067380032152,
+                        "y": 230.76467138087398,
+                        "parameters": {
+                            "value": "Test"
+                        },
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "fe165531-1530-d510-aad1-695fde079918",
+                        "type": "String",
+                        "x": -73.39308315031906,
+                        "y": 356.09917521825804,
+                        "parameters": {
+                            "value": "Testsson"
+                        },
+                        "ports": [],
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "5ed6a434-8195-8218-bbac-13807b825b3b",
+    "version": "1",
+    "metadata": {}
+}
