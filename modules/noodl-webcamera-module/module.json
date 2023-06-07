@@ -1,0 +1,6 @@
+{
+  "name": "lib-test",
+  "label": "Web Camera Module",
+  "desc": "Contains a node to access the camera for web apps",
+  "_id": "eab51bf5-2b9c-4fa2-a55c-a43abb078515-lib-test"
+}
