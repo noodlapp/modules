@@ -1,0 +1,148 @@
+{
+    "name": "ChartJS Example",
+    "components": [
+        {
+            "name": "/Chart Examples",
+            "id": "e530d442-b04b-9931-6f4c-b4e29b8d9a3a",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "e8c39ad6-7f5e-ced3-0cfa-def6d97f89ab",
+                        "fromProperty": "data",
+                        "toId": "2bd15598-d22c-4aa6-8c42-16ff4d53eaed",
+                        "toProperty": "data"
+                    },
+                    {
+                        "fromId": "4836fb6d-fbde-2ba2-b315-a5b341c10ff8",
+                        "fromProperty": "data",
+                        "toId": "8cf41e1b-7432-5531-751b-2f5809d72845",
+                        "toProperty": "data"
+                    },
+                    {
+                        "fromId": "4836fb6d-fbde-2ba2-b315-a5b341c10ff8",
+                        "fromProperty": "scales",
+                        "toId": "8cf41e1b-7432-5531-751b-2f5809d72845",
+                        "toProperty": "scales"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "8d606c4d-523e-5fef-31fd-5067c21a4893",
+                        "type": "Group",
+                        "x": 167,
+                        "y": 260,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "8cf41e1b-7432-5531-751b-2f5809d72845",
+                                "type": "Line Chart",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "tooltips.bodyFontFamily": "Roboto-Light",
+                                    "legend.labels.fontFamily": "Roboto-Light"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "3935fb0c-830c-6ef1-1277-5b9cf088f127",
+                                "type": "Group",
+                                "x": 20,
+                                "y": 148,
+                                "parameters": {
+                                    "sizeMode": "contentHeight",
+                                    "marginTop": {
+                                        "value": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "2bd15598-d22c-4aa6-8c42-16ff4d53eaed",
+                                        "type": "Pie Chart",
+                                        "x": 20,
+                                        "y": 46,
+                                        "parameters": {
+                                            "tooltips.bodyFontFamily": "Roboto-Light",
+                                            "legend.labels.fontFamily": "Roboto-Light"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "e8c39ad6-7f5e-ced3-0cfa-def6d97f89ab",
+                        "type": "Javascript2",
+                        "label": "Pie Data",
+                        "x": -81,
+                        "y": 444,
+                        "parameters": {
+                            "code": "script({\n\toutputs:{\n\t    data: \"*\"\n\t},\n\tsetup() {\n\t    this.setOutputs({\n\t        data: {\n    \t        datasets: [{\n    \t\t\tdata: [20, 20, 60],\n    \t\t\tbackgroundColor: [\n    \t\t\t\t'#FF5382',\n    \t\t\t\t'#FFCC34',\n    \t\t\t\t'#00A3F1'\n        \t\t\t],\n        \t\t}],\n        \t\tlabels: [\n        \t\t\t'Red',\n        \t\t\t'Yellow',\n        \t\t\t'Blue'\n        \t\t]\n    \t    }\n\t    });\n\t}\n})\n"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "data",
+                                "type": {
+                                    "name": "*"
+                                },
+                                "plug": "output",
+                                "group": "Outputs",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "4836fb6d-fbde-2ba2-b315-a5b341c10ff8",
+                        "type": "Javascript2",
+                        "label": "Line Data",
+                        "x": -87,
+                        "y": 288,
+                        "parameters": {
+                            "code": "script({\n\toutputs:{\n\t    data: \"*\",\n\t    scales: \"*\"\n\t},\n\tsetup() {\n\t    this.setOutputs({\n\t        data: {\n    \t        datasets: [{\n    \t            label: 'My Data',\n    \t\t\t    data: [1, 3, 2],\n    \t\t\t    borderColor: '#FF5382',\n    \t\t\t    fill: false\n        \t\t}],\n        \t\tlabels: [\n        \t\t\t'One',\n        \t\t\t'Two',\n        \t\t\t'Three'\n        \t\t]\n    \t    },\n    \t    scales: {\n    \t        xAxes: [{\n\t\t\t\t\tdisplay: true,\n\t\t\t\t\tscaleLabel: {\n\t\t\t\t\t\tdisplay: true,\n\t\t\t\t\t\tlabelString: 'Number',\n\t\t\t\t\t\tfontFamily: \"Roboto-Light\" //make sure Roboto-Light.ttf is included and used by some node in Noodl, or just define your own CSS class\n\t\t\t\t\t},\n\t\t\t\t\tticks: {\n\t\t\t\t\t    fontFamily: \"Roboto-Light\"\n\t\t\t\t\t}\n\t\t\t\t}],\n\t\t\t\tyAxes: [{\n\t\t\t\t\tdisplay: true,\n\t\t\t\t\tscaleLabel: {\n\t\t\t\t\t\tdisplay: true,\n\t\t\t\t\t\tlabelString: 'Value',\n\t\t\t\t\t\tfontFamily: \"Roboto-Light\"\n\t\t\t\t\t},\n\t\t\t\t\tticks: {\n\t\t\t\t\t    fontFamily: \"Roboto-Light\"\n\t\t\t\t\t}\n\t\t\t\t}]\n    \t    }\n\t    });\n\t}\n})\n"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "data",
+                                "type": {
+                                    "name": "*"
+                                },
+                                "plug": "output",
+                                "group": "Outputs",
+                                "index": 2
+                            },
+                            {
+                                "name": "scales",
+                                "type": {
+                                    "name": "*"
+                                },
+                                "plug": "output",
+                                "group": "Outputs",
+                                "index": 3
+                            }
+                        ],
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "8d606c4d-523e-5fef-31fd-5067c21a4893",
+    "version": "1",
+    "metadata": {
+        "dbCollections": []
+    }
+}
