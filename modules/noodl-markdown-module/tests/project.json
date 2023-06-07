@@ -1,0 +1,76 @@
+{
+    "name": "Markdown Test",
+    "components": [
+        {
+            "name": "/My tests",
+            "id": "3936da2d-21f6-20ea-0911-2a4ae18c68bf",
+            "graph": {
+                "connections": [],
+                "roots": [
+                    {
+                        "id": "fa598b29-f4ba-62af-3f27-2c0608ed977f",
+                        "type": "Group",
+                        "x": 487.1747673889846,
+                        "y": 49.69403369323612,
+                        "parameters": {
+                            "backgroundColor": "#FFFFFF",
+                            "paddingLeft": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingRight": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "scrollEnabled": true,
+                            "nativeScroll": true
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "5faa63e8-5b59-650b-915b-6a4c7125ca59",
+                                "type": "Markdown",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "source": "# H1\n## H2\n### H3\n\nEmphasis, aka italics, with *asterisks* or _underscores_.\nStrong emphasis, aka bold, with **asterisks** or __underscores__.\nCombined emphasis with **asterisks and _underscores_**.\n1. First ordered list item\n2. Another item\n  * Unordered sub-list. \n1. Actual numbers don't matter, just that it's a number\n  1. Ordered sub-list\n4. And another item.\n* Unordered list can use asterisks\n- Or minuses\n+ Or pluses\n\n[Link to Google](https://www.google.com)\n\nImage: \n![noodl logo](https://uploads-ssl.webflow.com/5ed7a7a9f2bff45062890ed6/5ef31ce42ee3d316fbf5f888_text-logo-black.png)\n\n> Blockquote\n\nIframe embed:\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/YQBndLl1phI\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                                    "sizeMode": "explicit",
+                                    "width": {
+                                        "value": 100,
+                                        "unit": "px"
+                                    },
+                                    "visible": true,
+                                    "textAlignX": "center",
+                                    "allowDangerousHtml": true
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "80ca928d-00c6-62ca-57e8-aaadd58aa6fe",
+                        "type": "CSS Definition",
+                        "label": "Markdown style",
+                        "x": 294.81734367104474,
+                        "y": 90.86437492402226,
+                        "parameters": {
+                            "style": "/* Open Sans font added with the help of https://fonts.google.com */\n@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');\n\n.markdown {\n    font-family: 'Open Sans';\n    font-size: 16px; /* default font size*/\n}\n\n/* make all h1 blue */\n.markdown h1 { \n    color: blue; \n}\n\n/* style the unordered lists */\n.markdown ul { \n    list-style-type: circle; \n    /* list-style-image: url('sqpurple.gif'); */ /* you can also use images in the project folder */\n}\n\n/* style links */\n.markdown a { \n    text-decoration: none;\n}"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "fa598b29-f4ba-62af-3f27-2c0608ed977f",
+    "version": "1",
+    "metadata": {
+        "dbCollections": []
+    }
+}
