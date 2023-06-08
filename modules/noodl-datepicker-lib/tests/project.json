@@ -1,0 +1,358 @@
+{
+    "name": "Date Picker Tests",
+    "components": [
+        {
+            "name": "/Example",
+            "id": "f3b8dd2f-c03f-9f74-131a-d29929c54835",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "6c1a5aa4-48b6-6d31-3880-d6803a52eb26",
+                        "fromProperty": "value",
+                        "toId": "7471364e-1cee-0fef-3e49-11b0cd189df2",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "7471364e-1cee-0fef-3e49-11b0cd189df2",
+                        "fromProperty": "value",
+                        "toId": "6c1a5aa4-48b6-6d31-3880-d6803a52eb26",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "6c1a5aa4-48b6-6d31-3880-d6803a52eb26",
+                        "fromProperty": "onChange",
+                        "toId": "7471364e-1cee-0fef-3e49-11b0cd189df2",
+                        "toProperty": "store"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "052655a1-a3d8-79d1-354c-cec12c503b25",
+                        "type": "Group",
+                        "x": 0,
+                        "y": 0,
+                        "parameters": {
+                            "backgroundColor": "#FFFFFF",
+                            "paddingLeft": {
+                                "value": 100,
+                                "unit": "px"
+                            },
+                            "paddingTop": {
+                                "value": 100,
+                                "unit": "px"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "6c1a5aa4-48b6-6d31-3880-d6803a52eb26",
+                                "type": "Date Picker Button",
+                                "parameters": {},
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "7471364e-1cee-0fef-3e49-11b0cd189df2",
+                        "type": "Variable",
+                        "x": 291.5465472900496,
+                        "y": 29.977141263016506,
+                        "parameters": {
+                            "name": "AnImportantDate"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            },
+            "metadata": {
+                "canvasPos": {
+                    "x": 480,
+                    "y": -2
+                }
+            }
+        },
+        {
+            "name": "/My tests",
+            "id": "3936da2d-21f6-20ea-0911-2a4ae18c68bf",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "fromProperty": "value",
+                        "toId": "9332176c-2de2-7f65-4d44-be8cbcc1730a",
+                        "toProperty": "input"
+                    },
+                    {
+                        "fromId": "9332176c-2de2-7f65-4d44-be8cbcc1730a",
+                        "fromProperty": "currentValue",
+                        "toId": "06d8034c-1ace-15d2-ebd4-61c2d8bf5176",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "fromProperty": "hoverState",
+                        "toId": "9698ad47-dd41-f3b4-c333-4c567073946c",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "fromProperty": "pressedState",
+                        "toId": "eadafe90-cd7c-9877-02f0-15a0d8da818f",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "fromProperty": "focusState",
+                        "toId": "63d897f4-120d-50a0-1ac7-63cce9c8d3c4",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "fromProperty": "onClick",
+                        "toId": "1aeabcef-0fb8-8d57-188e-4a229e17b48f",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "fromProperty": "onFocus",
+                        "toId": "1aeabcef-0fb8-8d57-188e-4a229e17b48f",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "fromProperty": "onBlur",
+                        "toId": "1aeabcef-0fb8-8d57-188e-4a229e17b48f",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "fromProperty": "hoverStart",
+                        "toId": "1aeabcef-0fb8-8d57-188e-4a229e17b48f",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "fromProperty": "hoverEnd",
+                        "toId": "1aeabcef-0fb8-8d57-188e-4a229e17b48f",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "fromProperty": "pointerDown",
+                        "toId": "1aeabcef-0fb8-8d57-188e-4a229e17b48f",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "fromProperty": "pointerUp",
+                        "toId": "1aeabcef-0fb8-8d57-188e-4a229e17b48f",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "11959161-3683-a189-d164-ab6da9104ee4",
+                        "fromProperty": "state",
+                        "toId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "toProperty": "mounted"
+                    },
+                    {
+                        "fromId": "25ce48b0-3a13-b9b8-4bfd-7fae4797d789",
+                        "fromProperty": "onClick",
+                        "toId": "11959161-3683-a189-d164-ab6da9104ee4",
+                        "toProperty": "flip"
+                    },
+                    {
+                        "fromId": "20b8cd15-b74d-ea6b-6736-9b4a60a1edd0",
+                        "fromProperty": "out-Date",
+                        "toId": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                        "toProperty": "value"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "e8570140-710c-df7f-2314-faa1656a4f9c",
+                        "type": "Group",
+                        "x": 355,
+                        "y": 278,
+                        "parameters": {
+                            "paddingLeft": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingRight": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingTop": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingBottom": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "backgroundColor": "#FFFFFF"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "25ce48b0-3a13-b9b8-4bfd-7fae4797d789",
+                                "type": "Text",
+                                "parameters": {
+                                    "text": "Date picker"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "06d8034c-1ace-15d2-ebd4-61c2d8bf5176",
+                                "type": "Text",
+                                "parameters": {
+                                    "text": "No date picked"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "876ee5c2-c9ff-4959-71f0-8ea7a1a027a9",
+                                "type": "Date Picker Button",
+                                "parameters": {
+                                    "width": {
+                                        "value": 300,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 40,
+                                        "unit": "px"
+                                    },
+                                    "marginTop": {
+                                        "value": 20,
+                                        "unit": "px"
+                                    },
+                                    "marginLeft": {
+                                        "value": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "9332176c-2de2-7f65-4d44-be8cbcc1730a",
+                        "type": "Date To String",
+                        "x": 664.2208781351893,
+                        "y": 346.5417781256224,
+                        "parameters": {
+                            "formatString": "{year}/{month}/{date}"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "9698ad47-dd41-f3b4-c333-4c567073946c",
+                        "type": "Boolean",
+                        "label": "Hover",
+                        "x": 670.308870681925,
+                        "y": 491.38641260378336,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "eadafe90-cd7c-9877-02f0-15a0d8da818f",
+                        "type": "Boolean",
+                        "label": "Pressed",
+                        "x": 672.3274217753258,
+                        "y": 617.5458559413305,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "63d897f4-120d-50a0-1ac7-63cce9c8d3c4",
+                        "type": "Boolean",
+                        "label": "Focused",
+                        "x": 681.410901695629,
+                        "y": 756.8258813859825,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "1aeabcef-0fb8-8d57-188e-4a229e17b48f",
+                        "type": "Boolean",
+                        "x": 79.88267586220485,
+                        "y": 554.9707720459071,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "11959161-3683-a189-d164-ab6da9104ee4",
+                        "type": "Switch",
+                        "x": 62.63788867695118,
+                        "y": 388.81324297800126,
+                        "parameters": {
+                            "onFromStart": true
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "20b8cd15-b74d-ea6b-6736-9b4a60a1edd0",
+                        "type": "JavaScriptFunction",
+                        "x": 92.1126624038892,
+                        "y": 709.6548490115181,
+                        "parameters": {
+                            "functionScript": "Outputs.Date = new Date(\"2021/01/02\")"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "out-Date",
+                                "displayName": "Date",
+                                "plug": "output",
+                                "type": "*",
+                                "group": "Outputs",
+                                "index": 4
+                            }
+                        ],
+                        "children": []
+                    }
+                ]
+            },
+            "metadata": {
+                "canvasSize": {
+                    "width": "441px",
+                    "height": "543px"
+                },
+                "canvasPos": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "e8570140-710c-df7f-2314-faa1656a4f9c",
+    "version": "1",
+    "metadata": {
+        "dbCollections": []
+    }
+}
