@@ -1,0 +1,15 @@
+{
+  "name": "Material UI Icons",
+  "version": "0.1",
+  "description": "Icon node that use the Material UI icon font.",
+  "image": "./mui-icons-module.png",
+  "docs": "./assets/readme.md",
+  "main":"index.js",
+  "dependencies":[],
+  "browser": {
+    "head": [
+      "<link href=\"https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp\" rel=\"stylesheet\">"
+
+    ]
+  }
+}
