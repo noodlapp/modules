@@ -53,11 +53,14 @@ export function defineChartReactNode(args: ChartNodeOptions) {
   return Noodl.defineReactNode<{
     props: any;
     chart: any;
+    initialDataSet: boolean;
   }>({
     name: args.name,
     docs: args.docs,
     category: "chart.js",
     initialize() {
+      this.initialDataSet = false;
+
       // Expose the Helper so we can get the Click data etc
       this.setOutputs({ helpers: ChartHelpers });
       
@@ -132,6 +135,15 @@ export function defineChartReactNode(args: ChartNodeOptions) {
       data(value) {
         if (!this.chart) return;
         this.chart.data = value;
+        const animate = typeof this.inputs.animateOnDataUpdate === 'undefined' ? true : this.inputs.animateOnDataUpdate;
+        // With initialDataSet, it will animate the first time.
+        if (animate || !this.initialDataSet) {
+          this.chart.update();
+        } else {
+          this.chart.update('none');
+        }
+        this.initialDataSet = true;
+      },
         this.chart.update();
       },
       scales(value) {
