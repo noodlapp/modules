@@ -84,6 +84,10 @@ export function defineChartReactNode(args: ChartNodeOptions) {
         type: "*",
         displayName: "Data",
       },
+      animations: {
+        type: "*",
+        displayName: "Animations",
+      },
       scales: {
         type: "*",
         displayName: "Scales",
@@ -144,6 +148,9 @@ export function defineChartReactNode(args: ChartNodeOptions) {
         }
         this.initialDataSet = true;
       },
+      animations(value) {
+        if (!this.chart) return;
+        this.chart.options.animations = value;
         this.chart.update();
       },
       scales(value) {
@@ -193,6 +200,9 @@ export function defineChartReactNode(args: ChartNodeOptions) {
           // @ts-expect-error
           this.setOptions(options, element);
         }
+
+        // @ts-expect-error
+        options.animations = this.inputs.animations;
 
         // @ts-expect-error
         options.scales = this.inputs.scales;
