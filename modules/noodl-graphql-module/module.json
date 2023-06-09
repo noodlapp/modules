@@ -1,0 +1,7 @@
+{
+  "name": "lib-test",
+  "label": "GraphQL",
+  "desc": "Make GraphQL queries",
+  "_id": "eab51bf5-2b9c-4fa2-a55c-a43abb078515-lib-test",
+  "docs": "https://docs.noodl.net/#/modules/graphql"
+}
