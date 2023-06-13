@@ -1,0 +1,317 @@
+{
+    "name": "Mapbox test",
+    "components": [
+        {
+            "name": "/My tests",
+            "id": "3936da2d-21f6-20ea-0911-2a4ae18c68bf",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "cd12eca1-8604-de36-3f9d-abf904c195a6",
+                        "fromProperty": "longitude",
+                        "toId": "56e34a29-9c47-68e6-bc08-7f3542a9728b",
+                        "toProperty": "lng"
+                    },
+                    {
+                        "fromId": "cd12eca1-8604-de36-3f9d-abf904c195a6",
+                        "fromProperty": "latitute",
+                        "toId": "e06429c5-c3b4-fafe-d870-94c59db76689",
+                        "toProperty": "lat"
+                    },
+                    {
+                        "fromId": "56e34a29-9c47-68e6-bc08-7f3542a9728b",
+                        "fromProperty": "formatted",
+                        "toId": "5ce27b3b-4b3e-ee00-95d5-b55b7ac3eb5b",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "e06429c5-c3b4-fafe-d870-94c59db76689",
+                        "fromProperty": "formatted",
+                        "toId": "3b93ec35-2ea7-caaf-484b-a5451d46cf85",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "4ecf53a6-2a3e-b4af-b11c-23b075600f00",
+                        "fromProperty": "onClick",
+                        "toId": "cd12eca1-8604-de36-3f9d-abf904c195a6",
+                        "toProperty": "centerOnUser"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "e8570140-710c-df7f-2314-faa1656a4f9c",
+                        "type": "Group",
+                        "x": 249,
+                        "y": 165,
+                        "parameters": {
+                            "paddingLeft": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingRight": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingTop": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingBottom": {
+                                "value": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "0fa29df9-6193-22ff-c817-099d978360ab",
+                                "type": "Group",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "sizeMode": "contentHeight",
+                                    "marginBottom": {
+                                        "value": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "85113db5-55de-b8e8-3447-59080d8253a1",
+                                        "type": "Text",
+                                        "x": 20,
+                                        "y": 46,
+                                        "parameters": {
+                                            "text": "Mapbox example"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "da3c953b-4434-21ae-3124-5214644c451c",
+                                "type": "Group",
+                                "x": 284,
+                                "y": 180,
+                                "parameters": {},
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "cd12eca1-8604-de36-3f9d-abf904c195a6",
+                                        "type": "Mapbox Map",
+                                        "x": 20,
+                                        "y": 46,
+                                        "parameters": {
+                                            "mapboxStyle": "mapbox://styles/mapbox/dark-v10",
+                                            "interactive": true
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "f11b7aa8-1421-0185-6b38-ef5ed9b70236",
+                                        "type": "Group",
+                                        "label": "Sidebar",
+                                        "x": 20,
+                                        "y": 148,
+                                        "parameters": {
+                                            "sizeMode": "contentHeight",
+                                            "backgroundColor": "white",
+                                            "boxShadowEnabled": true,
+                                            "boxShadowBlurRadius": {
+                                                "value": 20,
+                                                "unit": "px"
+                                            },
+                                            "boxShadowSpreadRadius": {
+                                                "value": 0,
+                                                "unit": "px"
+                                            },
+                                            "position": "absolute",
+                                            "marginLeft": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "marginTop": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "paddingLeft": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "paddingTop": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "paddingRight": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "paddingBottom": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "boxShadowColor": "rgba(0,0,0,0.5)",
+                                            "width": {
+                                                "value": 150,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "5ce27b3b-4b3e-ee00-95d5-b55b7ac3eb5b",
+                                                "type": "Text",
+                                                "x": 309,
+                                                "y": 441,
+                                                "parameters": {
+                                                    "text": "Lang"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": []
+                                            },
+                                            {
+                                                "id": "3b93ec35-2ea7-caaf-484b-a5451d46cf85",
+                                                "type": "Text",
+                                                "x": 309,
+                                                "y": 579,
+                                                "parameters": {
+                                                    "text": "Lang"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": []
+                                            },
+                                            {
+                                                "id": "4ecf53a6-2a3e-b4af-b11c-23b075600f00",
+                                                "type": "Group",
+                                                "x": 20,
+                                                "y": 223,
+                                                "parameters": {
+                                                    "paddingLeft": {
+                                                        "value": 5,
+                                                        "unit": "px"
+                                                    },
+                                                    "paddingRight": {
+                                                        "value": 5,
+                                                        "unit": "px"
+                                                    },
+                                                    "paddingTop": {
+                                                        "value": 3,
+                                                        "unit": "px"
+                                                    },
+                                                    "paddingBottom": {
+                                                        "value": 3,
+                                                        "unit": "px"
+                                                    },
+                                                    "marginTop": {
+                                                        "value": 16,
+                                                        "unit": "px"
+                                                    },
+                                                    "boxShadowBlurRadius": {
+                                                        "value": 0,
+                                                        "unit": "px"
+                                                    },
+                                                    "borderStyle": "solid",
+                                                    "borderWidth": {
+                                                        "value": 1,
+                                                        "unit": "px"
+                                                    },
+                                                    "borderColor": "black"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "fe429040-98fb-6a60-668c-4ffb02b26fbf",
+                                                        "type": "Text",
+                                                        "x": 20,
+                                                        "y": 46,
+                                                        "parameters": {
+                                                            "text": "Center on user"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "23c24add-1396-4f64-edbe-080dd9ef43a6",
+                        "type": "CSS Definition",
+                        "label": "global font",
+                        "x": -64.56244179369497,
+                        "y": 205.53335402890846,
+                        "parameters": {
+                            "style": "@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');\n\nbody {\n    font-family: 'Open Sans', sans-serif;\n}"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "56e34a29-9c47-68e6-bc08-7f3542a9728b",
+                        "type": "String Format",
+                        "x": -9.502081199804792,
+                        "y": 412.9170135333008,
+                        "parameters": {
+                            "format": "Lng {lng}"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "lng",
+                                "type": "string",
+                                "plug": "input",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "e06429c5-c3b4-fafe-d870-94c59db76689",
+                        "type": "String Format",
+                        "x": -9.489036733245001,
+                        "y": 535.7729671334124,
+                        "parameters": {
+                            "format": "Lat {lat}"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "lat",
+                                "type": "string",
+                                "plug": "input",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {
+        "mapboxAccessToken": ""
+    },
+    "rootNodeId": "e8570140-710c-df7f-2314-faa1656a4f9c",
+    "version": "1",
+    "metadata": {
+        "dbCollections": []
+    }
+}
