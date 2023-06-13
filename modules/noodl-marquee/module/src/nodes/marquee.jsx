@@ -18,6 +18,7 @@ function hexToRgbArray(hex) {
 function MarqueeComponent({
   eventHandler,
 
+  autoFill,
   speed,
   delay,
   loop,
@@ -60,7 +61,7 @@ function MarqueeComponent({
   return (
     <Marquee
       play={isPlaying}
-      autoFill
+      autoFill={autoFill}
       direction={direction}
       speed={speed}
       delay={delay}
@@ -83,6 +84,12 @@ export default defineReactNode({
     return MarqueeComponent;
   },
   inputProps: {
+    autoFill: {
+      displayName: "Auto Fill",
+      group: "General",
+      type: "boolean",
+      default: true,
+    },
     speed: {
       displayName: "Speed",
       group: "General",
