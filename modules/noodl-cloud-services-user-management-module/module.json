@@ -1,0 +1,7 @@
+{
+  "name": "noodl-cloud-services-user-management",
+  "label": "Cloud Services - User Management",
+  "desc": "Adds log in, sign up, persistent user data, and more. Make sure you enable cloud services.",
+  "docs": "https://docs.noodl.net/#/modules/cloud-services-user-management/",
+  "_id": "eab51bf5-2b9c-4fa2-a55c-a43abb078515-lib-test"
+}

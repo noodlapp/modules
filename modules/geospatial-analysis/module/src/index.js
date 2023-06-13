@@ -5,7 +5,7 @@ import Area from './nodes/turfArea';
 import Center from './nodes/turfCenter';
 import CenterOfMass from './nodes/turfCenterOfMass';
 
-Noodl.defineModule({
+defineModule({
   reactNodes: [],
   nodes: [
     Api,

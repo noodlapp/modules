@@ -1,5 +1,5 @@
 {
-  "name": "turf-geospatial-analysis",
+  "name": "geospatial-analysis",
   "main": "index.js",
   "dependencies": []
 }

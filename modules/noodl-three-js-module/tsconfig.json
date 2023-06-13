@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "lib": ["ES2019"],
+        "noImplicitAny": true,
+        "module": "es2015",
+        "target": "es2015",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "typeRoots": [
+            "./typings/**/*",
+            "./node_modules/@types"
+        ],
+        "paths": {
+            "@noodl/noodl-sdk": ["./src/noodl-sdk"]
+        } 
+    }
+}

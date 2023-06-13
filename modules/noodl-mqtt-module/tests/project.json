@@ -1,0 +1,223 @@
+{
+    "name": "MQTT Module tests",
+    "components": [
+        {
+            "name": "/My tests",
+            "id": "23f49aac-52db-2d08-c030-e10a8da4bb07",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "5ed6a434-8195-8218-bbac-13807b825b3b",
+                        "fromProperty": "onClick",
+                        "toId": "6efaaca6-0bff-24ae-d026-4ab032119083",
+                        "toProperty": "Send"
+                    },
+                    {
+                        "fromId": "12790f39-1b51-78b8-ba50-2bf707d146b0",
+                        "fromProperty": "savedValue",
+                        "toId": "6efaaca6-0bff-24ae-d026-4ab032119083",
+                        "toProperty": "topic-ho"
+                    },
+                    {
+                        "fromId": "0eb5ee31-73b6-4823-8021-1a0ede8b7fb8",
+                        "fromProperty": "savedValue",
+                        "toId": "6efaaca6-0bff-24ae-d026-4ab032119083",
+                        "toProperty": "payload-test"
+                    },
+                    {
+                        "fromId": "685844f2-82a6-b2b1-fb88-fc4d6419a2c2",
+                        "fromProperty": "payload-test",
+                        "toId": "88a3c7e5-41b6-ecb9-57fc-729ae0de4be3",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "685844f2-82a6-b2b1-fb88-fc4d6419a2c2",
+                        "fromProperty": "topic-Grr",
+                        "toId": "fcac61f7-8362-3813-b346-cb50f644a121",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "df05b819-29c6-7ffe-47cf-f22cfc7453ab",
+                        "fromProperty": "payload-test",
+                        "toId": "1460d97a-7961-0528-2895-c4bdae578c95",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "86892715-2db7-3304-7e33-d0a8909da0e3",
+                        "fromProperty": "payload-test",
+                        "toId": "2acde97c-aa4b-f74d-6093-29d8581bc518",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "7149fb4e-1d67-b53f-b80c-fd7ea8d1d79f",
+                        "fromProperty": "savedValue",
+                        "toId": "d90b9422-9bfc-fbd7-6bef-5012645543db",
+                        "toProperty": "topic-bzz"
+                    },
+                    {
+                        "fromId": "d90b9422-9bfc-fbd7-6bef-5012645543db",
+                        "fromProperty": "payload-test",
+                        "toId": "2a6daa46-2ef9-9758-f549-94ef04f4cbe2",
+                        "toProperty": "value"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "5ed6a434-8195-8218-bbac-13807b825b3b",
+                        "type": "Group",
+                        "x": 336.23617713990745,
+                        "y": 190.32617669998805,
+                        "parameters": {},
+                        "ports": [],
+                        "children": [
+                            {
+                                "id": "88a3c7e5-41b6-ecb9-57fc-729ae0de4be3",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 82,
+                                "parameters": {},
+                                "ports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "fcac61f7-8362-3813-b346-cb50f644a121",
+                                "type": "Text",
+                                "x": 408.43338766911893,
+                                "y": 223.57398620240073,
+                                "parameters": {},
+                                "ports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "6efaaca6-0bff-24ae-d026-4ab032119083",
+                        "type": "Send Message",
+                        "x": -4.893136888870856,
+                        "y": 152.56733502994587,
+                        "parameters": {
+                            "topic": "/hej/{ho}",
+                            "payload": "test"
+                        },
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "12790f39-1b51-78b8-ba50-2bf707d146b0",
+                        "type": "String",
+                        "x": -288.17444773732745,
+                        "y": 109.03602953287529,
+                        "parameters": {
+                            "value": "bye"
+                        },
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "0eb5ee31-73b6-4823-8021-1a0ede8b7fb8",
+                        "type": "Number",
+                        "x": -297.61534754506874,
+                        "y": 287.32280919621087,
+                        "parameters": {
+                            "value": 120
+                        },
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "685844f2-82a6-b2b1-fb88-fc4d6419a2c2",
+                        "type": "Receive Message",
+                        "x": -11.469922604669364,
+                        "y": 317.27560564439494,
+                        "parameters": {
+                            "topic": "/hej/+Grr+",
+                            "payload": "test"
+                        },
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "df05b819-29c6-7ffe-47cf-f22cfc7453ab",
+                        "type": "Receive Message",
+                        "x": -12.64763640539718,
+                        "y": 491.1508645403179,
+                        "parameters": {
+                            "topic": "/hej/bye",
+                            "payload": "test"
+                        },
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "1460d97a-7961-0528-2895-c4bdae578c95",
+                        "type": "Number",
+                        "x": 267.7503822116537,
+                        "y": 511.6178731984968,
+                        "parameters": {},
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "86892715-2db7-3304-7e33-d0a8909da0e3",
+                        "type": "Receive Message",
+                        "x": -18.7877390028508,
+                        "y": 625.2097712513895,
+                        "parameters": {
+                            "topic": "/hej/+",
+                            "payload": "test"
+                        },
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "2acde97c-aa4b-f74d-6093-29d8581bc518",
+                        "type": "Number",
+                        "x": 261.61027961420007,
+                        "y": 645.6767799095684,
+                        "parameters": {},
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "d90b9422-9bfc-fbd7-6bef-5012645543db",
+                        "type": "Receive Message",
+                        "x": -1.744805296287666,
+                        "y": 791.3571109795503,
+                        "parameters": {
+                            "topic": "/hej/{bzz}",
+                            "payload": "test"
+                        },
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "7149fb4e-1d67-b53f-b80c-fd7ea8d1d79f",
+                        "type": "String",
+                        "x": -236.24526563951736,
+                        "y": 811.6798293927276,
+                        "parameters": {
+                            "value": "bye"
+                        },
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "2a6daa46-2ef9-9758-f549-94ef04f4cbe2",
+                        "type": "Number",
+                        "x": 263.6505370983594,
+                        "y": 817.876884798569,
+                        "parameters": {},
+                        "ports": [],
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {
+        "mqtt-module-broker-url": "mqtt://bfe1e0b0:7e3859aa4a8c8c0b@broker.shiftr.io"
+    },
+    "rootNodeId": "5ed6a434-8195-8218-bbac-13807b825b3b",
+    "version": "1",
+    "metadata": {}
+}

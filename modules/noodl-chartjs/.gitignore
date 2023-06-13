@@ -1,0 +1,4 @@
+module/node_modules
+tests/noodl_modules/noodl-chartjs
+project/noodl_modules/noodl-chartjs
+module/src/.DS_Store

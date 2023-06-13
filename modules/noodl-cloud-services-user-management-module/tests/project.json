@@ -1,0 +1,2292 @@
+{
+    "name": "User Management Tests",
+    "components": [
+        {
+            "name": "/My tests",
+            "id": "23f49aac-52db-2d08-c030-e10a8da4bb07",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "cff7fc26-181b-5f3d-3fb9-eb2fd77d3422",
+                        "fromProperty": "authenticated",
+                        "toId": "4e05b85b-0e60-d079-47c5-88943060cd55",
+                        "toProperty": "input 0"
+                    },
+                    {
+                        "fromId": "7f58e9f5-2c11-af7f-ca6b-32f5b754ba22",
+                        "fromProperty": "didMount",
+                        "toId": "45b29c75-c9ff-1ce2-2dad-95431ec35f70",
+                        "toProperty": "on"
+                    },
+                    {
+                        "fromId": "45b29c75-c9ff-1ce2-2dad-95431ec35f70",
+                        "fromProperty": "state",
+                        "toId": "4e05b85b-0e60-d079-47c5-88943060cd55",
+                        "toProperty": "input 1"
+                    },
+                    {
+                        "fromId": "4e05b85b-0e60-d079-47c5-88943060cd55",
+                        "fromProperty": "result",
+                        "toId": "fd409447-02b7-8f24-3246-263f8da18990",
+                        "toProperty": "Navigate"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "7f58e9f5-2c11-af7f-ca6b-32f5b754ba22",
+                        "type": "Group",
+                        "x": 6.667990989781458,
+                        "y": 132.7148574248774,
+                        "parameters": {
+                            "paddingLeft": {
+                                "value": 16,
+                                "unit": "px"
+                            },
+                            "paddingTop": {
+                                "value": 16,
+                                "unit": "px"
+                            },
+                            "paddingRight": {
+                                "value": 16,
+                                "unit": "px"
+                            },
+                            "style": "{\n    maxWidth: '500px'\n}",
+                            "alignX": "center"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "79abfe7c-ba87-083f-fca6-1506551c8fa0",
+                                "type": "Web Router",
+                                "x": 20,
+                                "y": 82,
+                                "parameters": {
+                                    "pages": "Sign Up,Login,Signed In",
+                                    "pageComponent-Sign Up": "/Pages/Sign Up",
+                                    "pagePath-Sign Up": "/signup",
+                                    "pageComponent-Login": "/Pages/Log In",
+                                    "pagePath-Login": "/",
+                                    "defaultPage": "Login",
+                                    "style": "{\n}",
+                                    "pageComponent-Signed In": "/Pages/Signed In",
+                                    "pagePath-Signed In": "/signedin"
+                                },
+                                "ports": [],
+                                "dynamicports": [
+                                    {
+                                        "name": "pageComponent-Sign Up",
+                                        "displayName": "Component",
+                                        "plug": "input",
+                                        "type": "component",
+                                        "group": "Sign Up Page",
+                                        "index": 14
+                                    },
+                                    {
+                                        "name": "pagePath-Sign Up",
+                                        "displayName": "Path",
+                                        "plug": "input",
+                                        "type": "string",
+                                        "group": "Sign Up Page",
+                                        "index": 15
+                                    },
+                                    {
+                                        "name": "pageComponent-Login",
+                                        "displayName": "Component",
+                                        "plug": "input",
+                                        "type": "component",
+                                        "group": "Login Page",
+                                        "index": 16
+                                    },
+                                    {
+                                        "name": "pagePath-Login",
+                                        "displayName": "Path",
+                                        "plug": "input",
+                                        "type": "string",
+                                        "group": "Login Page",
+                                        "index": 17
+                                    },
+                                    {
+                                        "name": "pageComponent-Signed In",
+                                        "displayName": "Component",
+                                        "plug": "input",
+                                        "type": "component",
+                                        "group": "Signed In Page",
+                                        "index": 18
+                                    },
+                                    {
+                                        "name": "pagePath-Signed In",
+                                        "displayName": "Path",
+                                        "plug": "input",
+                                        "type": "string",
+                                        "group": "Signed In Page",
+                                        "index": 19
+                                    },
+                                    {
+                                        "plug": "input",
+                                        "type": {
+                                            "name": "enum",
+                                            "enums": [
+                                                "Sign Up",
+                                                "Login",
+                                                "Signed In"
+                                            ],
+                                            "allowEditOnly": true
+                                        },
+                                        "group": "Pages",
+                                        "displayName": "Default",
+                                        "name": "defaultPage",
+                                        "default": "Sign Up",
+                                        "index": 20
+                                    }
+                                ],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "10882a24-b449-7a94-cfcc-29a93846db91",
+                        "type": "CSS Definition",
+                        "label": "Default font",
+                        "x": -0.3320090102185418,
+                        "y": 6.714857424877408,
+                        "parameters": {
+                            "style": "* {\n    font-family: Menlo, \"Courier New\", monospace;\n    font-size: 16px;\n}"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "cff7fc26-181b-5f3d-3fb9-eb2fd77d3422",
+                        "type": "User",
+                        "x": 278.7533900761688,
+                        "y": 52.37945833849,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "4e05b85b-0e60-d079-47c5-88943060cd55",
+                        "type": "And",
+                        "label": "Cached session?",
+                        "x": 462.0013243231148,
+                        "y": 124.60453277712946,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "45b29c75-c9ff-1ce2-2dad-95431ec35f70",
+                        "type": "Switch",
+                        "x": 268.1977924436449,
+                        "y": 150.99258283188055,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "fd409447-02b7-8f24-3246-263f8da18990",
+                        "type": "WebRouterNavigate",
+                        "x": 674.3075195235157,
+                        "y": 130.6045327771294,
+                        "parameters": {
+                            "page": "Signed In"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Main"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Router",
+                                "name": "router",
+                                "default": "Main",
+                                "index": 1
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Sign Up",
+                                        "Login",
+                                        "Signed In"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Page",
+                                "name": "page",
+                                "default": "Sign Up",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/Pages/Sign Up",
+            "id": "d214f7c3-26fc-0bb1-0974-91d9e535bc04",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "7aa4a365-b4eb-a06d-f7df-16999b18f497",
+                        "fromProperty": "Click",
+                        "toId": "02a5528a-c7db-495c-c276-2196d6c8dffe",
+                        "toProperty": "Navigate"
+                    },
+                    {
+                        "fromId": "de2385cc-4ba4-e859-45ec-02c5dda66ff3",
+                        "fromProperty": "Click",
+                        "toId": "aa1066a6-6ca7-67d2-4196-10787af28cce",
+                        "toProperty": "off"
+                    },
+                    {
+                        "fromId": "de2385cc-4ba4-e859-45ec-02c5dda66ff3",
+                        "fromProperty": "Click",
+                        "toId": "43d39bc5-fdaf-8bf3-fc45-46683a7e9519",
+                        "toProperty": "signup"
+                    },
+                    {
+                        "fromId": "43d39bc5-fdaf-8bf3-fc45-46683a7e9519",
+                        "fromProperty": "error",
+                        "toId": "aa1066a6-6ca7-67d2-4196-10787af28cce",
+                        "toProperty": "on"
+                    },
+                    {
+                        "fromId": "43d39bc5-fdaf-8bf3-fc45-46683a7e9519",
+                        "fromProperty": "errorMessage",
+                        "toId": "515f8882-7057-4e37-9147-64b730d0e0c5",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "ed4f3560-206f-6c5a-e458-3fd3e5b80954",
+                        "fromProperty": "Text",
+                        "toId": "43d39bc5-fdaf-8bf3-fc45-46683a7e9519",
+                        "toProperty": "email"
+                    },
+                    {
+                        "fromId": "f2f6c4c2-597f-01aa-3b24-6096f429c311",
+                        "fromProperty": "Text",
+                        "toId": "43d39bc5-fdaf-8bf3-fc45-46683a7e9519",
+                        "toProperty": "password"
+                    },
+                    {
+                        "fromId": "f2f6c4c2-597f-01aa-3b24-6096f429c311",
+                        "fromProperty": "Text",
+                        "toId": "67f22893-9100-ebcc-54bf-9ed0f71267c8",
+                        "toProperty": "pass"
+                    },
+                    {
+                        "fromId": "bf8ff642-b765-762e-de73-af434ffd09bd",
+                        "fromProperty": "Text",
+                        "toId": "67f22893-9100-ebcc-54bf-9ed0f71267c8",
+                        "toProperty": "pass2"
+                    },
+                    {
+                        "fromId": "67f22893-9100-ebcc-54bf-9ed0f71267c8",
+                        "fromProperty": "result",
+                        "toId": "7ff0198b-b2ea-0a19-4b69-4f6684cac0a7",
+                        "toProperty": "input 0"
+                    },
+                    {
+                        "fromId": "aa1066a6-6ca7-67d2-4196-10787af28cce",
+                        "fromProperty": "state",
+                        "toId": "7ff0198b-b2ea-0a19-4b69-4f6684cac0a7",
+                        "toProperty": "input 1"
+                    },
+                    {
+                        "fromId": "7ff0198b-b2ea-0a19-4b69-4f6684cac0a7",
+                        "fromProperty": "result",
+                        "toId": "de2385cc-4ba4-e859-45ec-02c5dda66ff3",
+                        "toProperty": "Enabled"
+                    },
+                    {
+                        "fromId": "43d39bc5-fdaf-8bf3-fc45-46683a7e9519",
+                        "fromProperty": "success",
+                        "toId": "6059746b-51c8-5636-9b70-fab6ecb610b0",
+                        "toProperty": "store"
+                    },
+                    {
+                        "fromId": "6059746b-51c8-5636-9b70-fab6ecb610b0",
+                        "fromProperty": "stored",
+                        "toId": "8429ec92-b64b-3ac1-4666-1d7c0ba2273b",
+                        "toProperty": "Navigate"
+                    },
+                    {
+                        "fromId": "49741fe4-82c4-ff9c-3196-59edac79a21a",
+                        "fromProperty": "Text",
+                        "toId": "6059746b-51c8-5636-9b70-fab6ecb610b0",
+                        "toProperty": "skillLevel"
+                    },
+                    {
+                        "fromId": "93938376-c10f-ac80-af73-e2656c0a98e9",
+                        "fromProperty": "userId",
+                        "toId": "ee700cd1-2d41-20c9-b423-80c2350dbf4c",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "93938376-c10f-ac80-af73-e2656c0a98e9",
+                        "fromProperty": "email",
+                        "toId": "ee700cd1-2d41-20c9-b423-80c2350dbf4c",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "93938376-c10f-ac80-af73-e2656c0a98e9",
+                        "fromProperty": "createdAt",
+                        "toId": "ee700cd1-2d41-20c9-b423-80c2350dbf4c",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "93938376-c10f-ac80-af73-e2656c0a98e9",
+                        "fromProperty": "authenticated",
+                        "toId": "ee700cd1-2d41-20c9-b423-80c2350dbf4c",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "93938376-c10f-ac80-af73-e2656c0a98e9",
+                        "fromProperty": "Address",
+                        "toId": "ee700cd1-2d41-20c9-b423-80c2350dbf4c",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "93938376-c10f-ac80-af73-e2656c0a98e9",
+                        "fromProperty": "Phone",
+                        "toId": "ee700cd1-2d41-20c9-b423-80c2350dbf4c",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "aa1066a6-6ca7-67d2-4196-10787af28cce",
+                        "fromProperty": "state",
+                        "toId": "e6cf0965-3fc0-208a-48c8-9a4263e848ba",
+                        "toProperty": "Address"
+                    },
+                    {
+                        "fromId": "aa1066a6-6ca7-67d2-4196-10787af28cce",
+                        "fromProperty": "switchedToOn",
+                        "toId": "e6cf0965-3fc0-208a-48c8-9a4263e848ba",
+                        "toProperty": "store"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "f65a7802-ddb5-8034-7ba1-d625c739caa0",
+                        "type": "Group",
+                        "x": 134.2808661166191,
+                        "y": 287.6869144595445,
+                        "parameters": {
+                            "sizeMode": "contentHeight",
+                            "style": "{\n}"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "27fb7ba5-0d92-0d42-f3ac-493ed89f2579",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "text": "Register new user",
+                                    "marginBottom": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "ed4f3560-206f-6c5a-e458-3fd3e5b80954",
+                                "type": "/UI/Input Field",
+                                "label": "email",
+                                "x": 20,
+                                "y": 92,
+                                "parameters": {
+                                    "Label": "email",
+                                    "Placeholder": "my@email.com",
+                                    "Type": "email"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "f2f6c4c2-597f-01aa-3b24-6096f429c311",
+                                "type": "/UI/Input Field",
+                                "label": "password",
+                                "x": 154.2808661166191,
+                                "y": 476.6869144595445,
+                                "parameters": {
+                                    "Label": "password",
+                                    "Placeholder": "my password",
+                                    "Type": "password"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "bf8ff642-b765-762e-de73-af434ffd09bd",
+                                "type": "/UI/Input Field",
+                                "label": "password",
+                                "x": 154.2808661166191,
+                                "y": 573.6869144595445,
+                                "parameters": {
+                                    "Label": "confirm password",
+                                    "Placeholder": "my password",
+                                    "Type": "password"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "49741fe4-82c4-ff9c-3196-59edac79a21a",
+                                "type": "/UI/Input Field",
+                                "label": "skill level",
+                                "x": 20,
+                                "y": 383,
+                                "parameters": {
+                                    "Label": "Noodl skill level (1-5)",
+                                    "Type": "number"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "de2385cc-4ba4-e859-45ec-02c5dda66ff3",
+                                "type": "/UI/Button",
+                                "x": 20,
+                                "y": 444,
+                                "parameters": {},
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "c0ea8b38-8358-f9f6-ffd4-afebb8dc7e9d",
+                                "type": "Group",
+                                "x": 193.1971848130173,
+                                "y": 303.3553071751933,
+                                "parameters": {
+                                    "sizeMode": "contentHeight",
+                                    "flexDirection": "column",
+                                    "marginTop": {
+                                        "value": 32,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "87481ba4-c265-b8f7-e0f0-a074444e702b",
+                                        "type": "Text",
+                                        "x": 20,
+                                        "y": 46,
+                                        "parameters": {
+                                            "text": "Already have a user?"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "7aa4a365-b4eb-a06d-f7df-16999b18f497",
+                                        "type": "/UI/Button",
+                                        "x": 20,
+                                        "y": 92,
+                                        "parameters": {
+                                            "Text": "Sign in",
+                                            "Margin Top": {
+                                                "value": 8,
+                                                "unit": "px"
+                                            },
+                                            "Pad Left": {
+                                                "value": 8,
+                                                "unit": "px"
+                                            },
+                                            "Pad Right": {
+                                                "value": 8,
+                                                "unit": "px"
+                                            },
+                                            "Pad Top": {
+                                                "value": 4,
+                                                "unit": "px"
+                                            },
+                                            "Pad Bottom": {
+                                                "value": 4,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "515f8882-7057-4e37-9147-64b730d0e0c5",
+                                "type": "Text",
+                                "x": 154.2808661166191,
+                                "y": 1033.6869144595444,
+                                "parameters": {
+                                    "color": "red",
+                                    "text": "",
+                                    "marginTop": {
+                                        "value": 32,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "02a5528a-c7db-495c-c276-2196d6c8dffe",
+                        "type": "WebRouterNavigate",
+                        "label": "To sign up page",
+                        "x": -90.8121462386805,
+                        "y": 850.309262483303,
+                        "parameters": {
+                            "page": "Login"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Main"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Router",
+                                "name": "router",
+                                "default": "Main",
+                                "index": 1
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Sign Up",
+                                        "Login",
+                                        "Signed In"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Page",
+                                "name": "page",
+                                "default": "Sign Up",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "aa1066a6-6ca7-67d2-4196-10787af28cce",
+                        "type": "Switch",
+                        "label": "Button Enabled",
+                        "x": 1050.4250233440664,
+                        "y": 727.953050543906,
+                        "parameters": {
+                            "onFromStart": true
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "8429ec92-b64b-3ac1-4666-1d7c0ba2273b",
+                        "type": "WebRouterNavigate",
+                        "label": "To signed in page",
+                        "x": 1117.1195471521237,
+                        "y": 431.5888872863243,
+                        "parameters": {
+                            "page": "Signed In"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Main"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Router",
+                                "name": "router",
+                                "default": "Main",
+                                "index": 1
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Sign Up",
+                                        "Login",
+                                        "Signed In"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Page",
+                                "name": "page",
+                                "default": "Sign Up",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "43d39bc5-fdaf-8bf3-fc45-46683a7e9519",
+                        "type": "Sign Up",
+                        "x": 559.3306062182661,
+                        "y": 461.50638765473894,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "7ff0198b-b2ea-0a19-4b69-4f6684cac0a7",
+                        "type": "And",
+                        "x": 818.0338960736817,
+                        "y": 839.31567219934,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "67f22893-9100-ebcc-54bf-9ed0f71267c8",
+                        "type": "Expression",
+                        "x": 619.7632632287324,
+                        "y": 867.4573104095914,
+                        "parameters": {
+                            "expression": "pass && pass === pass2 "
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "pass",
+                                "type": "*",
+                                "plug": "input",
+                                "index": 2
+                            },
+                            {
+                                "name": "pass2",
+                                "type": "*",
+                                "plug": "input",
+                                "index": 3
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "6059746b-51c8-5636-9b70-fab6ecb610b0",
+                        "type": "User",
+                        "x": 888.0052306551418,
+                        "y": 514.2918434290291,
+                        "parameters": {
+                            "properties": "skillLevel"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "skillLevel",
+                                "index": 15
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "93938376-c10f-ac80-af73-e2656c0a98e9",
+                        "type": "User",
+                        "x": 1568.6252334838066,
+                        "y": 919.9633865845203,
+                        "parameters": {
+                            "properties": "My Custom Property,Address,Phone"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "My Custom Property",
+                                "index": 15
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "Address",
+                                "index": 16
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "Phone",
+                                "index": 17
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "ee700cd1-2d41-20c9-b423-80c2350dbf4c",
+                        "type": "String",
+                        "x": 2036.8600338818815,
+                        "y": 927.8804001178212,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "e6cf0965-3fc0-208a-48c8-9a4263e848ba",
+                        "type": "User",
+                        "x": 1566.660249843509,
+                        "y": 790.070717354522,
+                        "parameters": {
+                            "properties": "My Custom Property,Address,Phone"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "My Custom Property",
+                                "index": 15
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "Address",
+                                "index": 16
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "Phone",
+                                "index": 17
+                            }
+                        ],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/UI/Button",
+            "id": "8326a3b7-4693-1dfe-1753-aa4105c60cab",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "a1885f9f-9efc-8fcf-4959-a741e51cf235",
+                        "fromProperty": "Text",
+                        "toId": "04765a27-3250-0571-4739-14db87f59a29",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "fromProperty": "onClick",
+                        "toId": "87e68a1d-d939-977f-170a-d3f0ddefaa42",
+                        "toProperty": "Click"
+                    },
+                    {
+                        "fromId": "a1885f9f-9efc-8fcf-4959-a741e51cf235",
+                        "fromProperty": "Margin Left",
+                        "toId": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "toProperty": "marginLeft"
+                    },
+                    {
+                        "fromId": "a1885f9f-9efc-8fcf-4959-a741e51cf235",
+                        "fromProperty": "Margin Right",
+                        "toId": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "toProperty": "marginRight"
+                    },
+                    {
+                        "fromId": "a1885f9f-9efc-8fcf-4959-a741e51cf235",
+                        "fromProperty": "Margin Top",
+                        "toId": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "toProperty": "marginTop"
+                    },
+                    {
+                        "fromId": "a1885f9f-9efc-8fcf-4959-a741e51cf235",
+                        "fromProperty": "Margin Bottom",
+                        "toId": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "toProperty": "marginBottom"
+                    },
+                    {
+                        "fromId": "a1885f9f-9efc-8fcf-4959-a741e51cf235",
+                        "fromProperty": "Pad Left",
+                        "toId": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "toProperty": "paddingLeft"
+                    },
+                    {
+                        "fromId": "a1885f9f-9efc-8fcf-4959-a741e51cf235",
+                        "fromProperty": "Pad Right",
+                        "toId": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "toProperty": "paddingRight"
+                    },
+                    {
+                        "fromId": "a1885f9f-9efc-8fcf-4959-a741e51cf235",
+                        "fromProperty": "Pad Top",
+                        "toId": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "toProperty": "paddingTop"
+                    },
+                    {
+                        "fromId": "a1885f9f-9efc-8fcf-4959-a741e51cf235",
+                        "fromProperty": "Pad Bottom",
+                        "toId": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "toProperty": "paddingBottom"
+                    },
+                    {
+                        "fromId": "a1885f9f-9efc-8fcf-4959-a741e51cf235",
+                        "fromProperty": "Enabled",
+                        "toId": "4a6a2560-fd3f-6a11-fba4-85897db83226",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "4a6a2560-fd3f-6a11-fba4-85897db83226",
+                        "fromProperty": "savedValue",
+                        "toId": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "toProperty": "pointerEventsEnabled"
+                    },
+                    {
+                        "fromId": "4a6a2560-fd3f-6a11-fba4-85897db83226",
+                        "fromProperty": "savedValue",
+                        "toId": "4b90b968-1d51-b297-c4a4-6e072edf5400",
+                        "toProperty": "blendValue"
+                    },
+                    {
+                        "fromId": "4b90b968-1d51-b297-c4a4-6e072edf5400",
+                        "fromProperty": "result",
+                        "toId": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "toProperty": "opacity"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "b2eeaa19-135e-837e-7c36-a46cba8bd155",
+                        "type": "Group",
+                        "x": 384.6217701465844,
+                        "y": 255,
+                        "parameters": {
+                            "width": {
+                                "value": 100,
+                                "unit": "px"
+                            },
+                            "height": {
+                                "value": 100,
+                                "unit": "px"
+                            },
+                            "sizeMode": "contentSize",
+                            "borderStyle": "dashed",
+                            "borderWidth": {
+                                "value": 1,
+                                "unit": "px"
+                            },
+                            "paddingLeft": {
+                                "value": 16,
+                                "unit": "px"
+                            },
+                            "paddingTop": {
+                                "value": 8,
+                                "unit": "px"
+                            },
+                            "paddingBottom": {
+                                "value": 8,
+                                "unit": "px"
+                            },
+                            "paddingRight": {
+                                "value": 16,
+                                "unit": "px"
+                            },
+                            "marginTop": {
+                                "value": 16,
+                                "unit": "px"
+                            },
+                            "style": "{\n    cursor: 'pointer'\n}",
+                            "pointerEventsMode": "explicit"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "04765a27-3250-0571-4739-14db87f59a29",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 162,
+                                "parameters": {
+                                    "text": "Sign Up",
+                                    "pointerEventsMode": "explicit",
+                                    "pointerEventsEnabled": false
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "a1885f9f-9efc-8fcf-4959-a741e51cf235",
+                        "type": "Component Inputs",
+                        "x": -189.7748921911608,
+                        "y": 181.8315394605203,
+                        "parameters": {},
+                        "ports": [
+                            {
+                                "name": "Text",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 0
+                            },
+                            {
+                                "name": "Margin Left",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 1
+                            },
+                            {
+                                "name": "Margin Right",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 2
+                            },
+                            {
+                                "name": "Margin Top",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 3
+                            },
+                            {
+                                "name": "Margin Bottom",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 4
+                            },
+                            {
+                                "name": "Pad Left",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 5
+                            },
+                            {
+                                "name": "Pad Right",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 6
+                            },
+                            {
+                                "name": "Pad Top",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 7
+                            },
+                            {
+                                "name": "Pad Bottom",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 8
+                            },
+                            {
+                                "name": "Enabled",
+                                "plug": "output",
+                                "type": {
+                                    "name": "*"
+                                },
+                                "index": 9
+                            }
+                        ],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "87e68a1d-d939-977f-170a-d3f0ddefaa42",
+                        "type": "Component Outputs",
+                        "x": 561.4777986180586,
+                        "y": 304.78713669663773,
+                        "parameters": {},
+                        "ports": [
+                            {
+                                "name": "Click",
+                                "plug": "input",
+                                "type": "*",
+                                "index": 0
+                            }
+                        ],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "4b90b968-1d51-b297-c4a4-6e072edf5400",
+                        "type": "Number Blend",
+                        "x": 138.92343897771184,
+                        "y": 552.7856554280388,
+                        "parameters": {
+                            "input 0": 0.3,
+                            "input 1": 1
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "4a6a2560-fd3f-6a11-fba4-85897db83226",
+                        "type": "Boolean",
+                        "label": "Enabled",
+                        "x": -82.65392840499001,
+                        "y": 479.7335834167044,
+                        "parameters": {
+                            "value": true
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/Pages/Signed In",
+            "id": "cfcee250-45d0-1063-7385-a0d2e063286a",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "6aa94ea0-aa66-ad05-0375-1b3b245fa47c",
+                        "fromProperty": "email",
+                        "toId": "ac117f81-a6e1-f04c-488f-a648c418b6e9",
+                        "toProperty": "Value"
+                    },
+                    {
+                        "fromId": "6aa94ea0-aa66-ad05-0375-1b3b245fa47c",
+                        "fromProperty": "createdAt",
+                        "toId": "cc22c1bd-e034-3985-900b-edbee3355cd0",
+                        "toProperty": "Value"
+                    },
+                    {
+                        "fromId": "6aa94ea0-aa66-ad05-0375-1b3b245fa47c",
+                        "fromProperty": "authenticated",
+                        "toId": "6b0013a2-2c60-e6bb-efb1-34c2f2cb0429",
+                        "toProperty": "Value"
+                    },
+                    {
+                        "fromId": "d9bc6fb7-8b2f-3678-f9b4-1c456c7dfb5b",
+                        "fromProperty": "Click",
+                        "toId": "4bf9381d-61a3-7fac-1704-194d64d16b80",
+                        "toProperty": "logout"
+                    },
+                    {
+                        "fromId": "4bf9381d-61a3-7fac-1704-194d64d16b80",
+                        "fromProperty": "success",
+                        "toId": "0e329e1a-66ab-3b67-5615-2edc4871b28b",
+                        "toProperty": "Navigate"
+                    },
+                    {
+                        "fromId": "4bf9381d-61a3-7fac-1704-194d64d16b80",
+                        "fromProperty": "errorMessage",
+                        "toId": "e690f577-17c6-40d4-4244-adac3dccb120",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "6aa94ea0-aa66-ad05-0375-1b3b245fa47c",
+                        "fromProperty": "skillLevel",
+                        "toId": "077d8d5c-9822-6df4-54ae-02efed292140",
+                        "toProperty": "Value"
+                    },
+                    {
+                        "fromId": "2d622d7f-6dce-7faa-cd08-b065fe21451c",
+                        "fromProperty": "Click",
+                        "toId": "4ae3faf0-72d7-94e6-1594-93f4e5f8f59c",
+                        "toProperty": "store"
+                    },
+                    {
+                        "fromId": "2801bb45-7254-a199-f7c4-9b1bc18f5853",
+                        "fromProperty": "Text",
+                        "toId": "4ae3faf0-72d7-94e6-1594-93f4e5f8f59c",
+                        "toProperty": "skillLevel"
+                    },
+                    {
+                        "fromId": "6aa94ea0-aa66-ad05-0375-1b3b245fa47c",
+                        "fromProperty": "userId",
+                        "toId": "c021a059-0c9a-9317-5b2a-ebb3ba8bba7c",
+                        "toProperty": "Value"
+                    },
+                    {
+                        "fromId": "5c81d7dc-7b69-57a2-f05a-98c15cc38c28",
+                        "fromProperty": "Click",
+                        "toId": "a7f20287-88df-a334-39c2-bb73b6eee929",
+                        "toProperty": "store"
+                    },
+                    {
+                        "fromId": "c77eb60e-305f-6362-b5a4-f3ff80b35632",
+                        "fromProperty": "Click",
+                        "toId": "35973390-625a-7497-8305-92257d2d2e0f",
+                        "toProperty": "store"
+                    },
+                    {
+                        "fromId": "0bad96ed-3f0b-cdc1-f877-9367e3ba9ad4",
+                        "fromProperty": "Click",
+                        "toId": "a8916be6-3986-8853-af58-85bd9cf1a34d",
+                        "toProperty": "store"
+                    },
+                    {
+                        "fromId": "3c200ca0-9c44-b366-812c-c3569c14cf6d",
+                        "fromProperty": "Text",
+                        "toId": "a8916be6-3986-8853-af58-85bd9cf1a34d",
+                        "toProperty": "username"
+                    },
+                    {
+                        "fromId": "92476153-d277-b57f-a50a-c65697bf862b",
+                        "fromProperty": "Text",
+                        "toId": "a7f20287-88df-a334-39c2-bb73b6eee929",
+                        "toProperty": "password"
+                    },
+                    {
+                        "fromId": "e93b731d-7920-d5f2-d896-f647b42cb795",
+                        "fromProperty": "Text",
+                        "toId": "35973390-625a-7497-8305-92257d2d2e0f",
+                        "toProperty": "email"
+                    },
+                    {
+                        "fromId": "6aa94ea0-aa66-ad05-0375-1b3b245fa47c",
+                        "fromProperty": "username",
+                        "toId": "f7e98c97-52f3-2b13-c677-2f537e980dc1",
+                        "toProperty": "Value"
+                    },
+                    {
+                        "fromId": "a8916be6-3986-8853-af58-85bd9cf1a34d",
+                        "fromProperty": "error",
+                        "toId": "ad079cba-3ad5-b9fe-dd70-b13b08d821ed",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "a8916be6-3986-8853-af58-85bd9cf1a34d",
+                        "fromProperty": "stored",
+                        "toId": "ad079cba-3ad5-b9fe-dd70-b13b08d821ed",
+                        "toProperty": "value"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "61699ede-603c-c4c5-069c-cd38551c2ca1",
+                        "type": "Group",
+                        "x": 231,
+                        "y": 217,
+                        "parameters": {
+                            "sizeMode": "contentHeight"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "c021a059-0c9a-9317-5b2a-ebb3ba8bba7c",
+                                "type": "/UI/Data Row",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "Key": "Id"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "6b0013a2-2c60-e6bb-efb1-34c2f2cb0429",
+                                "type": "/UI/Data Row",
+                                "x": 251,
+                                "y": 345,
+                                "parameters": {
+                                    "Key": "Authenticated"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "f7e98c97-52f3-2b13-c677-2f537e980dc1",
+                                "type": "/UI/Data Row",
+                                "x": 283.41698782123706,
+                                "y": 420.02719499456725,
+                                "parameters": {
+                                    "Key": "username"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "ac117f81-a6e1-f04c-488f-a648c418b6e9",
+                                "type": "/UI/Data Row",
+                                "x": 251,
+                                "y": 427,
+                                "parameters": {
+                                    "Key": "email"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "cc22c1bd-e034-3985-900b-edbee3355cd0",
+                                "type": "/UI/Data Row",
+                                "x": 251,
+                                "y": 509,
+                                "parameters": {
+                                    "Key": "Created At"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "26ea25d7-46cc-235f-2bdf-ccefc4b6be7a",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 374,
+                                "parameters": {
+                                    "text": "Custom properties",
+                                    "marginTop": {
+                                        "value": 32,
+                                        "unit": "px"
+                                    },
+                                    "marginBottom": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "077d8d5c-9822-6df4-54ae-02efed292140",
+                                "type": "/UI/Data Row",
+                                "x": 20,
+                                "y": 420,
+                                "parameters": {
+                                    "Key": "Skill level"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "d9bc6fb7-8b2f-3678-f9b4-1c456c7dfb5b",
+                                "type": "/UI/Button",
+                                "x": 273.5,
+                                "y": 234,
+                                "parameters": {
+                                    "Text": "Log Out"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "e690f577-17c6-40d4-4244-adac3dccb120",
+                                "type": "Text",
+                                "label": "Error message",
+                                "x": 270.5966214835495,
+                                "y": 232.57415744700162,
+                                "parameters": {
+                                    "color": "red",
+                                    "text": "",
+                                    "marginTop": {
+                                        "value": 32,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "35a773d5-658a-5161-ff6c-e8281f93d414",
+                                "type": "Group",
+                                "x": 251,
+                                "y": 898,
+                                "parameters": {
+                                    "flexDirection": "row"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "2801bb45-7254-a199-f7c4-9b1bc18f5853",
+                                        "type": "/UI/Input Field",
+                                        "x": 271,
+                                        "y": 944,
+                                        "parameters": {
+                                            "Label": "Edit Skill Level",
+                                            "Type": "number"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "2d622d7f-6dce-7faa-cd08-b065fe21451c",
+                                        "type": "/UI/Button",
+                                        "x": 271,
+                                        "y": 1026,
+                                        "parameters": {
+                                            "Text": "Save"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "8c05d097-acff-f972-eeca-74cfe40c2bdc",
+                                "type": "Group",
+                                "x": 263.78317338682496,
+                                "y": 1100.7831733868252,
+                                "parameters": {
+                                    "flexDirection": "row"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "3c200ca0-9c44-b366-812c-c3569c14cf6d",
+                                        "type": "/UI/Input Field",
+                                        "x": 20,
+                                        "y": 46,
+                                        "parameters": {
+                                            "Label": "Edit Username",
+                                            "Type": "text"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "0bad96ed-3f0b-cdc1-f877-9367e3ba9ad4",
+                                        "type": "/UI/Button",
+                                        "x": 271,
+                                        "y": 1026,
+                                        "parameters": {
+                                            "Text": "Save"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "0714f2c9-baf6-8ad3-6b8b-c93a2f489c81",
+                                "type": "Group",
+                                "x": 251,
+                                "y": 1318,
+                                "parameters": {
+                                    "flexDirection": "row"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "92476153-d277-b57f-a50a-c65697bf862b",
+                                        "type": "/UI/Input Field",
+                                        "x": 20,
+                                        "y": 46,
+                                        "parameters": {
+                                            "Label": "Edit Password",
+                                            "Type": "password"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "5c81d7dc-7b69-57a2-f05a-98c15cc38c28",
+                                        "type": "/UI/Button",
+                                        "x": 271,
+                                        "y": 1446,
+                                        "parameters": {
+                                            "Text": "Save"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "32c98384-a045-acd4-f6eb-9b808a9b7d47",
+                                "type": "Group",
+                                "x": 287.02540112782464,
+                                "y": 1522.998862374815,
+                                "parameters": {
+                                    "flexDirection": "row"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "e93b731d-7920-d5f2-d896-f647b42cb795",
+                                        "type": "/UI/Input Field",
+                                        "x": 20,
+                                        "y": 46,
+                                        "parameters": {
+                                            "Label": "Edit Email",
+                                            "Type": "email"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "c77eb60e-305f-6362-b5a4-f3ff80b35632",
+                                        "type": "/UI/Button",
+                                        "x": 271,
+                                        "y": 1446,
+                                        "parameters": {
+                                            "Text": "Save"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "6aa94ea0-aa66-ad05-0375-1b3b245fa47c",
+                        "type": "User",
+                        "x": -68.53154389281468,
+                        "y": 333.06348574665043,
+                        "parameters": {
+                            "properties": "skillLevel"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "skillLevel",
+                                "index": 15
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "4bf9381d-61a3-7fac-1704-194d64d16b80",
+                        "type": "Log Out",
+                        "x": 524.5,
+                        "y": 698,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "0e329e1a-66ab-3b67-5615-2edc4871b28b",
+                        "type": "WebRouterNavigate",
+                        "x": 764.7523511425175,
+                        "y": 698.0481117612642,
+                        "parameters": {
+                            "page": "Login"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Main"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Router",
+                                "name": "router",
+                                "default": "Main",
+                                "index": 1
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Sign Up",
+                                        "Login",
+                                        "Signed In"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Page",
+                                "name": "page",
+                                "default": "Sign Up",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "4ae3faf0-72d7-94e6-1594-93f4e5f8f59c",
+                        "type": "User",
+                        "x": 519.4752661442213,
+                        "y": 941.5443192373843,
+                        "parameters": {
+                            "properties": "skillLevel"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "skillLevel",
+                                "index": 15
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "a8916be6-3986-8853-af58-85bd9cf1a34d",
+                        "type": "User",
+                        "x": 547.0810362233418,
+                        "y": 1193.6738065981572,
+                        "parameters": {
+                            "properties": "skillLevel"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "skillLevel",
+                                "index": 15
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "a7f20287-88df-a334-39c2-bb73b6eee929",
+                        "type": "User",
+                        "x": 593.9904092089795,
+                        "y": 1401.7589739447028,
+                        "parameters": {
+                            "properties": "skillLevel"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "skillLevel",
+                                "index": 15
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "35973390-625a-7497-8305-92257d2d2e0f",
+                        "type": "User",
+                        "x": 573.4840018669333,
+                        "y": 1588.71576978658,
+                        "parameters": {
+                            "properties": "skillLevel"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Custom User Data",
+                                "name": "skillLevel",
+                                "index": 15
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "ad079cba-3ad5-b9fe-dd70-b13b08d821ed",
+                        "type": "Boolean",
+                        "x": 774.1611975171381,
+                        "y": 1147.7238784897143,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/Pages/Log In",
+            "id": "ba9bd8fa-ea03-1341-42ed-2aabc2403190",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "c1f3a8aa-96b7-b7b4-5daf-eabefc610660",
+                        "fromProperty": "Click",
+                        "toId": "f10e3d86-e11c-3f52-4098-1283c2e12e2a",
+                        "toProperty": "Navigate"
+                    },
+                    {
+                        "fromId": "31e17e86-1b48-5a00-0e60-b56ca797e2cc",
+                        "fromProperty": "Click",
+                        "toId": "e181325c-662f-5743-985c-ca585eca2362",
+                        "toProperty": "login"
+                    },
+                    {
+                        "fromId": "e181325c-662f-5743-985c-ca585eca2362",
+                        "fromProperty": "success",
+                        "toId": "2533b6fd-b803-3504-2895-eb9d7374bd63",
+                        "toProperty": "Navigate"
+                    },
+                    {
+                        "fromId": "e181325c-662f-5743-985c-ca585eca2362",
+                        "fromProperty": "errorMessage",
+                        "toId": "3da94209-04a9-1b36-ec09-f252d6dc24cc",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "86236faa-4243-fe39-7af1-ae1d4b66de08",
+                        "fromProperty": "Text",
+                        "toId": "e181325c-662f-5743-985c-ca585eca2362",
+                        "toProperty": "username"
+                    },
+                    {
+                        "fromId": "6e7371ff-feca-45e4-0996-f190ebc16f4f",
+                        "fromProperty": "Text",
+                        "toId": "e181325c-662f-5743-985c-ca585eca2362",
+                        "toProperty": "password"
+                    },
+                    {
+                        "fromId": "e181325c-662f-5743-985c-ca585eca2362",
+                        "fromProperty": "error",
+                        "toId": "8e799e9f-ac59-6bd4-fa84-45ce3d9b6065",
+                        "toProperty": "on"
+                    },
+                    {
+                        "fromId": "8e799e9f-ac59-6bd4-fa84-45ce3d9b6065",
+                        "fromProperty": "state",
+                        "toId": "c1f3a8aa-96b7-b7b4-5daf-eabefc610660",
+                        "toProperty": "Enabled"
+                    },
+                    {
+                        "fromId": "c1f3a8aa-96b7-b7b4-5daf-eabefc610660",
+                        "fromProperty": "Click",
+                        "toId": "8e799e9f-ac59-6bd4-fa84-45ce3d9b6065",
+                        "toProperty": "off"
+                    },
+                    {
+                        "fromId": "e181325c-662f-5743-985c-ca585eca2362",
+                        "fromProperty": "success",
+                        "toId": "8e799e9f-ac59-6bd4-fa84-45ce3d9b6065",
+                        "toProperty": "on"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "39bfa8b0-3f79-2933-ec63-63ac14d31b55",
+                        "type": "Group",
+                        "x": 32,
+                        "y": 380,
+                        "parameters": {
+                            "sizeMode": "contentHeight",
+                            "style": "{\n}"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "b73ffbcd-5d0f-d05c-d741-a0b62284497d",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "text": "Login",
+                                    "marginBottom": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "86236faa-4243-fe39-7af1-ae1d4b66de08",
+                                "type": "/UI/Input Field",
+                                "label": "email",
+                                "x": 52,
+                                "y": 472,
+                                "parameters": {
+                                    "Label": "email",
+                                    "Placeholder": "my@email.com"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "6e7371ff-feca-45e4-0996-f190ebc16f4f",
+                                "type": "/UI/Input Field",
+                                "label": "password",
+                                "x": 20,
+                                "y": 189,
+                                "parameters": {
+                                    "Label": "password",
+                                    "Placeholder": "my password",
+                                    "Type": "password"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "31e17e86-1b48-5a00-0e60-b56ca797e2cc",
+                                "type": "/UI/Button",
+                                "x": 52,
+                                "y": 778,
+                                "parameters": {
+                                    "Text": "Log in"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "3da94209-04a9-1b36-ec09-f252d6dc24cc",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 516,
+                                "parameters": {
+                                    "color": "red",
+                                    "text": "",
+                                    "marginTop": {
+                                        "value": 32,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "2d5e34d5-fd38-7dd3-4da1-d3843c59c3b0",
+                                "type": "Group",
+                                "x": 20,
+                                "y": 562,
+                                "parameters": {
+                                    "sizeMode": "contentHeight",
+                                    "flexDirection": "column",
+                                    "marginTop": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "4c9396ad-0f4f-3540-f2e3-cdbf095c5041",
+                                        "type": "Text",
+                                        "x": 72,
+                                        "y": 870,
+                                        "parameters": {
+                                            "text": "New user?"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "c1f3a8aa-96b7-b7b4-5daf-eabefc610660",
+                                        "type": "/UI/Button",
+                                        "x": 72,
+                                        "y": 916,
+                                        "parameters": {
+                                            "Text": "Register",
+                                            "Margin Top": {
+                                                "value": 8,
+                                                "unit": "px"
+                                            },
+                                            "Pad Left": {
+                                                "value": 8,
+                                                "unit": "px"
+                                            },
+                                            "Pad Right": {
+                                                "value": 8,
+                                                "unit": "px"
+                                            },
+                                            "Pad Top": {
+                                                "value": 4,
+                                                "unit": "px"
+                                            },
+                                            "Pad Bottom": {
+                                                "value": 4,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "f10e3d86-e11c-3f52-4098-1283c2e12e2a",
+                        "type": "WebRouterNavigate",
+                        "x": 338.6977763946835,
+                        "y": 1085.4897263135344,
+                        "parameters": {
+                            "page": "Sign Up"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Main"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Router",
+                                "name": "router",
+                                "default": "Main",
+                                "index": 1
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Sign Up",
+                                        "Login",
+                                        "Signed In"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Page",
+                                "name": "page",
+                                "default": "Sign Up",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "2533b6fd-b803-3504-2895-eb9d7374bd63",
+                        "type": "WebRouterNavigate",
+                        "x": 874.7432917320499,
+                        "y": 593.7987346346737,
+                        "parameters": {
+                            "page": "Signed In"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Main"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Router",
+                                "name": "router",
+                                "default": "Main",
+                                "index": 1
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "Sign Up",
+                                        "Login",
+                                        "Signed In"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Page",
+                                "name": "page",
+                                "default": "Sign Up",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "e181325c-662f-5743-985c-ca585eca2362",
+                        "type": "Log In",
+                        "x": 663.6304446655973,
+                        "y": 540.6357216006695,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "8e799e9f-ac59-6bd4-fa84-45ce3d9b6065",
+                        "type": "Switch",
+                        "x": 371.2807346649001,
+                        "y": 776.7223131992469,
+                        "parameters": {
+                            "onFromStart": true
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/UI/Data Row",
+            "id": "d8a59d97-356e-656c-9f67-cfe5f025245e",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "756e5e8f-827c-b915-4ffd-5c4ebcc95ed3",
+                        "fromProperty": "Key",
+                        "toId": "5e1ab71e-ad17-807d-39e7-554a0051da85",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "756e5e8f-827c-b915-4ffd-5c4ebcc95ed3",
+                        "fromProperty": "Value",
+                        "toId": "99bb0c07-55e9-de90-6f84-ee41ce883bc5",
+                        "toProperty": "text"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "ae029275-6b3a-a1f4-62c3-735a9d2dfd94",
+                        "type": "Group",
+                        "x": 316,
+                        "y": 432,
+                        "parameters": {
+                            "flexDirection": "row",
+                            "sizeMode": "contentHeight",
+                            "marginBottom": {
+                                "value": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "5e1ab71e-ad17-807d-39e7-554a0051da85",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "color": "#434B53",
+                                    "marginRight": {
+                                        "value": 8,
+                                        "unit": "px"
+                                    },
+                                    "sizeMode": "contentHeight",
+                                    "width": {
+                                        "value": 220,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "99bb0c07-55e9-de90-6f84-ee41ce883bc5",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 128,
+                                "parameters": {
+                                    "text": ""
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "756e5e8f-827c-b915-4ffd-5c4ebcc95ed3",
+                        "type": "Component Inputs",
+                        "x": 117,
+                        "y": 499,
+                        "parameters": {},
+                        "ports": [
+                            {
+                                "name": "Key",
+                                "plug": "output",
+                                "type": {
+                                    "name": "*"
+                                },
+                                "index": 1
+                            },
+                            {
+                                "name": "Value",
+                                "plug": "output",
+                                "type": {
+                                    "name": "*"
+                                },
+                                "index": 2
+                            }
+                        ],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/UI/Input Field",
+            "id": "c1faeff0-d875-7f9f-0e49-8ec5a525da24",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "ed9eac8b-87fe-d869-0a5c-bdfccfcd0e97",
+                        "fromProperty": "Label",
+                        "toId": "46e7b914-4f33-9184-d257-3ffe36c2ae3e",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "ed9eac8b-87fe-d869-0a5c-bdfccfcd0e97",
+                        "fromProperty": "Type",
+                        "toId": "54395923-b4aa-1189-22a8-ae55d21adb7c",
+                        "toProperty": "type"
+                    },
+                    {
+                        "fromId": "ed9eac8b-87fe-d869-0a5c-bdfccfcd0e97",
+                        "fromProperty": "Placeholder",
+                        "toId": "54395923-b4aa-1189-22a8-ae55d21adb7c",
+                        "toProperty": "placeholder"
+                    },
+                    {
+                        "fromId": "54395923-b4aa-1189-22a8-ae55d21adb7c",
+                        "fromProperty": "onTextChanged",
+                        "toId": "31d437c0-d0d8-b944-6ead-01b15e418792",
+                        "toProperty": "Text"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "aad126e2-d076-6e70-7a34-d6504f098edf",
+                        "type": "Group",
+                        "x": 179,
+                        "y": 350,
+                        "parameters": {
+                            "sizeMode": "contentHeight",
+                            "marginTop": {
+                                "value": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "46e7b914-4f33-9184-d257-3ffe36c2ae3e",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "text": "my input"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "54395923-b4aa-1189-22a8-ae55d21adb7c",
+                                "type": "Text Input",
+                                "x": 20,
+                                "y": 128,
+                                "parameters": {},
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "ed9eac8b-87fe-d869-0a5c-bdfccfcd0e97",
+                        "type": "Component Inputs",
+                        "x": -69,
+                        "y": 398,
+                        "parameters": {},
+                        "ports": [
+                            {
+                                "name": "Label",
+                                "plug": "output",
+                                "type": {
+                                    "name": "*"
+                                },
+                                "index": 1
+                            },
+                            {
+                                "name": "Type",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 1
+                            },
+                            {
+                                "name": "Placeholder",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 2
+                            }
+                        ],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "31d437c0-d0d8-b944-6ead-01b15e418792",
+                        "type": "Component Outputs",
+                        "x": 578,
+                        "y": 448,
+                        "parameters": {},
+                        "ports": [
+                            {
+                                "name": "Text",
+                                "plug": "input",
+                                "type": "*",
+                                "index": 0
+                            }
+                        ],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "7f58e9f5-2c11-af7f-ca6b-32f5b754ba22",
+    "version": "1",
+    "metadata": {
+        "cloudservices": {
+            "instanceId": "puznspzonm",
+            "workspaceId": "noodl-dev",
+            "endpoint": "https://cs2.noodlapp.com/noodl-dev/puznspzonm"
+        },
+        "dbCollections": [
+            {
+                "name": "Products",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "name": {
+                            "type": "String"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "test",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

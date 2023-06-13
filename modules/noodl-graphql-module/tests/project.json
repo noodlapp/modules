@@ -1,0 +1,110 @@
+{
+    "name": "GraphQL Module tests",
+    "components": [
+        {
+            "name": "/My tests",
+            "id": "23f49aac-52db-2d08-c030-e10a8da4bb07",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "36fe7ff7-ee81-8aff-6040-eb94778d0fdd",
+                        "fromProperty": "savedValue",
+                        "toId": "869e3d84-3054-8725-35b0-935899371d1b",
+                        "toProperty": "var-currency"
+                    },
+                    {
+                        "fromId": "5ed6a434-8195-8218-bbac-13807b825b3b",
+                        "fromProperty": "didMount",
+                        "toId": "869e3d84-3054-8725-35b0-935899371d1b",
+                        "toProperty": "Fetch"
+                    },
+                    {
+                        "fromId": "4f88ebea-be57-49af-28a8-4d52af926307",
+                        "fromProperty": "res-allCampaignCards",
+                        "toId": "8e4f83b0-dfd3-3a24-e655-28facf837211",
+                        "toProperty": "items"
+                    },
+                    {
+                        "fromId": "5ed6a434-8195-8218-bbac-13807b825b3b",
+                        "fromProperty": "didMount",
+                        "toId": "4f88ebea-be57-49af-28a8-4d52af926307",
+                        "toProperty": "Fetch"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "5ed6a434-8195-8218-bbac-13807b825b3b",
+                        "type": "Group",
+                        "x": 502.4918143826591,
+                        "y": 216.36621626812988,
+                        "parameters": {},
+                        "ports": [],
+                        "children": [
+                            {
+                                "id": "88a3c7e5-41b6-ecb9-57fc-729ae0de4be3",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {},
+                                "ports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "8e4f83b0-dfd3-3a24-e655-28facf837211",
+                                "type": "For Each",
+                                "x": 562.7934702623527,
+                                "y": 258.71396032668497,
+                                "parameters": {},
+                                "ports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "869e3d84-3054-8725-35b0-935899371d1b",
+                        "type": "GraphQL Query",
+                        "x": 135.50226852449669,
+                        "y": 179.36285766968618,
+                        "parameters": {
+                            "Query": "# List all countries with a specific currency\nquery ListAllCountriesWithCurrency($currency:String!) {\n  countries(filter:{currency:{eq:$currency}}) {\n  \tname\n    currency\n  }\n}",
+                            "Endpoint": "https://countries.trevorblades.com/",
+                            "OutputsList": "countries",
+                            "ResultsList": "countries"
+                        },
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "36fe7ff7-ee81-8aff-6040-eb94778d0fdd",
+                        "type": "String",
+                        "x": -124.50004673327194,
+                        "y": 183.17477448015975,
+                        "parameters": {
+                            "value": "EUR"
+                        },
+                        "ports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "4f88ebea-be57-49af-28a8-4d52af926307",
+                        "type": "GraphQL Query",
+                        "x": 134.91641393515783,
+                        "y": 370.15728157892863,
+                        "parameters": {
+                            "RequestHeaders": "// Specify the request headers as a JS object, for instance:\n// headers({\n//  'Auhtorization':'secret'\n// })\nheaders({\n    'Authorization':'Bearer f60e2ea4dcd07fbcdaef8c8cd8418e'\n})\n",
+                            "Query": "{\n    allCampaignCards {\n        body \n        id \n        title \n        noodlNavigationData \n        buttonText \n        campaignImage {\n            url\n        } \n    }\n}",
+                            "ResultsList": "allCampaignCards",
+                            "Endpoint": "https://graphql.datocms.com/"
+                        },
+                        "ports": [],
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "5ed6a434-8195-8218-bbac-13807b825b3b",
+    "version": "1",
+    "metadata": {}
+}
