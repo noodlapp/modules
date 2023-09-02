@@ -9,6 +9,7 @@ function ChatContainer({
   className,
   eventHandler,
   outAtBottom,
+  outScrollPosition,
   outScrolling,
   outScrollingStarted,
   outScrollingStopped
@@ -19,10 +20,11 @@ function ChatContainer({
   const isTrackingRef = useRef(true);
   const lastScrollTop = useRef(0);
   const isScrolling = useRef(false);
+  const isJumpingToPresent = useRef(false);
 
   const onResize = useCallback(() => {
     if (isTrackingRef.current && scrollBottomRef.current) {
-      scrollBottomRef.current.scrollIntoView({ behavior: "auto" });
+      scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
     }
   }, []);
 
@@ -37,30 +39,36 @@ function ChatContainer({
       outScrolling && outScrolling();
 
       // scrollTop can be half a pixel off, so you will never hit the bottom.
-      const isAtBottom =
-        elem.scrollTop + elem.clientHeight + 1 >= elem.scrollHeight;
+      const isAtBottom = elem.scrollTop + elem.clientHeight + 1 >= elem.scrollHeight;
       setIsTracking(isAtBottom);
       isTrackingRef.current = isAtBottom;
       outAtBottom && outAtBottom(isAtBottom);
+      outScrollPosition && outScrollPosition(elem.scrollTop);
 
       lastScrollTop.current = scrollableRef.current.scrollTop;
-      
+
       // HACK: Keep track of when the browser is scrolling.
       if (scrollHandler !== null) {
         clearTimeout(scrollHandler);        
       }
+
       if (!isScrolling.current) {
         isScrolling.current = true;
         outScrollingStarted && outScrollingStarted();
       }
+
       scrollHandler = setTimeout(function() {
         isScrolling.current = false;
         outScrollingStopped && outScrollingStopped();
       }, 150);
+
+      if (isAtBottom && isJumpingToPresent.current) {
+        isJumpingToPresent.current = false;
+      }
     }
 
     const scrollable = scrollableRef.current;
-    scrollable.addEventListener("scroll", handleScroll);
+    scrollable.addEventListener('scroll', handleScroll);
 
     const observer = new ResizeObserver(onResize);
     observer.observe(scrollableRef.current);
@@ -70,18 +78,19 @@ function ChatContainer({
         clearTimeout(scrollHandler);        
       }
       observer.disconnect();
-      scrollable.removeEventListener("scroll", handleScroll);
+      scrollable.removeEventListener('scroll', handleScroll);
     };
   }, [onResize, scrollableRef]);
 
   useEffect(() => {
     // Scroll to the bottom at the start
     if (scrollBottomRef.current) {
-      scrollBottomRef.current.scrollIntoView({ behavior: "auto" });
+      scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
     }
 
     // Set the default "At Bottom" output
-    outAtBottom && outAtBottom(isAtBottom);
+    outAtBottom && outAtBottom(isTracking);
+    outScrollPosition && outScrollPosition(0);
   }, []);
 
   useEffect(() => {
@@ -92,8 +101,9 @@ function ChatContainer({
 
   useEffect(() => {
     function handleScrollToBottom() {
-      if (scrollBottomRef.current && !isScrolling.current) {
-        scrollBottomRef.current.scrollIntoView({ behavior: "smooth" });
+      if (scrollBottomRef.current) {
+        isJumpingToPresent.current = true;
+        scrollBottomRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     }
 
@@ -106,7 +116,7 @@ function ChatContainer({
   if (isTracking && scrollBottomRef.current) {
     requestAnimationFrame(() => {
       if (scrollBottomRef.current) {
-        scrollBottomRef.current.scrollIntoView({ behavior: "auto" });
+        scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
       }
     });
   }
@@ -148,20 +158,25 @@ export default {
       displayName: "At Bottom",
       group: "State",
     },
+    outScrollPosition: {
+      type: "number",
+      displayName: "Scroll Position",
+      group: "Scroll",
+    },
     outScrolling: {
       type: "signal",
       displayName: "Scrolling",
-      group: "Events",
+      group: "Scroll",
     },
     outScrollingStarted: {
       type: "signal",
-      displayName: "Scrolling Started",
-      group: "Events",
+      displayName: "Scroll Start",
+      group: "Scroll",
     },
     outScrollingStopped: {
       type: "signal",
-      displayName: "Scrolling Stopped",
-      group: "Events",
+      displayName: "Scroll Stop",
+      group: "Scroll",
     },
   },
 };
