@@ -3,6 +3,58 @@ import classNames from 'classnames';
 
 import css from "./ChatContainer.module.scss";
 
+// There is a bug in Chromium when using iframe,
+// since we have full control over the scroll area,
+// lets just do it all by ourselves...
+// https://bugs.chromium.org/p/chromium/issues/detail?id=819314#c21
+function scrollIntoView(element, focusElement, type) {
+  const elementRect = element.getBoundingClientRect();
+  const focusElementRect = focusElement.getBoundingClientRect();
+
+  let scrollTop = element.scrollTop;
+  if (elementRect.top < focusElementRect.top) {
+    scrollTop += focusElementRect.top - elementRect.top;
+  } else if (elementRect.bottom > focusElementRect.bottom) {
+    scrollTop -= elementRect.bottom - focusElementRect.bottom;
+  }
+
+  switch (type) {
+    default:
+    case "auto": {
+      element.scrollTop = scrollTop;
+      break;
+    }
+    case "smooth": {
+      // TODO: Expose these as node inputs
+      const duration = 500;
+      const increment = 20; // Adjust as needed (smaller value for smoother animation)
+      
+      const start = element.scrollTop;
+      const change = scrollTop - start;
+      let currentTime = 0;
+
+      function animateScroll() {
+        currentTime += increment;
+        const val = Math.easeInOutQuad(currentTime, start, change, duration);
+        element.scrollTop = val;
+        if (currentTime < duration) {
+          requestAnimationFrame(animateScroll);
+        }
+      }
+
+      Math.easeInOutQuad = function (t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return (c / 2) * t * t + b;
+        t--;
+        return (-c / 2) * (t * (t - 2) - 1) + b;
+      };
+
+      animateScroll();
+      break;
+    }
+  }
+}
+
 function ChatContainer({
   children,
   style,
@@ -24,7 +76,8 @@ function ChatContainer({
 
   const onResize = useCallback(() => {
     if (isTrackingRef.current && scrollBottomRef.current) {
-      scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
+      scrollIntoView(scrollableRef.current, scrollBottomRef.current, 'auto');
+      // scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
     }
   }, []);
 
@@ -85,7 +138,8 @@ function ChatContainer({
   useEffect(() => {
     // Scroll to the bottom at the start
     if (scrollBottomRef.current) {
-      scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
+      scrollIntoView(scrollableRef.current, scrollBottomRef.current, 'auto');
+      // scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
     }
 
     // Set the default "At Bottom" output
@@ -103,7 +157,8 @@ function ChatContainer({
     function handleScrollToBottom() {
       if (scrollBottomRef.current) {
         isJumpingToPresent.current = true;
-        scrollBottomRef.current.scrollIntoView({ behavior: 'smooth' });
+        scrollIntoView(scrollableRef.current, scrollBottomRef.current, 'smooth');
+        // scrollBottomRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     }
 
@@ -116,7 +171,8 @@ function ChatContainer({
   if (isTracking && scrollBottomRef.current) {
     requestAnimationFrame(() => {
       if (scrollBottomRef.current) {
-        scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
+        scrollIntoView(scrollableRef.current, scrollBottomRef.current, 'auto');
+        // scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
       }
     });
   }
