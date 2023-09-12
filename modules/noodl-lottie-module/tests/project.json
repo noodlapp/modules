@@ -1,0 +1,119 @@
+{
+    "name": "Lottie test",
+    "components": [
+        {
+            "name": "/My tests",
+            "id": "3936da2d-21f6-20ea-0911-2a4ae18c68bf",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "3141c93c-6f9b-b940-da92-c171174bffb9",
+                        "fromProperty": "onClick",
+                        "toId": "d0eda52d-ae19-964d-21cb-7661e1af64ac",
+                        "toProperty": "play"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "e8570140-710c-df7f-2314-faa1656a4f9c",
+                        "type": "Group",
+                        "x": 462.03114593179356,
+                        "y": 78.90497036053486,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "3141c93c-6f9b-b940-da92-c171174bffb9",
+                                "type": "Group",
+                                "label": "Button",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "width": {
+                                        "value": 100,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 40,
+                                        "unit": "px"
+                                    },
+                                    "backgroundColor": "#F0BF56",
+                                    "borderRadius": {
+                                        "value": 8,
+                                        "unit": "px"
+                                    },
+                                    "alignX": "center",
+                                    "marginTop": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    },
+                                    "styleType": "css",
+                                    "styleCss": ""
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "39025dda-f431-c939-b7ea-04d1d9cfeda3",
+                                        "type": "Text",
+                                        "x": 20,
+                                        "y": 95,
+                                        "parameters": {
+                                            "text": "Play",
+                                            "textAlignX": "center",
+                                            "fontFamily": "Helvetica",
+                                            "fontSize": {
+                                                "value": 14,
+                                                "unit": "px"
+                                            },
+                                            "sizeMode": "explicit",
+                                            "textAlignY": "center",
+                                            "style": "/* example:\n{\n\tbackgroundColor: 'red'\n}\n*/\n\n{\n}",
+                                            "styleType": "css",
+                                            "styleCss": "cursor: pointer;"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "ebb38d30-d9d8-09cd-52d1-8fff3f14b89b",
+                                "type": "Group",
+                                "label": "Animation Container",
+                                "x": 20,
+                                "y": 187,
+                                "parameters": {},
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "d0eda52d-ae19-964d-21cb-7661e1af64ac",
+                                        "type": "Lottie",
+                                        "x": 20,
+                                        "y": 59,
+                                        "parameters": {
+                                            "autoplay": false,
+                                            "renderer": "svg"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "e8570140-710c-df7f-2314-faa1656a4f9c",
+    "version": "1",
+    "metadata": {
+        "dbCollections": []
+    }
+}

@@ -36,6 +36,18 @@ const globalOptions: Input = {
   ],
 };
 
+const globalAnimationOptions: Input = {
+  group: "Animation",
+  options: [
+    {
+      name: "animateOnDataUpdate",
+      displayName: "On Data Update",
+      type: "boolean",
+      transformFrom: () => true,
+    },
+  ],
+};
+
 const tooltipsOptions: Input = {
   group: "Tooltips",
   namespace: "plugins.tooltip",
@@ -369,6 +381,7 @@ const interactionOptions: Input = {
 
 export const chart_inputs = {
   ...generateInputs(globalOptions),
+  ...generateInputs(globalAnimationOptions),
   ...generateInputs(titleOptions),
   ...generateInputs(titleFontOptions),
   ...generateInputs(tooltipsOptions),
@@ -389,6 +402,7 @@ export const chart_inputs = {
 
 export const chart_changed = {
   ...generateInputsChanged(globalOptions),
+  ...generateInputsChanged(globalAnimationOptions),
   ...generateInputsChanged(titleOptions),
   ...generateInputsChanged(titleFontOptions),
   ...generateInputsChanged(tooltipsOptions),
@@ -414,6 +428,7 @@ export const chart_changed = {
 
 export const chart_options = [
   globalOptions,
+  globalAnimationOptions,
   titleOptions,
   titleFontOptions,
   tooltipsOptions,

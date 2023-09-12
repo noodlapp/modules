@@ -1,0 +1,73 @@
+{
+    "name": "My react lib templates",
+    "components": [
+        {
+            "name": "/My tests",
+            "id": "3936da2d-21f6-20ea-0911-2a4ae18c68bf",
+            "graph": {
+                "connections": [],
+                "roots": [
+                    {
+                        "id": "e8570140-710c-df7f-2314-faa1656a4f9c",
+                        "type": "Group",
+                        "x": 355,
+                        "y": 278,
+                        "parameters": {
+                            "paddingLeft": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingRight": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingTop": {
+                                "value": 10,
+                                "unit": "px"
+                            },
+                            "paddingBottom": {
+                                "value": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "ports": [],
+                        "children": [
+                            {
+                                "id": "6e7a93a1-5004-1a71-e934-4d2f21f00be1",
+                                "type": "Custom React Component",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "backgroundColor": "#828282",
+                                    "style": "{\n}",
+                                    "marginBottom": {
+                                        "value": 50,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "422d3638-270f-438f-edab-72158997d230",
+                                "type": "Custom React Component",
+                                "x": 20,
+                                "y": 92,
+                                "parameters": {
+                                    "backgroundColor": "#828282",
+                                    "style": "{\n}"
+                                },
+                                "ports": [],
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "e8570140-710c-df7f-2314-faa1656a4f9c",
+    "version": "1",
+    "metadata": {}
+}

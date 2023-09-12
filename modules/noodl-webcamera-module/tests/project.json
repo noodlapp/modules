@@ -1,0 +1,65 @@
+{
+    "name": "Webcamera module tests",
+    "components": [
+        {
+            "name": "/My tests",
+            "id": "23f49aac-52db-2d08-c030-e10a8da4bb07",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "5ed6a434-8195-8218-bbac-13807b825b3b",
+                        "fromProperty": "didMount",
+                        "toId": "925a328f-8026-1ea0-f6c6-8626824baa6a",
+                        "toProperty": "startStream"
+                    },
+                    {
+                        "fromId": "925a328f-8026-1ea0-f6c6-8626824baa6a",
+                        "fromProperty": "stream",
+                        "toId": "04951dfa-d57a-855f-cd57-851b15d5950e",
+                        "toProperty": "srcObject"
+                    },
+                    {
+                        "fromId": "925a328f-8026-1ea0-f6c6-8626824baa6a",
+                        "fromProperty": "streamStarted",
+                        "toId": "04951dfa-d57a-855f-cd57-851b15d5950e",
+                        "toProperty": "play"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "5ed6a434-8195-8218-bbac-13807b825b3b",
+                        "type": "Group",
+                        "x": 502.4918143826591,
+                        "y": 216.36621626812988,
+                        "parameters": {},
+                        "ports": [],
+                        "children": [
+                            {
+                                "id": "04951dfa-d57a-855f-cd57-851b15d5950e",
+                                "type": "Video",
+                                "x": 561.8344764276499,
+                                "y": 232.47742604329187,
+                                "parameters": {},
+                                "ports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "925a328f-8026-1ea0-f6c6-8626824baa6a",
+                        "type": "Web Camera",
+                        "x": 805.5667459583315,
+                        "y": 261.31765129388293,
+                        "parameters": {},
+                        "ports": [],
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "5ed6a434-8195-8218-bbac-13807b825b3b",
+    "version": "1",
+    "metadata": {}
+}

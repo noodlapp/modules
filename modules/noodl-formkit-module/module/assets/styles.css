@@ -1,0 +1,165 @@
+.ndl-formkit-checkbox {
+    margin: 0;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    background-color: transparent;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+.ndl-formkit-checkbox:checked {
+    background-color: #000000;
+}
+
+.ndl-formkit-radiobutton {
+    margin: 0;
+    border: 1px solid #000000;
+    border-radius: 16px;
+    background-color: transparent;
+    -webkit-appearance: none;
+    outline: none;
+    width:32px;
+    height:32px;
+    display: block;
+}
+
+.ndl-formkit-radiobutton:checked {
+    background-color: #000000;
+}
+
+.ndl-formkit-select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius:0;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+  
+    /* Stack above custom arrow */
+    z-index: 1;
+  
+    /* Remove dropdown arrow in IE10 & IE11
+      @link https://www.filamentgroup.com/lab/select-css.html */
+  /*  &::-ms-expand {
+      display: none;
+    }*/
+  
+    /* Remove focus outline, will add on alternate element */
+    outline: none; 
+}
+
+.ndl-formkit-form {
+}
+
+.ndl-formkit-fieldset {
+    outline:none;
+    border:none;
+    margin: 0;
+    padding: 0;
+}
+
+.ndl-formkit-button {
+    outline: none;
+    border: none;
+    color: white;
+    background-color: black;
+}
+
+.ndl-formkit-textinput {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #000000;
+}
+
+.ndl-formkit-radiobuttongroup {
+    background-color: transparent;
+}
+
+/* --------------------------------------- Range --------------------------------------- */
+.ndl-formkit-range {
+    margin:0;
+    padding:0;
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.ndl-formkit-range::-webkit-slider-thumb {
+    width: 16px;
+    height: 16px;
+    background: #000000;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top:-5px;
+}
+
+.ndl-formkit-range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #000000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ndl-formkit-range::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    background: #000000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 0px;
+    /*Needed to keep the Edge thumb centred*/
+}
+
+.ndl-formkit-range::-webkit-slider-runnable-track {
+    background: #f0f0f0;
+    border: none;
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+    top:4px;
+    margin-top:5px;
+}
+
+.ndl-formkit-range:focus::-webkit-slider-runnable-track {
+    background: #f0f0f0;
+}
+
+.ndl-formkit-range::-moz-range-track {
+    background: #f0f0f0;
+    border: none;
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+}
+
+.ndl-formkit-range::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 5px 0;
+    color: transparent;
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+}
+
+.ndl-formkit-range::-ms-fill-lower {
+    background: #f0f0f0;
+    border: none;
+}
+.ndl-formkit-range::-ms-fill-upper {
+    background: #f0f0f0;
+    border: none;
+}

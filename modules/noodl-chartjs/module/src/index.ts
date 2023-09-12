@@ -9,6 +9,7 @@ import { pieNode } from "./reactNodes/pie";
 import { polarAreaNode } from "./reactNodes/polarArea";
 import { radarNode } from "./reactNodes/radar";
 import { scatterNode } from "./reactNodes/scatter";
+import { chartNode } from "./reactNodes/chart";
 
 Chart.register(...registerables);
 
@@ -25,6 +26,7 @@ Noodl.defineModule({
     polarAreaNode,
     radarNode,
     scatterNode,
+    chartNode,
   ],
   nodes: [],
   settings: [],

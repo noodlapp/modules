@@ -1,0 +1,6 @@
+{
+  "name": "lib-test",
+  "label": "MQTT Module",
+  "desc": "The module contains node to send and receive MQTT messages",
+  "_id": "eab51bf5-2b9c-4fa2-a55c-a43abb078515-lib-test"
+}

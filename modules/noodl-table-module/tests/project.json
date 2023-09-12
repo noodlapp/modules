@@ -1,0 +1,2800 @@
+{
+    "name": "Table test",
+    "components": [
+        {
+            "name": "/Product Table/Product Table",
+            "id": "3936da2d-21f6-20ea-0911-2a4ae18c68bf",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "ba47a99d-0f77-4a91-00ec-7ff219b3197d",
+                        "fromProperty": "Items",
+                        "toId": "9ed92ec1-30b3-30a5-3948-954da31aac55",
+                        "toProperty": "Items"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "1e148e2a-2809-63dc-b397-85dffa466dc0",
+                        "type": "CSS Definition",
+                        "x": 663.489036733245,
+                        "y": 346.26788963268154,
+                        "parameters": {
+                            "style": "thead {\n    background-color: grey;\n}\n\nth > div, td > div {\n    position: static !important;\n}\n"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "e07f9c10-387c-ca3f-199d-ba1888f324e3",
+                        "type": "Group",
+                        "label": "Product Table",
+                        "x": 376.8841622533462,
+                        "y": 283.8664823082413,
+                        "parameters": {
+                            "sizeMode": "contentHeight"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "b3e949e2-fd5b-a460-2fcb-1e2bb62ce36f",
+                                "type": "Table",
+                                "x": 20,
+                                "y": 59,
+                                "parameters": {
+                                    "borderSpacing": "0"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "e884124d-5f95-fbdc-c5c4-634c3f1df878",
+                                        "type": "/Product Table/Product Table Header",
+                                        "x": 20,
+                                        "y": 46,
+                                        "parameters": {},
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "9ed92ec1-30b3-30a5-3948-954da31aac55",
+                                        "type": "/Product Table/Product Table Items",
+                                        "x": 20,
+                                        "y": 92,
+                                        "parameters": {},
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "ba47a99d-0f77-4a91-00ec-7ff219b3197d",
+                        "type": "Component Inputs",
+                        "x": 205.45446494067218,
+                        "y": 436.4116106773722,
+                        "parameters": {},
+                        "ports": [
+                            {
+                                "name": "Items",
+                                "plug": "output",
+                                "type": {
+                                    "name": "*"
+                                },
+                                "index": 1
+                            }
+                        ],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "25cf1753-3939-ca49-68be-3612bd6da2d1",
+                        "type": "Table",
+                        "x": 71.17326679379948,
+                        "y": 261.31643151169783,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "dbfd58b4-d3de-b5cd-aa5a-067dbc9ceccc",
+                        "type": "Table",
+                        "x": 427.4644647363017,
+                        "y": 127.97252985100619,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/Product Table/Product Table Item",
+            "id": "34b5f2f7-ec30-b057-3660-e93e375c2e40",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "e11ce592-5078-9882-2297-87a12f60bf5c",
+                        "fromProperty": "itemId",
+                        "toId": "f42bf9ac-6893-8e58-18e9-994c0436a298",
+                        "toProperty": "modelId"
+                    },
+                    {
+                        "fromId": "f42bf9ac-6893-8e58-18e9-994c0436a298",
+                        "fromProperty": "id",
+                        "toId": "658c85c0-9f18-3ced-e41c-d9971c8adf49",
+                        "toProperty": "objectId"
+                    },
+                    {
+                        "fromId": "bad86143-23d5-1011-fa61-2ec460ab305d",
+                        "fromProperty": "didMount",
+                        "toId": "658c85c0-9f18-3ced-e41c-d9971c8adf49",
+                        "toProperty": "generate"
+                    },
+                    {
+                        "fromId": "84cb0927-815e-5aa9-c034-693f08c3061e",
+                        "fromProperty": "items",
+                        "toId": "658c85c0-9f18-3ced-e41c-d9971c8adf49",
+                        "toProperty": "columns"
+                    },
+                    {
+                        "fromId": "84cb0927-815e-5aa9-c034-693f08c3061e",
+                        "fromProperty": "modified",
+                        "toId": "658c85c0-9f18-3ced-e41c-d9971c8adf49",
+                        "toProperty": "generate"
+                    },
+                    {
+                        "fromId": "658c85c0-9f18-3ced-e41c-d9971c8adf49",
+                        "fromProperty": "cells",
+                        "toId": "0503f6f6-e4a3-1179-cb2b-ae8fdb71d67a",
+                        "toProperty": "items"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "bad86143-23d5-1011-fa61-2ec460ab305d",
+                        "type": "Table Row",
+                        "x": 520.3205171627097,
+                        "y": 201.21125937715564,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "0503f6f6-e4a3-1179-cb2b-ae8fdb71d67a",
+                                "type": "For Each",
+                                "x": 20,
+                                "y": 82,
+                                "parameters": {
+                                    "template": "/Product Table/Product Table Item Cell"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "f42bf9ac-6893-8e58-18e9-994c0436a298",
+                        "type": "DbModel",
+                        "x": 285.22737993122826,
+                        "y": 190.89260858154523,
+                        "parameters": {
+                            "$ndlCollectionName": "Product",
+                            "properties": "cells"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "cells",
+                                "index": 16
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed cells",
+                                "name": "changed-cells",
+                                "index": 17
+                            },
+                            {
+                                "name": "$ndlCollectionName",
+                                "displayName": "Collection Name",
+                                "group": "General",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        {
+                                            "value": "Projects",
+                                            "label": "Projects"
+                                        },
+                                        {
+                                            "value": "ProductCategory",
+                                            "label": "ProductCategory"
+                                        },
+                                        {
+                                            "value": "ProductFamily",
+                                            "label": "ProductFamily"
+                                        },
+                                        {
+                                            "value": "ProductGroup",
+                                            "label": "ProductGroup"
+                                        },
+                                        {
+                                            "value": "Manufacturer",
+                                            "label": "Manufacturer"
+                                        },
+                                        {
+                                            "value": "EPD",
+                                            "label": "EPD"
+                                        },
+                                        {
+                                            "value": "Product",
+                                            "label": "Product"
+                                        },
+                                        {
+                                            "value": "Index",
+                                            "label": "Index"
+                                        },
+                                        {
+                                            "value": "Dictionary_sv",
+                                            "label": "Dictionary_sv"
+                                        },
+                                        {
+                                            "value": "Dictionary_en",
+                                            "label": "Dictionary_en"
+                                        },
+                                        {
+                                            "value": "Parameter",
+                                            "label": "Parameter"
+                                        },
+                                        {
+                                            "value": "ParameterCategory",
+                                            "label": "ParameterCategory"
+                                        },
+                                        {
+                                            "value": "Project",
+                                            "label": "Project"
+                                        }
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "plug": "input",
+                                "index": 18
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "createdAt",
+                                "index": 19
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed createdAt",
+                                "name": "changed-createdAt",
+                                "index": 20
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "updatedAt",
+                                "index": 21
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed updatedAt",
+                                "name": "changed-updatedAt",
+                                "index": 22
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "trans",
+                                "index": 23
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed trans",
+                                "name": "changed-trans",
+                                "index": 24
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "emiclass",
+                                "index": 25
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed emiclass",
+                                "name": "changed-emiclass",
+                                "index": 26
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "manufacturer_id",
+                                "index": 27
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed manufacturer_id",
+                                "name": "changed-manufacturer_id",
+                                "index": 28
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "import_id",
+                                "index": 29
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed import_id",
+                                "name": "changed-import_id",
+                                "index": 30
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "label_sv",
+                                "index": 31
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed label_sv",
+                                "name": "changed-label_sv",
+                                "index": 32
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "epd_id",
+                                "index": 33
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed epd_id",
+                                "name": "changed-epd_id",
+                                "index": 34
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "desc_sv",
+                                "index": 35
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed desc_sv",
+                                "name": "changed-desc_sv",
+                                "index": 36
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "group_id",
+                                "index": 37
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed group_id",
+                                "name": "changed-group_id",
+                                "index": 38
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "material_id",
+                                "index": 39
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed material_id",
+                                "name": "changed-material_id",
+                                "index": 40
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "desc_en",
+                                "index": 41
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed desc_en",
+                                "name": "changed-desc_en",
+                                "index": 42
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "image",
+                                "index": 43
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed image",
+                                "name": "changed-image",
+                                "index": 44
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "family_id",
+                                "index": 45
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed family_id",
+                                "name": "changed-family_id",
+                                "index": 46
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "label_en",
+                                "index": 47
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed label_en",
+                                "name": "changed-label_en",
+                                "index": 48
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "category_id",
+                                "index": 49
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed category_id",
+                                "name": "changed-category_id",
+                                "index": 50
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "keywords_sv",
+                                "index": 51
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed keywords_sv",
+                                "name": "changed-keywords_sv",
+                                "index": 52
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "keywords_en",
+                                "index": 53
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed keywords_en",
+                                "name": "changed-keywords_en",
+                                "index": 54
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "length_mm",
+                                "index": 55
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed length_mm",
+                                "name": "changed-length_mm",
+                                "index": 56
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "width_mm",
+                                "index": 57
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed width_mm",
+                                "name": "changed-width_mm",
+                                "index": 58
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "reuse",
+                                "index": 59
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed reuse",
+                                "name": "changed-reuse",
+                                "index": 60
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "weight_kg",
+                                "index": 61
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed weight_kg",
+                                "name": "changed-weight_kg",
+                                "index": 62
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "thickness_mm",
+                                "index": 63
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed thickness_mm",
+                                "name": "changed-thickness_mm",
+                                "index": 64
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "co2",
+                                "index": 65
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed co2",
+                                "name": "changed-co2",
+                                "index": 66
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "biobased",
+                                "index": 67
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed biobased",
+                                "name": "changed-biobased",
+                                "index": 68
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "RC2",
+                                "index": 69
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed RC2",
+                                "name": "changed-RC2",
+                                "index": 70
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "recyc",
+                                "index": 71
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed recyc",
+                                "name": "changed-recyc",
+                                "index": 72
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "RC",
+                                "index": 73
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed RC",
+                                "name": "changed-RC",
+                                "index": 74
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "health",
+                                "index": 75
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed health",
+                                "name": "changed-health",
+                                "index": 76
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "data_quality",
+                                "index": 77
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed data_quality",
+                                "name": "changed-data_quality",
+                                "index": 78
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "voc",
+                                "index": 79
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed voc",
+                                "name": "changed-voc",
+                                "index": 80
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "form",
+                                "index": 81
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed form",
+                                "name": "changed-form",
+                                "index": 82
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "canc",
+                                "index": 83
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed canc",
+                                "name": "changed-canc",
+                                "index": 84
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "healthass",
+                                "index": 85
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed healthass",
+                                "name": "changed-healthass",
+                                "index": 86
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "sin",
+                                "index": 87
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed sin",
+                                "name": "changed-sin",
+                                "index": 88
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "co2bio",
+                                "index": 89
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed co2bio",
+                                "name": "changed-co2bio",
+                                "index": 90
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "co2land",
+                                "index": 91
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed co2land",
+                                "name": "changed-co2land",
+                                "index": 92
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "iso_10848_2",
+                                "index": 93
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed iso_10848_2",
+                                "name": "changed-iso_10848_2",
+                                "index": 94
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "iso_11654",
+                                "index": 95
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed iso_11654",
+                                "name": "changed-iso_11654",
+                                "index": 96
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "iso_13501_1",
+                                "index": 97
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed iso_13501_1",
+                                "name": "changed-iso_13501_1",
+                                "index": 98
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "art_nr",
+                                "index": 99
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed art_nr",
+                                "name": "changed-art_nr",
+                                "index": 100
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "FU",
+                                "index": 101
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed FU",
+                                "name": "changed-FU",
+                                "index": 102
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "heat_conduct",
+                                "index": 103
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed heat_conduct",
+                                "name": "changed-heat_conduct",
+                                "index": 104
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "iso_13501",
+                                "index": 105
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed iso_13501",
+                                "name": "changed-iso_13501",
+                                "index": 106
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "s_reduct_door",
+                                "index": 107
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed s_reduct_door",
+                                "name": "changed-s_reduct_door",
+                                "index": 108
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "iso_1077_12",
+                                "index": 109
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed iso_1077_12",
+                                "name": "changed-iso_1077_12",
+                                "index": 110
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "wind_material",
+                                "index": 111
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed wind_material",
+                                "name": "changed-wind_material",
+                                "index": 112
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "iso_140_3",
+                                "index": 113
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed iso_140_3",
+                                "name": "changed-iso_140_3",
+                                "index": 114
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "diameter_mm",
+                                "index": 115
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed diameter_mm",
+                                "name": "changed-diameter_mm",
+                                "index": 116
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "light_refl",
+                                "index": 117
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed light_refl",
+                                "name": "changed-light_refl",
+                                "index": 118
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "abs_per_st",
+                                "index": 119
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed abs_per_st",
+                                "name": "changed-abs_per_st",
+                                "index": 120
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "demo",
+                                "index": 121
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed demo",
+                                "name": "changed-demo",
+                                "index": 122
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "country",
+                                "index": 123
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed country",
+                                "name": "changed-country",
+                                "index": 124
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "iso_354",
+                                "index": 125
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Events",
+                                "displayName": "Changed iso_354",
+                                "name": "changed-iso_354",
+                                "index": 126
+                            },
+                            {
+                                "name": "$ndlModelInitCode",
+                                "displayName": "Initialize",
+                                "group": "Scripts",
+                                "type": {
+                                    "name": "string",
+                                    "allowEditOnly": true,
+                                    "codeeditor": "javascript"
+                                },
+                                "default": "initialize({\n\t// Here you can initialize new models\n\t//myProperty:'Some init value',\n\t//anotherProperty:function() { return 'Some other value' }\n})\n",
+                                "plug": "input",
+                                "index": 127
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "e11ce592-5078-9882-2297-87a12f60bf5c",
+                        "type": "For Each Actions",
+                        "x": 22.071155007937833,
+                        "y": 203.8953299546472,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "658c85c0-9f18-3ced-e41c-d9971c8adf49",
+                        "type": "Javascript2",
+                        "x": 286.1729912097255,
+                        "y": 397.98258006497235,
+                        "parameters": {
+                            "code": "script({\n\t// The input ports of the Javascript node, name of input and type\n\tinputs:{\n        objectId:'string',\n        columns:'array'\n\t},\n\toutputs:{\n\t    cells:'array',\n\t},\n\tsignals:{\n\t\tgenerate:function() {\n\t\t    let object = Noodl.Object.get(this.inputs.objectId);\n\t\t    let cells = Noodl.Array.get(this.inputs.objectId+\"_cells\");\n\t\t    cells.set({});\n\t        this.inputs.columns.each(col=>{\n\t            let key = col.get(\"key\");\n\t            let value = object.get([key]);\n\t            let cell = Noodl.Model.get(this.inputs.objectId+\"_cells_\"+key);\n\t\t        cell.setAll({key:key,value:value});\n\t\t        cells.add(cell);\n\t        })\n\t        \n\t        this.setOutputs({cells: cells});\n            //object.set(\"cells\",cells);\n\t\t}\n\t}\n})\n"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "objectId",
+                                "plug": "input",
+                                "type": {
+                                    "name": "string"
+                                },
+                                "group": "Inputs",
+                                "index": 2
+                            },
+                            {
+                                "name": "columns",
+                                "plug": "input",
+                                "type": {
+                                    "name": "array"
+                                },
+                                "group": "Inputs",
+                                "index": 3
+                            },
+                            {
+                                "name": "generate",
+                                "plug": "input",
+                                "type": {
+                                    "name": "signal"
+                                },
+                                "group": "Inputs",
+                                "index": 4
+                            },
+                            {
+                                "name": "cells",
+                                "type": {
+                                    "name": "array"
+                                },
+                                "plug": "output",
+                                "group": "Outputs",
+                                "index": 5
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "84cb0927-815e-5aa9-c034-693f08c3061e",
+                        "type": "Collection",
+                        "x": 22.582188371884833,
+                        "y": 405.62903493422505,
+                        "parameters": {
+                            "collectionId": "CurrentColumns"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/Product Table/Product Table Header",
+            "id": "8c828d6c-045b-0108-cf9f-5a28ba98882a",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "8b2d73c9-6e91-f53b-f191-68c25ef1f4d7",
+                        "fromProperty": "items",
+                        "toId": "ccc0e728-7984-cba7-03b5-f9ab9543c162",
+                        "toProperty": "items"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "522572d4-cd13-3871-5ef3-928398ca0b4b",
+                        "type": "Table Head",
+                        "x": 625,
+                        "y": 302.5,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "802cd712-4d60-fd47-367c-40c4c761638a",
+                                "type": "Table Row",
+                                "x": 669,
+                                "y": 323,
+                                "parameters": {},
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "ccc0e728-7984-cba7-03b5-f9ab9543c162",
+                                        "type": "For Each",
+                                        "x": 20,
+                                        "y": 46,
+                                        "parameters": {
+                                            "template": "/Product Table/Product Table Header Cell "
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "8b2d73c9-6e91-f53b-f191-68c25ef1f4d7",
+                        "type": "Collection",
+                        "x": 348,
+                        "y": 373,
+                        "parameters": {
+                            "collectionId": "CurrentColumns"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/Product Table/Product Table Header Cell ",
+            "id": "7fe0d189-6494-e207-6329-704ff164b4e9",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "477b5d53-8c07-6439-15cf-a516cce0b5f9",
+                        "fromProperty": "label",
+                        "toId": "ab830a4c-dc18-7238-4cb8-b7965c1c2493",
+                        "toProperty": "text"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "0fcf86a5-e573-52e9-1a9b-8a3f239d88ea",
+                        "type": "Table Cell",
+                        "x": 237,
+                        "y": 277,
+                        "parameters": {
+                            "cellType": "th"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "ab830a4c-dc18-7238-4cb8-b7965c1c2493",
+                                "type": "Text",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "text": "cell",
+                                    "style": "/* example:\n{\n\tbackgroundColor: 'red'\n}\n*/\n\n{\n    position: \"static\"\n}",
+                                    "fontFamily": "Courier New",
+                                    "fontSize": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 32,
+                                        "unit": "px"
+                                    },
+                                    "sizeMode": "contentSize"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "477b5d53-8c07-6439-15cf-a516cce0b5f9",
+                        "type": "Component Inputs",
+                        "x": -126,
+                        "y": 305,
+                        "parameters": {},
+                        "ports": [
+                            {
+                                "name": "label",
+                                "plug": "output",
+                                "type": "*",
+                                "index": 0
+                            }
+                        ],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/Product Table/Product Table Item Cell",
+            "id": "1dc5c151-868d-413e-9bfa-c1ceb2858565",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "a1476a7c-0e65-7a64-5872-546f34863b78",
+                        "fromProperty": "itemId",
+                        "toId": "0987d913-bc78-864b-3aa0-5f51647d3f5d",
+                        "toProperty": "modelId"
+                    },
+                    {
+                        "fromId": "0987d913-bc78-864b-3aa0-5f51647d3f5d",
+                        "fromProperty": "value",
+                        "toId": "a2b98eea-299d-88f4-bf48-87ac5cdbdfe5",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "1c73b377-9d31-166d-1685-2ff697303cb2",
+                        "fromProperty": "items",
+                        "toId": "4efd89ab-6ac0-d46f-eec6-93221c136693",
+                        "toProperty": "columns"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "cea11310-b8dd-8181-3faf-31bfc775e119",
+                        "type": "Table Cell",
+                        "x": 257,
+                        "y": 467,
+                        "parameters": {
+                            "className": "table-body-cell"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "a2b98eea-299d-88f4-bf48-87ac5cdbdfe5",
+                                "type": "Text",
+                                "x": 560.3205171627097,
+                                "y": 293.21125937715567,
+                                "parameters": {
+                                    "text": "cell",
+                                    "style": "/* example:\n{\n\tbackgroundColor: 'red'\n}\n*/\n\n{\n    position: \"static\"\n}",
+                                    "fontFamily": "Courier New",
+                                    "fontSize": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "a1476a7c-0e65-7a64-5872-546f34863b78",
+                        "type": "For Each Actions",
+                        "x": -133,
+                        "y": 407.5,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "0987d913-bc78-864b-3aa0-5f51647d3f5d",
+                        "type": "Model",
+                        "x": 46,
+                        "y": 408.5,
+                        "parameters": {
+                            "properties": "key,value"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "key",
+                                "index": 11
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Changed Events",
+                                "displayName": "key Changed",
+                                "name": "changed-key",
+                                "index": 12
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "value",
+                                "index": 13
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Changed Events",
+                                "displayName": "value Changed",
+                                "name": "changed-value",
+                                "index": 14
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "1c73b377-9d31-166d-1685-2ff697303cb2",
+                        "type": "Collection",
+                        "x": -219.71148828198636,
+                        "y": 780.645560527361,
+                        "parameters": {
+                            "collectionId": "CurrentColumns"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "4efd89ab-6ac0-d46f-eec6-93221c136693",
+                        "type": "Javascript2",
+                        "x": 64.28851171801364,
+                        "y": 793.645560527361,
+                        "parameters": {
+                            "code": "script({\n\tinputs:{\n        columns:'array',\n        key:'string'\n\t},\n\toutputs:{\n\t    mount:'boolean',\n\t},\n\tsignals: {\n\t    checkColumns: function(){\n\t        this.check();\n\t    }\n\t},\n\tchanged:{\n\t\tcolumns:function(value) {\n\t\t    this.check();\n\t\t}\n\t},\n\tmethods:{\n\t\tcheck:function() {\n\t\t    let found = false;\n\t\t    this.inputs.columns.each(col =>{\n\t\t        if(col.get(\"key\") === this.inputs.key) found = true;\n\t\t    })\n\t\t    this.setOutputs({mount:found});\n\t\t}\n\t}\n})\n"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "columns",
+                                "plug": "input",
+                                "type": {
+                                    "name": "array"
+                                },
+                                "group": "Inputs",
+                                "index": 2
+                            },
+                            {
+                                "name": "key",
+                                "plug": "input",
+                                "type": {
+                                    "name": "string"
+                                },
+                                "group": "Inputs",
+                                "index": 3
+                            },
+                            {
+                                "name": "checkColumns",
+                                "plug": "input",
+                                "type": {
+                                    "name": "signal"
+                                },
+                                "group": "Inputs",
+                                "index": 4
+                            },
+                            {
+                                "name": "mount",
+                                "type": {
+                                    "name": "boolean"
+                                },
+                                "plug": "output",
+                                "group": "Outputs",
+                                "index": 5
+                            }
+                        ],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/Product Table/Product Table Items",
+            "id": "e709785f-2b25-f3de-5d61-f728abaf520c",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "a6b2392c-ca53-1e67-0249-88b378a73e05",
+                        "fromProperty": "Items",
+                        "toId": "039cef9c-0822-f81c-3ea4-182d12497771",
+                        "toProperty": "items"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "7808f2f4-00c0-ab8b-a8c4-350788f6a76e",
+                        "type": "Table Body",
+                        "x": 302,
+                        "y": 291,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "039cef9c-0822-f81c-3ea4-182d12497771",
+                                "type": "For Each",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "template": "/Product Table/Product Table Item"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "a6b2392c-ca53-1e67-0249-88b378a73e05",
+                        "type": "Component Inputs",
+                        "x": 16,
+                        "y": 337,
+                        "parameters": {},
+                        "ports": [
+                            {
+                                "name": "Items",
+                                "plug": "output",
+                                "type": {
+                                    "name": "*"
+                                },
+                                "index": 1
+                            }
+                        ],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        },
+        {
+            "name": "/Main Table Test",
+            "id": "0a892918-8fec-f586-432a-4aa2827140b5",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "a8b13c12-792d-6dc2-a233-9e5bd438b907",
+                        "fromProperty": "hoverStart",
+                        "toId": "b2cf8e1b-9b13-348c-3a74-15e523784273",
+                        "toProperty": "to-hover on"
+                    },
+                    {
+                        "fromId": "a8b13c12-792d-6dc2-a233-9e5bd438b907",
+                        "fromProperty": "hoverEnd",
+                        "toId": "b2cf8e1b-9b13-348c-3a74-15e523784273",
+                        "toProperty": "to-hover off"
+                    },
+                    {
+                        "fromId": "b2cf8e1b-9b13-348c-3a74-15e523784273",
+                        "fromProperty": "bg color",
+                        "toId": "a8b13c12-792d-6dc2-a233-9e5bd438b907",
+                        "toProperty": "backgroundColor"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "739bfe84-db49-2252-bd1d-6b52c0b76a4c",
+                        "type": "Group",
+                        "x": 218,
+                        "y": 284,
+                        "parameters": {
+                            "paddingLeft": {
+                                "value": 24,
+                                "unit": "px"
+                            },
+                            "paddingRight": {
+                                "value": 24,
+                                "unit": "px"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "6c40ec50-2546-5a99-24a3-a8d5d4b4cd9f",
+                                "type": "Table",
+                                "x": 20,
+                                "y": 46,
+                                "parameters": {
+                                    "borderSpacing": "0",
+                                    "borderCollapse": "separate",
+                                    "borderSpacingH": "0",
+                                    "borderSpacingV": "15",
+                                    "onlyVertical": true
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "32ad97ca-1763-5cd3-d6d2-4c15ebf5f3c2",
+                                        "type": "Table Head",
+                                        "x": 20,
+                                        "y": 46,
+                                        "parameters": {
+                                            "backgroundColor": "#006394",
+                                            "styleType": "css",
+                                            "styleCss": ""
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "3b954fb8-dd7c-44d8-3c11-e1a221544550",
+                                                "type": "Table Cell",
+                                                "x": 331.85432386437105,
+                                                "y": 411.31425590156095,
+                                                "parameters": {
+                                                    "cellType": "th"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "74768383-b04b-e18c-68a5-f8c282569b5d",
+                                                        "type": "Text",
+                                                        "x": 342.69310811381115,
+                                                        "y": 433.63178631453786,
+                                                        "parameters": {},
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "58d1a501-c8b1-7549-8cab-47033073db8d",
+                                                "type": "Table Cell",
+                                                "x": 278,
+                                                "y": 422,
+                                                "parameters": {
+                                                    "cellType": "th"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "dc16ec7c-9627-face-94b6-814f90d806b5",
+                                                        "type": "Text",
+                                                        "x": 342.69310811381115,
+                                                        "y": 433.63178631453786,
+                                                        "parameters": {},
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "a8b13c12-792d-6dc2-a233-9e5bd438b907",
+                                        "type": "Table Row",
+                                        "x": 20,
+                                        "y": 276,
+                                        "parameters": {
+                                            "style": "/* example:\n{\n\tbackgroundColor: 'red'\n}\n*/\n\n{\n    border:1px solid black;\n}",
+                                            "styleType": "css",
+                                            "styleCss": "border:1px solid black;",
+                                            "className": "something"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "b608a6f1-e9ea-8ec1-84eb-4da6022b45c3",
+                                                "type": "Table Cell",
+                                                "x": 20,
+                                                "y": 122,
+                                                "parameters": {},
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "e7b0342d-4b07-faa4-2837-bbac5ec0127d",
+                                                        "type": "Group",
+                                                        "x": 20,
+                                                        "y": 46,
+                                                        "parameters": {
+                                                            "width": {
+                                                                "value": 100,
+                                                                "unit": "px"
+                                                            },
+                                                            "height": {
+                                                                "value": 100,
+                                                                "unit": "px"
+                                                            },
+                                                            "backgroundColor": "#F0BF56"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "2e633799-75e9-0228-5db9-5489ac9ae10f",
+                                                "type": "Table Cell",
+                                                "x": 20,
+                                                "y": 214,
+                                                "parameters": {
+                                                    "className": "table-cell",
+                                                    "paddingTop": 10
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "43049ed3-aa91-c816-6de3-8ba8d441505a",
+                                        "type": "Table Row",
+                                        "x": 20,
+                                        "y": 582,
+                                        "parameters": {
+                                            "height": 0
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "e510be56-1809-d154-150d-a389f2c59738",
+                                                "type": "Table Cell",
+                                                "x": 20,
+                                                "y": 46,
+                                                "parameters": {
+                                                    "paddingTop": 0
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "d8da278d-c101-6adf-f68c-3f432ad9e212",
+                                                        "type": "Group",
+                                                        "x": 20,
+                                                        "y": 46,
+                                                        "parameters": {
+                                                            "width": {
+                                                                "value": 100,
+                                                                "unit": "px"
+                                                            },
+                                                            "height": {
+                                                                "value": 100,
+                                                                "unit": "px"
+                                                            },
+                                                            "backgroundColor": "#F0BF56"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "50e4e1a4-ae5e-d62a-4569-8c9270bab990",
+                                                "type": "Table Cell",
+                                                "x": 278,
+                                                "y": 1004,
+                                                "parameters": {
+                                                    "paddingTop": 0
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "a19ad94f-0b95-8df2-b360-8d0f6bd003fb",
+                        "type": "Group",
+                        "x": 95,
+                        "y": 167,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "b2cf8e1b-9b13-348c-3a74-15e523784273",
+                        "type": "States",
+                        "x": -55.979155453948295,
+                        "y": 427.09893398079987,
+                        "parameters": {
+                            "states": "hover on,hover off",
+                            "values": "bg color",
+                            "type-bg color": "color",
+                            "value-hover on-bg color": "#FFFFFF",
+                            "value-hover off-bg color": "#E7E9ED",
+                            "currentState": "hover off"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "color",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "output",
+                                "group": "Values",
+                                "name": "bg color",
+                                "index": 5
+                            },
+                            {
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        {
+                                            "label": "Number",
+                                            "value": "number"
+                                        },
+                                        {
+                                            "label": "String",
+                                            "value": "string"
+                                        },
+                                        {
+                                            "label": "Boolean",
+                                            "value": "boolean"
+                                        },
+                                        {
+                                            "label": "Color",
+                                            "value": "color"
+                                        },
+                                        {
+                                            "label": "Text Style",
+                                            "value": "textStyle"
+                                        }
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "default": "number",
+                                "plug": "input",
+                                "group": "Types",
+                                "displayName": "bg color",
+                                "name": "type-bg color",
+                                "index": 6
+                            },
+                            {
+                                "plug": "input",
+                                "type": "color",
+                                "group": "hover on Values",
+                                "name": "value-hover on-bg color",
+                                "displayName": "bg color",
+                                "editorName": "hover on|bg color",
+                                "index": 7
+                            },
+                            {
+                                "plug": "input",
+                                "type": "curve",
+                                "displayName": "Default",
+                                "default": {
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.58,
+                                        1
+                                    ],
+                                    "dur": 300,
+                                    "delay": 0
+                                },
+                                "group": "hover on Transitions",
+                                "name": "transitiondef-hover on",
+                                "index": 8
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "curve"
+                                },
+                                "default": {
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.58,
+                                        1
+                                    ],
+                                    "dur": 300,
+                                    "delay": 0
+                                },
+                                "group": "hover on Transitions",
+                                "name": "transition-hover on-bg color",
+                                "displayName": "bg color",
+                                "editorName": "Transition hover on|bg color",
+                                "index": 9
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "boolean",
+                                    "allowConnectionsOnly": true
+                                },
+                                "displayName": "To hover on",
+                                "name": "to-hover on",
+                                "group": "Go to state",
+                                "index": 10
+                            },
+                            {
+                                "plug": "output",
+                                "type": "boolean",
+                                "displayName": "At hover on",
+                                "name": "at-hover on",
+                                "group": "Current state",
+                                "index": 11
+                            },
+                            {
+                                "plug": "output",
+                                "type": "signal",
+                                "displayName": "Has Reached hover on",
+                                "name": "reached-hover on",
+                                "group": "Current state",
+                                "index": 12
+                            },
+                            {
+                                "plug": "input",
+                                "type": "color",
+                                "group": "hover off Values",
+                                "name": "value-hover off-bg color",
+                                "displayName": "bg color",
+                                "editorName": "hover off|bg color",
+                                "index": 13
+                            },
+                            {
+                                "plug": "input",
+                                "type": "curve",
+                                "displayName": "Default",
+                                "default": {
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.58,
+                                        1
+                                    ],
+                                    "dur": 300,
+                                    "delay": 0
+                                },
+                                "group": "hover off Transitions",
+                                "name": "transitiondef-hover off",
+                                "index": 14
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "curve"
+                                },
+                                "default": {
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.58,
+                                        1
+                                    ],
+                                    "dur": 300,
+                                    "delay": 0
+                                },
+                                "group": "hover off Transitions",
+                                "name": "transition-hover off-bg color",
+                                "displayName": "bg color",
+                                "editorName": "Transition hover off|bg color",
+                                "index": 15
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "boolean",
+                                    "allowConnectionsOnly": true
+                                },
+                                "displayName": "To hover off",
+                                "name": "to-hover off",
+                                "group": "Go to state",
+                                "index": 16
+                            },
+                            {
+                                "plug": "output",
+                                "type": "boolean",
+                                "displayName": "At hover off",
+                                "name": "at-hover off",
+                                "group": "Current state",
+                                "index": 17
+                            },
+                            {
+                                "plug": "output",
+                                "type": "signal",
+                                "displayName": "Has Reached hover off",
+                                "name": "reached-hover off",
+                                "group": "Current state",
+                                "index": 18
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "hover on",
+                                        "hover off"
+                                    ]
+                                },
+                                "group": "States",
+                                "displayName": "State",
+                                "name": "currentState",
+                                "default": "hover on",
+                                "index": 19
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "bb868609-ca2e-db1d-f2b9-c28ff923060f",
+                        "type": "CSS Definition",
+                        "x": 486.21346652628563,
+                        "y": 833.9737168958011,
+                        "parameters": {
+                            "style": ".table-cell{\n    background-color:red;\n}\n\n.table-header-cell{\n    padding:10px;\n}"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {},
+    "rootNodeId": "739bfe84-db49-2252-bd1d-6b52c0b76a4c",
+    "version": "1",
+    "metadata": {
+        "dbCollections": [
+            {
+                "name": "Projects",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "name": {
+                            "type": "String"
+                        },
+                        "UserId": {
+                            "type": "String"
+                        },
+                        "client": {
+                            "type": "String"
+                        },
+                        "location": {
+                            "type": "String"
+                        },
+                        "description": {
+                            "type": "String"
+                        },
+                        "size": {
+                            "type": "Number"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "ProductCategory",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "path": {
+                            "type": "String"
+                        },
+                        "import_id": {
+                            "type": "Number"
+                        },
+                        "label_sv": {
+                            "type": "String"
+                        },
+                        "keywords_en": {
+                            "type": "String"
+                        },
+                        "label_en": {
+                            "type": "String"
+                        },
+                        "keywords_sv": {
+                            "type": "String"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "ProductFamily",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "import_id": {
+                            "type": "Number"
+                        },
+                        "label_sv": {
+                            "type": "String"
+                        },
+                        "path": {
+                            "type": "String"
+                        },
+                        "keywords_sv": {
+                            "type": "String"
+                        },
+                        "label_en": {
+                            "type": "String"
+                        },
+                        "category_id": {
+                            "type": "Pointer",
+                            "targetClass": "ProductCategory"
+                        },
+                        "keywords_en": {
+                            "type": "String"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "ProductGroup",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "params": {
+                            "type": "Array"
+                        },
+                        "import_id": {
+                            "type": "Number"
+                        },
+                        "label_en": {
+                            "type": "String"
+                        },
+                        "mins": {
+                            "type": "Array"
+                        },
+                        "label_sv": {
+                            "type": "String"
+                        },
+                        "path": {
+                            "type": "String"
+                        },
+                        "maxes": {
+                            "type": "Array"
+                        },
+                        "family_id": {
+                            "type": "Pointer",
+                            "targetClass": "ProductFamily"
+                        },
+                        "param13": {
+                            "type": "Number"
+                        },
+                        "keywords_sv": {
+                            "type": "String"
+                        },
+                        "keywords_en": {
+                            "type": "String"
+                        },
+                        "quant_unit": {
+                            "type": "String"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Manufacturer",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "import_id": {
+                            "type": "Number"
+                        },
+                        "keywords_en": {
+                            "type": "String"
+                        },
+                        "logo": {
+                            "type": "String"
+                        },
+                        "label": {
+                            "type": "String"
+                        },
+                        "keywords_sv": {
+                            "type": "String"
+                        },
+                        "role_id": {
+                            "type": "Pointer",
+                            "targetClass": "_Role"
+                        },
+                        "demo": {
+                            "type": "Boolean"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "EPD",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "Fixt_wight": {
+                            "type": "Number"
+                        },
+                        "import_id": {
+                            "type": "Number"
+                        },
+                        "Samanfogad": {
+                            "type": "String"
+                        },
+                        "Ref_weight__kg_": {
+                            "type": "Number"
+                        },
+                        "label": {
+                            "type": "String"
+                        },
+                        "manufacturer_id": {
+                            "type": "Pointer",
+                            "targetClass": "Manufacturer"
+                        },
+                        "Dynamic_wight": {
+                            "type": "Number"
+                        },
+                        "A4_Co2e": {
+                            "type": "Number"
+                        },
+                        "Disciption": {
+                            "type": "String"
+                        },
+                        "Product_reff_name_in_EPD": {
+                            "type": "String"
+                        },
+                        "Varianter_index": {
+                            "type": "Number"
+                        },
+                        "FU": {
+                            "type": "String"
+                        },
+                        "Name": {
+                            "type": "String"
+                        },
+                        "Fixt__KG_": {
+                            "type": "Number"
+                        },
+                        "variabel_KG_": {
+                            "type": "Number"
+                        },
+                        "Fixt_Co2": {
+                            "type": "Number"
+                        },
+                        "Co2": {
+                            "type": "Number"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Product",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "trans": {
+                            "type": "Array"
+                        },
+                        "emiclass": {
+                            "type": "Array"
+                        },
+                        "manufacturer_id": {
+                            "type": "Pointer",
+                            "targetClass": "Manufacturer"
+                        },
+                        "import_id": {
+                            "type": "Number"
+                        },
+                        "label_sv": {
+                            "type": "String"
+                        },
+                        "epd_id": {
+                            "type": "Pointer",
+                            "targetClass": "EPD"
+                        },
+                        "desc_sv": {
+                            "type": "String"
+                        },
+                        "group_id": {
+                            "type": "Pointer",
+                            "targetClass": "ProductGroup"
+                        },
+                        "material_id": {
+                            "type": "Number"
+                        },
+                        "desc_en": {
+                            "type": "String"
+                        },
+                        "image": {
+                            "type": "String"
+                        },
+                        "family_id": {
+                            "type": "Pointer",
+                            "targetClass": "ProductFamily"
+                        },
+                        "label_en": {
+                            "type": "String"
+                        },
+                        "category_id": {
+                            "type": "Pointer",
+                            "targetClass": "ProductCategory"
+                        },
+                        "keywords_sv": {
+                            "type": "String"
+                        },
+                        "keywords_en": {
+                            "type": "String"
+                        },
+                        "length_mm": {
+                            "type": "Number"
+                        },
+                        "width_mm": {
+                            "type": "Number"
+                        },
+                        "reuse": {
+                            "type": "Number"
+                        },
+                        "weight_kg": {
+                            "type": "Number"
+                        },
+                        "thickness_mm": {
+                            "type": "Number"
+                        },
+                        "co2": {
+                            "type": "Number"
+                        },
+                        "biobased": {
+                            "type": "Number"
+                        },
+                        "RC2": {
+                            "type": "Number"
+                        },
+                        "recyc": {
+                            "type": "Number"
+                        },
+                        "RC": {
+                            "type": "Number"
+                        },
+                        "health": {
+                            "type": "Number"
+                        },
+                        "data_quality": {
+                            "type": "Number"
+                        },
+                        "voc": {
+                            "type": "Number"
+                        },
+                        "form": {
+                            "type": "Number"
+                        },
+                        "canc": {
+                            "type": "Number"
+                        },
+                        "healthass": {
+                            "type": "Number"
+                        },
+                        "sin": {
+                            "type": "Number"
+                        },
+                        "co2bio": {
+                            "type": "Number"
+                        },
+                        "co2land": {
+                            "type": "Number"
+                        },
+                        "iso_10848_2": {
+                            "type": "Number"
+                        },
+                        "iso_11654": {
+                            "type": "Number"
+                        },
+                        "iso_13501_1": {
+                            "type": "Number"
+                        },
+                        "art_nr": {
+                            "type": "String"
+                        },
+                        "FU": {
+                            "type": "String"
+                        },
+                        "heat_conduct": {
+                            "type": "Number"
+                        },
+                        "iso_13501": {
+                            "type": "Number"
+                        },
+                        "s_reduct_door": {
+                            "type": "Number"
+                        },
+                        "iso_1077_12": {
+                            "type": "Number"
+                        },
+                        "wind_material": {
+                            "type": "Number"
+                        },
+                        "iso_140_3": {
+                            "type": "Number"
+                        },
+                        "diameter_mm": {
+                            "type": "Number"
+                        },
+                        "light_refl": {
+                            "type": "Number"
+                        },
+                        "abs_per_st": {
+                            "type": "Number"
+                        },
+                        "demo": {
+                            "type": "Boolean"
+                        },
+                        "country": {
+                            "type": "Number"
+                        },
+                        "iso_354": {
+                            "type": "Number"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Index",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "referred_object_id": {
+                            "type": "String"
+                        },
+                        "search_string": {
+                            "type": "String"
+                        },
+                        "label": {
+                            "type": "String"
+                        },
+                        "object_class": {
+                            "type": "String"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Dictionary_sv",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "word": {
+                            "type": "String"
+                        },
+                        "score": {
+                            "type": "Number"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Dictionary_en",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "word": {
+                            "type": "String"
+                        },
+                        "score": {
+                            "type": "Number"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Parameter",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "import_id": {
+                            "type": "Number"
+                        },
+                        "key": {
+                            "type": "String"
+                        },
+                        "label_en": {
+                            "type": "String"
+                        },
+                        "type": {
+                            "type": "Number"
+                        },
+                        "restriction": {
+                            "type": "String"
+                        },
+                        "label_sv": {
+                            "type": "String"
+                        },
+                        "unit": {
+                            "type": "String"
+                        },
+                        "category_id": {
+                            "type": "Pointer",
+                            "targetClass": "ParameterCategory"
+                        },
+                        "enums_sv": {
+                            "type": "Array"
+                        },
+                        "enums_en": {
+                            "type": "Array"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "ParameterCategory",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "import_id": {
+                            "type": "Number"
+                        },
+                        "label_sv": {
+                            "type": "String"
+                        },
+                        "label_en": {
+                            "type": "String"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Project",
+                "schema": {
+                    "properties": {
+                        "createdAt": {
+                            "type": "Date"
+                        },
+                        "updatedAt": {
+                            "type": "Date"
+                        },
+                        "name": {
+                            "type": "String"
+                        },
+                        "client": {
+                            "type": "String"
+                        },
+                        "location": {
+                            "type": "String"
+                        },
+                        "user_id": {
+                            "type": "Pointer",
+                            "targetClass": "_User"
+                        },
+                        "description": {
+                            "type": "String"
+                        },
+                        "size": {
+                            "type": "Number"
+                        },
+                        "items": {
+                            "type": "Array"
+                        }
+                    }
+                }
+            }
+        ],
+        "cloudservices": {
+            "instanceId": "cbfc3e6e-2204-7f50-0146-64100a3ea433",
+            "workspaceId": "carbonzero",
+            "endpoint": "http://localhost:1337/parse",
+            "appId": "cz-backend"
+        }
+    }
+}

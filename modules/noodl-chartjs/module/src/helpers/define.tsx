@@ -53,11 +53,14 @@ export function defineChartReactNode(args: ChartNodeOptions) {
   return Noodl.defineReactNode<{
     props: any;
     chart: any;
+    initialDataSet: boolean;
   }>({
     name: args.name,
     docs: args.docs,
     category: "chart.js",
     initialize() {
+      this.initialDataSet = false;
+
       // Expose the Helper so we can get the Click data etc
       this.setOutputs({ helpers: ChartHelpers });
       
@@ -80,6 +83,10 @@ export function defineChartReactNode(args: ChartNodeOptions) {
       data: {
         type: "*",
         displayName: "Data",
+      },
+      animations: {
+        type: "*",
+        displayName: "Animations",
       },
       scales: {
         type: "*",
@@ -132,6 +139,18 @@ export function defineChartReactNode(args: ChartNodeOptions) {
       data(value) {
         if (!this.chart) return;
         this.chart.data = value;
+        const animate = typeof this.inputs.animateOnDataUpdate === 'undefined' ? true : this.inputs.animateOnDataUpdate;
+        // With initialDataSet, it will animate the first time.
+        if (animate || !this.initialDataSet) {
+          this.chart.update();
+        } else {
+          this.chart.update('none');
+        }
+        this.initialDataSet = true;
+      },
+      animations(value) {
+        if (!this.chart) return;
+        this.chart.options.animations = value;
         this.chart.update();
       },
       scales(value) {
@@ -181,6 +200,9 @@ export function defineChartReactNode(args: ChartNodeOptions) {
           // @ts-expect-error
           this.setOptions(options, element);
         }
+
+        // @ts-expect-error
+        options.animations = this.inputs.animations;
 
         // @ts-expect-error
         options.scales = this.inputs.scales;

@@ -1,0 +1,18 @@
+{
+ "hw":"Hej Världen",
+ "gb":"Hejdå",
+ "hej":"Hej {{name}}",
+ "items":"sak",
+ "items_plural":"saker",
+ "item1": { "text":"Detta är item 1"},
+ "item2": {"text":"Och detta är item 2"},
+ "ett": {
+     "text":"Detta är text 1"
+     },
+ "två": {
+    "text":"Detta är text 2"
+ },
+ "tre": {
+    "text":"Detta är text 3"
+ }     
+}
