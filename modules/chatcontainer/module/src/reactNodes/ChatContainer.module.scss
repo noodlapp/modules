@@ -2,15 +2,14 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: end;
-  overflow: hidden;
-  flex-direction: column;
+  display: block;
+  overflow-y: auto;
+  overflow-y: overlay;
 }
 
 .ScrollArea {
   display: flex;
+  justify-content: end;
   flex-direction: column;
-  overflow-y: auto;
-  overflow-y: overlay;
+  min-height: 100%;
 }

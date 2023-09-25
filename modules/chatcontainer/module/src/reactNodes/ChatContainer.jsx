@@ -3,6 +3,15 @@ import classNames from 'classnames';
 
 import css from "./ChatContainer.module.scss";
 
+const Curve = {
+  easeInOutQuad: function (t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  }
+};
+
 // There is a bug in Chromium when using iframe,
 // since we have full control over the scroll area,
 // lets just do it all by ourselves...
@@ -35,19 +44,12 @@ function scrollIntoView(element, focusElement, type) {
 
       function animateScroll() {
         currentTime += increment;
-        const val = Math.easeInOutQuad(currentTime, start, change, duration);
+        const val = Curve.easeInOutQuad(currentTime, start, change, duration);
         element.scrollTop = val;
         if (currentTime < duration) {
           requestAnimationFrame(animateScroll);
         }
       }
-
-      Math.easeInOutQuad = function (t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return (c / 2) * t * t + b;
-        t--;
-        return (-c / 2) * (t * (t - 2) - 1) + b;
-      };
 
       animateScroll();
       break;
@@ -67,6 +69,7 @@ function ChatContainer({
   outScrollingStopped
 }) {
   const scrollableRef = useRef(null);
+  const scrollAreaRef = useRef(null);
   const scrollBottomRef = useRef(null);
   const [isTracking, setIsTracking] = useState(true);
   const isTrackingRef = useRef(true);
@@ -77,12 +80,11 @@ function ChatContainer({
   const onResize = useCallback(() => {
     if (isTrackingRef.current && scrollBottomRef.current) {
       scrollIntoView(scrollableRef.current, scrollBottomRef.current, 'auto');
-      // scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
     }
   }, []);
 
   useEffect(() => {
-    if (!scrollableRef.current) return;
+    if (!scrollableRef.current || !scrollAreaRef.current) return;
 
     let scrollHandler = null;
 
@@ -124,7 +126,7 @@ function ChatContainer({
     scrollable.addEventListener('scroll', handleScroll);
 
     const observer = new ResizeObserver(onResize);
-    observer.observe(scrollableRef.current);
+    observer.observe(scrollAreaRef.current);
 
     return () => {
       if (scrollHandler !== null) {
@@ -133,13 +135,12 @@ function ChatContainer({
       observer.disconnect();
       scrollable.removeEventListener('scroll', handleScroll);
     };
-  }, [onResize, scrollableRef]);
+  }, [onResize, scrollableRef, scrollAreaRef]);
 
   useEffect(() => {
     // Scroll to the bottom at the start
     if (scrollBottomRef.current) {
       scrollIntoView(scrollableRef.current, scrollBottomRef.current, 'auto');
-      // scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
     }
 
     // Set the default "At Bottom" output
@@ -158,7 +159,6 @@ function ChatContainer({
       if (scrollBottomRef.current) {
         isJumpingToPresent.current = true;
         scrollIntoView(scrollableRef.current, scrollBottomRef.current, 'smooth');
-        // scrollBottomRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     }
 
@@ -172,14 +172,13 @@ function ChatContainer({
     requestAnimationFrame(() => {
       if (scrollBottomRef.current) {
         scrollIntoView(scrollableRef.current, scrollBottomRef.current, 'auto');
-        // scrollBottomRef.current.scrollIntoView({ behavior: 'auto' });
       }
     });
   }
 
   return (
-    <div style={style} className={classNames([css["ScrollContainer"], className])}>
-      <div className={css["ScrollArea"]} ref={scrollableRef}>
+    <div style={style} className={classNames([css["ScrollContainer"], className])} ref={scrollableRef}>
+      <div className={css["ScrollArea"]} ref={scrollAreaRef}>
         {children}
         <span ref={scrollBottomRef}></span>
       </div>
