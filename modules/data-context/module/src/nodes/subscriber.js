@@ -61,6 +61,10 @@ export default defineNode({
     this.scheduleAfterInputsHaveUpdated(() => {
       _this.subscribe();
     });
+
+    this.addDeleteListener(() => {
+      _this.unsubscribe();
+    });
   },
   signals: {
     Resubscribe() {
