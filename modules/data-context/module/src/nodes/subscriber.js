@@ -83,7 +83,10 @@ export default defineNode({
     unsubscribe() {
       if (!this._internal.store) return;
 
-      this._internal.store.unsubscribe(this._internal.updateState);
+      if (this._internal.store.unsubscribe) {
+        this._internal.store.unsubscribe(this._internal.updateState);
+      }
+
       this._internal.store = null;
       this._internal.context = {
         componentId: null,

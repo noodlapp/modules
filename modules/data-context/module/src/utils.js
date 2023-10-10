@@ -61,7 +61,7 @@ export function getContextInputProperties(contextNodes, contextName) {
 
   const properties = dataContexts
     .reduce((previous, item) => {
-      item.parameters.contextInputs.forEach((prop) => {
+      (item.parameters.contextInputs || []).forEach((prop) => {
         // TODO: Collision if the name is taken
         previous[prop.label] = {
           id: prop.id,
@@ -80,7 +80,7 @@ export function getContextOutputProperties(contextNodes, contextName) {
 
   const properties = dataContexts
     .reduce((previous, item) => {
-      item.parameters.contextInputs.forEach((prop) => {
+      (item.parameters.contextInputs || []).forEach((prop) => {
         // TODO: Collision if the name is taken
         previous[prop.label] = {
           id: prop.id,
