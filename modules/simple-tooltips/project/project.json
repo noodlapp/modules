@@ -1,0 +1,2776 @@
+{
+    "name": "Simple Tooltips",
+    "components": [
+        {
+            "name": "/App",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "8d72609c-0a92-c120-9585-c3020b1b9a2b",
+                        "fromProperty": "onClick",
+                        "toId": "5962a391-4703-3b7e-1de9-2e49fffbd4b0",
+                        "toProperty": "show"
+                    },
+                    {
+                        "fromId": "f98222e7-2165-6b82-8cac-0d84159c711e",
+                        "fromProperty": "onClick",
+                        "toId": "5962a391-4703-3b7e-1de9-2e49fffbd4b0",
+                        "toProperty": "hide"
+                    },
+                    {
+                        "fromId": "5962a391-4703-3b7e-1de9-2e49fffbd4b0",
+                        "fromProperty": "outIsOpen",
+                        "toId": "f98222e7-2165-6b82-8cac-0d84159c711e",
+                        "toProperty": "enabled"
+                    },
+                    {
+                        "fromId": "5962a391-4703-3b7e-1de9-2e49fffbd4b0",
+                        "fromProperty": "outIsOpen",
+                        "toId": "f849b019-5ecc-08c7-058c-1ca0b2366da8",
+                        "toProperty": "value"
+                    },
+                    {
+                        "fromId": "f849b019-5ecc-08c7-058c-1ca0b2366da8",
+                        "fromProperty": "result",
+                        "toId": "8d72609c-0a92-c120-9585-c3020b1b9a2b",
+                        "toProperty": "enabled"
+                    },
+                    {
+                        "fromId": "d40a159f-1a62-363e-0510-d070e637042c",
+                        "fromProperty": "hoverStart",
+                        "toId": "0c5d987e-c0ae-014f-8f1b-9323d21ac919",
+                        "toProperty": "show"
+                    },
+                    {
+                        "fromId": "d40a159f-1a62-363e-0510-d070e637042c",
+                        "fromProperty": "this",
+                        "toId": "0c5d987e-c0ae-014f-8f1b-9323d21ac919",
+                        "toProperty": "nodeRef"
+                    },
+                    {
+                        "fromId": "c5562610-9df1-9571-7e91-35cbce44a47c",
+                        "fromProperty": "hoverStart",
+                        "toId": "d581b911-6256-0877-019d-180aabb9d695",
+                        "toProperty": "show"
+                    },
+                    {
+                        "fromId": "c5562610-9df1-9571-7e91-35cbce44a47c",
+                        "fromProperty": "hoverEnd",
+                        "toId": "d581b911-6256-0877-019d-180aabb9d695",
+                        "toProperty": "hide"
+                    },
+                    {
+                        "fromId": "c5562610-9df1-9571-7e91-35cbce44a47c",
+                        "fromProperty": "this",
+                        "toId": "d581b911-6256-0877-019d-180aabb9d695",
+                        "toProperty": "nodeRef"
+                    },
+                    {
+                        "fromId": "adb6a221-88c2-933c-803f-bd67c51943af",
+                        "fromProperty": "hoverStart",
+                        "toId": "70456d2b-22e3-5018-94b8-1aa7f5ee777f",
+                        "toProperty": "show"
+                    },
+                    {
+                        "fromId": "adb6a221-88c2-933c-803f-bd67c51943af",
+                        "fromProperty": "hoverEnd",
+                        "toId": "70456d2b-22e3-5018-94b8-1aa7f5ee777f",
+                        "toProperty": "hide"
+                    },
+                    {
+                        "fromId": "db1c0424-857c-dcd0-784a-a92ae2066cd0",
+                        "fromProperty": "hoverStart",
+                        "toId": "88d9037c-62b3-4397-e4a5-d648b65bff7a",
+                        "toProperty": "show"
+                    },
+                    {
+                        "fromId": "db1c0424-857c-dcd0-784a-a92ae2066cd0",
+                        "fromProperty": "hoverEnd",
+                        "toId": "88d9037c-62b3-4397-e4a5-d648b65bff7a",
+                        "toProperty": "hide"
+                    },
+                    {
+                        "fromId": "db1c0424-857c-dcd0-784a-a92ae2066cd0",
+                        "fromProperty": "this",
+                        "toId": "88d9037c-62b3-4397-e4a5-d648b65bff7a",
+                        "toProperty": "nodeRef"
+                    },
+                    {
+                        "fromId": "adb6a221-88c2-933c-803f-bd67c51943af",
+                        "fromProperty": "this",
+                        "toId": "70456d2b-22e3-5018-94b8-1aa7f5ee777f",
+                        "toProperty": "nodeRef"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "246f9453-a119-ac78-171e-3806cf596ecc",
+                        "type": "Group",
+                        "x": -111.4681915301291,
+                        "y": 311.4376377651178,
+                        "parameters": {
+                            "backgroundColor": "Grey - 900",
+                            "minHeight": {
+                                "value": 100,
+                                "unit": "vh"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "df4e9301-eab8-e685-bd22-c184cf0383b2",
+                                "type": "Group",
+                                "parameters": {
+                                    "width": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "alignX": "center",
+                                    "styleCss": "gap: 8px;\r\n",
+                                    "sizeMode": "contentHeight",
+                                    "marginBottom": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    },
+                                    "marginTop": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "aa960804-3daa-94f5-0c37-3933c54443af",
+                                        "type": "Text",
+                                        "parameters": {
+                                            "text": "The default tooltip looks like this."
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "7a73d84c-50a7-20c8-49ae-0b358f9eaccf",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "ccad476c-6ccf-92f0-3aec-867c2b67b69d",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "3d5f5946-4e38-657e-af00-dfce248143dd",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Visual Node Tooltip"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "d40a159f-1a62-363e-0510-d070e637042c",
+                                                "type": "net.noodl.controls.button",
+                                                "parameters": {
+                                                    "sizeMode": "explicit",
+                                                    "label": "Logic Node Tooltip"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "0b52ced0-ed6a-0522-346a-a2d2bf881341",
+                                "type": "Group",
+                                "parameters": {
+                                    "width": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "styleCss": "gap: 8px;\r\n",
+                                    "sizeMode": "contentHeight",
+                                    "alignX": "center",
+                                    "marginTop": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    },
+                                    "marginBottom": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "9fc38b7e-825a-0cae-d1b5-630a7173bf07",
+                                        "type": "Text",
+                                        "parameters": {
+                                            "text": "The tooltip can be placed on four different sides in relation to the reference element. Additionally, it can be aligned to the reference element edge, rather than being centered."
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "32471dca-7be9-bb5e-897e-b064e3e09301",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "90a0d441-0db6-9bc5-0e27-4966c34ee7c7",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "top"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "893b9589-0322-de22-c707-72d85c9ca230",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "top"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "cf7ef84a-a999-1e92-a3df-a39db0b4d513",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "top-start"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "b677fbd2-eb54-1883-db23-694048d3dec9",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "top start"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "102614c2-99b2-9972-2ea0-16838259b456",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "top-end"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "9b61a2f2-563e-4226-a252-3292172a95e4",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "top end"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "67cb1111-5b7d-e629-b34f-037cddd3fc22",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "d8beb940-f199-e72f-84f6-6a707679b3e8",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "right"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "a09be1e4-029c-49d9-94af-8ce5c4fb7a2b",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "right"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "c28fcc40-1030-14f4-c2b9-2f8dae8fa9d5",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "right-start"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "82a01c6b-0f81-92e3-7237-48ec505cf31e",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "right start"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "3d9e6821-7028-4bf6-36f5-4a5cb87ab764",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "right-end"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "3d8cbd5a-5fd7-31f1-0ba2-de4a5fbd7c6e",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "right end"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "763d4148-7f1a-7c6b-0d80-a09882798741",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "1798cdca-e145-8c9e-9748-126148a60b56",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "bottom"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "0fba6e9b-0438-2a3c-d364-a4f6037c4ad2",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "bottom"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "598483a2-c8a8-5c20-38da-890ea14d8d6a",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "bottom-start"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "8ba9eea1-4c9e-f97c-b44a-572ed4af1129",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "bottom start"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "13eb9f97-dc3c-775a-3c7c-0183644a6f4a",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "bottom-end"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "78a81451-d60e-82a0-0226-bf8d90cc6c8a",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "bottom end"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "1380c581-0af3-6b6c-7ffb-aa7d71e89ebc",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "2d2f7a36-c640-bcc6-ed5d-07f007bff51e",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "left"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "1f5037fa-1c98-6b85-814e-26f0d5f70c32",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "left"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "a2ec6e06-5797-c921-97a4-e88dbd2d329f",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "left-start"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "7363ea60-ec04-cdcf-3a1e-74cbd714ed87",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "left start"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "2ef31147-3fad-6e43-3a66-2aa263a60d7c",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "tooltip",
+                                                    "placement": "left-end"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "fbc8d67d-e110-8538-dc3d-bf310acbfeaf",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "left end"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "8aa0f46d-e589-1602-2243-7adfc5f7fb7e",
+                                "type": "Group",
+                                "parameters": {
+                                    "width": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "styleCss": "gap: 8px;\r\n",
+                                    "sizeMode": "contentHeight",
+                                    "alignX": "center",
+                                    "marginTop": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    },
+                                    "marginBottom": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "72d5e591-0736-a76e-20ca-0a3316d5eae1",
+                                        "type": "Text",
+                                        "parameters": {
+                                            "text": "The arrow that points toward the element, and can be disabled completely."
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "5b802944-6e47-21f8-c4b5-45735069f832",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "02bf3562-1c55-b90f-4444-3b41346bb0cf",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "24a7e46b-4ada-2d7a-82f5-57cc3aeb7af5",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Arrow"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "1787d350-ed56-2c95-351b-e824cd2bd259",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "arrow": false
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "a4f37f19-4687-52b8-5aea-3e7512ae3d03",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "No Arrow"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "0235b97f-a1d9-8c8e-9e59-399d4bae67a3",
+                                "type": "Group",
+                                "parameters": {
+                                    "width": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "styleCss": "gap: 8px;\r\n",
+                                    "sizeMode": "contentHeight",
+                                    "alignX": "center",
+                                    "marginTop": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    },
+                                    "marginBottom": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "b4ebc47c-d0e4-f8cc-fdd5-b92f351f20fa",
+                                        "type": "Text",
+                                        "parameters": {
+                                            "text": "These animations are included."
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "19952f1f-ec1a-20f2-d8c7-168a83b5de36",
+                                        "type": "net.noodl.visual.columns",
+                                        "label": "Shift away",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "a4c56c67-7f81-bfd8-80e7-95cfe8b86e94",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "shift-away"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "c7f990c2-7e13-648d-9aaf-57868b540c2f",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "shift away"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "9bf60e22-5299-fef6-13c2-66e5e08be88e",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "scale-subtle"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "13ace8d8-5715-ccc3-0396-e74b902903a2",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "shift away subtle"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "1247b1c7-b5a6-d832-871e-afa4e5f33baf",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "shift-away-extreme"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "6e9b85c7-74c7-b3e8-26ed-071f0c744172",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "shift away extreme"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "3e9bc32b-cc73-4ff8-91ec-2552f482ed22",
+                                        "type": "net.noodl.visual.columns",
+                                        "label": "Shift Toward",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "406c6c6d-2c6e-4c72-8a8c-c7914aa8a778",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "shift-toward"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "3ef57220-9188-cc27-e4d0-bc21c91451ee",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "shift toward"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "b070dcc7-0a2b-38b2-25f8-cff8cece6adb",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "shift-away-subtle"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "52d8218c-2f7b-fb70-1843-3fe583b380a0",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "shift toward subtle"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "3147af07-72dc-7461-8ac7-7a0fc0ca8516",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "shift-toward"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "57370bec-d027-4d23-e575-8b74b81bbd9a",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "shift toward extreme"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "3adf89ed-f594-81e7-b4ff-2da358ebfc48",
+                                        "type": "net.noodl.visual.columns",
+                                        "label": "Scale",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "9622ad29-b756-d633-37ec-6772914d2e36",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "scale"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "8efaae30-eb1f-39f8-91e8-7f0c5a81a5ca",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "scale"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "3f167edb-fe48-c289-676a-a813b744f14c",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "scale-subtle"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "05d7a321-49bd-7a89-62be-fe96da7f1e17",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "scale subtle"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "c35c66a1-83f8-6aaa-7c33-122f67c8b8a1",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "scale-extreme"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "1e2b5f64-a5b8-ea9e-3f3f-12a4cd9d715d",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "scale extreme"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "b4e40fb2-473f-1ac7-c14d-a2380721c377",
+                                        "type": "net.noodl.visual.columns",
+                                        "label": "Perspective",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "0296594c-f917-0a70-54af-d7e32d6b61f6",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "perspective"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "b6c0f19a-fba4-8f8e-c674-96c4a1144f20",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "perspective"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "b4b0b77d-ad3a-3e20-33f7-8c9c001df197",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "perspective-subtle"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "a480f389-90b5-1cc1-926e-79b38b58f496",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "perspective subtle"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "ebdc9904-47f5-1371-8940-eeff678d85c3",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "animation": "perspective-extreme"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "3fcbd653-cd54-8dbd-c935-1e0e76c4d2a4",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "perspective extreme"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "0a31afff-d097-3df5-43ea-133112d8c8d4",
+                                "type": "Group",
+                                "parameters": {
+                                    "width": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "styleCss": "gap: 8px;\r\n",
+                                    "sizeMode": "contentHeight",
+                                    "alignX": "center",
+                                    "marginTop": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    },
+                                    "marginBottom": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "5bfc29f8-d78b-e8a8-6f15-2c9df4d74057",
+                                        "type": "Text",
+                                        "parameters": {
+                                            "text": "You can style the text color and background color."
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "7be71c81-547f-5943-9eb1-a820c32b32fe",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "3b76a9e7-565e-0bbf-1db4-f4808b09e7eb",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "backgroundColor": "Success",
+                                                    "color": "Grey - 900"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "71c3ae08-a8f0-44e0-ad53-0f82118a974d",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Success"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "18101b83-ccfe-bb7b-0120-b3a0f6e07d16",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "backgroundColor": "Notice",
+                                                    "color": "Grey - 900"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "55403a26-6c2d-ec9f-fa16-f495a0e5a691",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Notice"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "a2a5c44b-e2f1-a8d7-ecab-e7fec6aa1408",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "backgroundColor": "Danger",
+                                                    "color": "Grey - 900"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "90c4521b-0321-c6b6-df38-a13c91afc3fa",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Danger"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "c534744f-0284-3b8f-e134-aca44581cf4c",
+                                "type": "Group",
+                                "parameters": {
+                                    "width": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "styleCss": "gap: 8px;\r\n",
+                                    "sizeMode": "contentHeight",
+                                    "alignX": "center",
+                                    "marginTop": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    },
+                                    "marginBottom": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "5201e817-c444-24e7-9093-067cfe763b41",
+                                        "type": "Text",
+                                        "label": "",
+                                        "parameters": {
+                                            "text": "Your tooltip can delay hiding or showing after a trigger."
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "fa170c23-c863-0380-218c-ce2ce51b74ca",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "80a5bc6f-2ed3-b391-6e9a-d9f924f938b1",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "color": "Grey - 900",
+                                                    "delayShow": {
+                                                        "value": 500,
+                                                        "unit": "ms"
+                                                    }
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "35ac19eb-cd42-dd9d-e24e-63c75f0d3c34",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "500"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "3f8570a3-a835-aab9-23cc-66d9c7374845",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "color": "Grey - 900",
+                                                    "delayShow": {
+                                                        "value": 800,
+                                                        "unit": "ms"
+                                                    }
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "09ba51c2-f159-c8c6-4dd7-29b57c946868",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "[800, 0]"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "95c1ba2f-aefd-94cd-5cc4-ccb6f8647510",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "color": "Grey - 900",
+                                                    "delayhide": {
+                                                        "value": 800,
+                                                        "unit": "ms"
+                                                    }
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "fbbbeef7-44da-d3a3-9b15-2f6ce57a7ddd",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "[0, 800]"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "f5070346-6c3d-2523-c236-749ee9880664",
+                                        "type": "Text",
+                                        "label": "",
+                                        "parameters": {
+                                            "text": "with Show Tooltip node:",
+                                            "fontSize": {
+                                                "value": 12,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "b81bfacd-8eb1-0d77-9c8d-f7e035b9058e",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "c5562610-9df1-9571-7e91-35cbce44a47c",
+                                                "type": "net.noodl.controls.button",
+                                                "parameters": {
+                                                    "sizeMode": "explicit",
+                                                    "label": "500"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": []
+                                            },
+                                            {
+                                                "id": "adb6a221-88c2-933c-803f-bd67c51943af",
+                                                "type": "net.noodl.controls.button",
+                                                "parameters": {
+                                                    "sizeMode": "explicit",
+                                                    "label": "[800, 0]"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": []
+                                            },
+                                            {
+                                                "id": "db1c0424-857c-dcd0-784a-a92ae2066cd0",
+                                                "type": "net.noodl.controls.button",
+                                                "parameters": {
+                                                    "sizeMode": "explicit",
+                                                    "label": "[0, 800]"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "dba87a3f-c823-c44f-1180-dec4c299c28b",
+                                "type": "Group",
+                                "parameters": {
+                                    "width": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "styleCss": "gap: 8px;\r\n",
+                                    "sizeMode": "contentHeight",
+                                    "alignX": "center",
+                                    "marginTop": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    },
+                                    "marginBottom": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "4e636ce8-9984-ca04-7edc-d4a25795de77",
+                                        "type": "Text",
+                                        "parameters": {
+                                            "text": "The tooltips can be triggered by hover, click or via signals."
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "6e85b7e3-561e-9f5c-9a52-6fc167649652",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "c51606ac-cc41-0074-6ceb-2954d5687d1b",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "279589b2-a60a-8df3-b047-4d354904e5e3",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Mouse Enter"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "5badf9f5-20bc-e08c-5716-f42fcaf6684a",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "trigger": "click"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "1f243641-1829-bb27-d3fb-02123b92d2aa",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Click"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "6c20611d-8709-5264-9ba7-32f02d27c17d",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "5962a391-4703-3b7e-1de9-2e49fffbd4b0",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "trigger": "manual",
+                                                    "hideOnClick": "false"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "5184e89e-07e5-2d43-2d31-0a55e01af495",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Manual"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "252f0665-5dd9-ed5e-e5ae-c0a19da0937b",
+                                                "type": "net.noodl.visual.columns",
+                                                "parameters": {
+                                                    "layoutString": "1 1"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "8d72609c-0a92-c120-9585-c3020b1b9a2b",
+                                                        "type": "net.noodl.controls.button",
+                                                        "label": "Show",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "backgroundColor": "transparent",
+                                                            "label": "Show"
+                                                        },
+                                                        "stateParameters": {
+                                                            "disabled": {
+                                                                "color": "Grey - 800"
+                                                            }
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": "f98222e7-2165-6b82-8cac-0d84159c711e",
+                                                        "type": "net.noodl.controls.button",
+                                                        "label": "HIde",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Hide",
+                                                            "backgroundColor": "transparent"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "6046614c-267b-98d0-8ee9-7c483df0171b",
+                                "type": "Group",
+                                "parameters": {
+                                    "width": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "styleCss": "gap: 8px;\r\n",
+                                    "sizeMode": "contentHeight",
+                                    "alignX": "center",
+                                    "marginTop": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    },
+                                    "marginBottom": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "9da55fba-1d97-5f28-2e98-e4dcf99cb431",
+                                        "type": "Text",
+                                        "parameters": {
+                                            "text": "Tooltips can be interactive, allowing you to hover over and click inside."
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "456b45b8-a399-f8d7-9ffa-e281b160d1a7",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "3e764e14-515c-bfa0-c0ed-a78f98f9c4ab",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "You can select the text inside here.",
+                                                    "interactive": true
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "06c9560a-d406-a40f-3eb1-b5361f29f4d9",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Interactive"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "87a452a8-04af-e99c-ace2-8791dac1560d",
+                                "type": "Group",
+                                "parameters": {
+                                    "width": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "styleCss": "gap: 8px;\r\n",
+                                    "sizeMode": "contentHeight",
+                                    "alignX": "center",
+                                    "marginTop": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    },
+                                    "marginBottom": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "236e9976-ed30-dc31-9976-dc70be1b3547",
+                                        "type": "Text",
+                                        "parameters": {
+                                            "text": "Tooltips can contain HTML."
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "9b53f9d8-f249-8d7e-485a-5813e3aa8c57",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "98806056-9a57-bedf-44ed-0b89fd3de6f9",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "<strong>Bolded <span style=\"color: aqua;\">content</span></strong>",
+                                                    "allowHTML": true
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "0d972eb7-69e7-a20d-6e23-9f65a92b0cb6",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "HTML Content"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "777b692a-9acd-546e-1824-d1d1e25df678",
+                                "type": "Group",
+                                "parameters": {
+                                    "width": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "height": {
+                                        "value": 500,
+                                        "unit": "px"
+                                    },
+                                    "styleCss": "gap: 8px;\r\n",
+                                    "sizeMode": "contentHeight",
+                                    "alignX": "center",
+                                    "marginTop": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    },
+                                    "marginBottom": {
+                                        "value": 64,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "eab6fa14-30b8-a115-fb7f-a749c9cc036b",
+                                        "type": "Text",
+                                        "parameters": {
+                                            "text": "Tooltips can follow the mouse cursor and abide by a certain axis. Additionally, the tooltip can follow the cursor until it shows, at which point it will stop following (initial)."
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "90a34212-b2a3-89f2-d8c8-7b10f7a40b26",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "5bf28af4-76b6-bf56-91ff-6475ee9d34a5",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "dce75346-ff44-77e3-b341-916cb75674cb",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Default"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "4723a25c-d855-4966-e6ed-2b5b19501ee8",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "followCursor": "horizontal"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "33e21303-03a6-9cfb-1fbe-b5af3a5ecc1c",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Horizontal"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "f8581711-9f85-098e-469f-85dc7c1a745d",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1 1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "b166f32e-154b-6de4-5cdf-98c0c439d1b0",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "followCursor": "vertical"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "734ef9a6-c41e-ab37-a90a-b96363681fab",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Vertical"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "6963a58a-d6d8-9a5f-4d59-c6bafed16018",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "followCursor": "initial"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "de45b79d-6ba0-2051-d821-0f0116cfe5e0",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Initial"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "158cd464-daf0-b7cd-944b-d93e77ade9a3",
+                                        "type": "net.noodl.visual.columns",
+                                        "parameters": {
+                                            "layoutString": "1"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": [
+                                            {
+                                                "id": "96b73dbc-6769-712c-0213-71e2dd260874",
+                                                "type": "simple-tooltips.tooltip",
+                                                "parameters": {
+                                                    "content": "I'm a tooltip!",
+                                                    "followCursor": "true"
+                                                },
+                                                "ports": [],
+                                                "dynamicports": [],
+                                                "children": [
+                                                    {
+                                                        "id": "e7058147-de2f-8b1b-2efb-66b77e0eaef1",
+                                                        "type": "net.noodl.controls.button",
+                                                        "parameters": {
+                                                            "sizeMode": "explicit",
+                                                            "label": "Follow"
+                                                        },
+                                                        "ports": [],
+                                                        "dynamicports": [],
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "2e8bcbc6-791d-dbef-2c70-c9f9e957b6e4",
+                                "type": "Group",
+                                "parameters": {
+                                    "height": {
+                                        "value": 300,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "f849b019-5ecc-08c7-058c-1ca0b2366da8",
+                        "type": "Inverter",
+                        "x": -505.03912818665924,
+                        "y": 5922.912579245236,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "0c5d987e-c0ae-014f-8f1b-9323d21ac919",
+                        "type": "simple-tooltips.show-tooltip",
+                        "x": 201,
+                        "y": 586,
+                        "parameters": {
+                            "content": "I'm a tooltip!"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "d581b911-6256-0877-019d-180aabb9d695",
+                        "type": "simple-tooltips.show-tooltip",
+                        "x": 216,
+                        "y": 5360,
+                        "parameters": {
+                            "content": "I'm a tooltip!",
+                            "delayShow": {
+                                "value": 500,
+                                "unit": "ms"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "70456d2b-22e3-5018-94b8-1aa7f5ee777f",
+                        "type": "simple-tooltips.show-tooltip",
+                        "x": 214,
+                        "y": 5490,
+                        "parameters": {
+                            "content": "I'm a tooltip!",
+                            "delayShow": {
+                                "value": 800,
+                                "unit": "ms"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "88d9037c-62b3-4397-e4a5-d648b65bff7a",
+                        "type": "simple-tooltips.show-tooltip",
+                        "x": 216,
+                        "y": 5633,
+                        "parameters": {
+                            "content": "I'm a tooltip!",
+                            "delayhide": {
+                                "value": 800,
+                                "unit": "ms"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ],
+                "visualRoots": [
+                    "246f9453-a119-ac78-171e-3806cf596ecc"
+                ],
+                "comments": [
+                    {
+                        "text": "Duration?",
+                        "width": 150,
+                        "height": 100,
+                        "fill": true,
+                        "x": 392,
+                        "y": 4201,
+                        "id": "3ca9e7da-b4e0-afd4-185a-2e21558937af"
+                    },
+                    {
+                        "text": "Delay",
+                        "width": 150,
+                        "height": 100,
+                        "fill": true,
+                        "x": 388,
+                        "y": 4337,
+                        "id": "76c96034-e5df-e1da-f8e3-24c5b948b1b3"
+                    }
+                ]
+            },
+            "metadata": {
+                "canvasSize": {
+                    "width": "1039px",
+                    "height": "751px"
+                },
+                "canvasPos": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        }
+    ],
+    "settings": {
+        "bodyScroll": true,
+        "navigationPathType": "path",
+        "htmlTitle": "Simple Tooltips module"
+    },
+    "rootNodeId": "246f9453-a119-ac78-171e-3806cf596ecc",
+    "version": "4",
+    "metadata": {
+        "styles": {
+            "text": {
+                "Display": {
+                    "letterSpacing": {
+                        "value": "",
+                        "unit": "px"
+                    },
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none",
+                    "fontSize": {
+                        "value": "40",
+                        "unit": "px"
+                    },
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "color": "#fff"
+                },
+                "Headline": {
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "fontSize": {
+                        "value": "32",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Title Large": {
+                    "fontFamily": "fonts/Roboto/Roboto-Bold.ttf",
+                    "fontSize": {
+                        "value": "24",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120%",
+                        "unit": "px"
+                    },
+                    "textTransform": "none"
+                },
+                "Title Medium": {
+                    "fontFamily": "fonts/Roboto/Roboto-Medium.ttf",
+                    "fontSize": {
+                        "value": "20",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Title Small": {
+                    "fontFamily": "fonts/Roboto/Roboto-Bold.ttf",
+                    "fontSize": {
+                        "value": "16",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Label Large": {
+                    "fontFamily": "fonts/Roboto/Roboto-Medium.ttf",
+                    "fontSize": {
+                        "value": "16",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Label Medium": {
+                    "fontFamily": "fonts/Roboto/Roboto-Medium.ttf",
+                    "fontSize": {
+                        "value": "14",
+                        "unit": "px"
+                    },
+                    "color": "#fff",
+                    "letterSpacing": {
+                        "value": "",
+                        "unit": "px"
+                    },
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Label Small": {
+                    "fontFamily": "fonts/Roboto/Roboto-Medium.ttf",
+                    "fontSize": {
+                        "value": "12",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Body Large": {
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "fontSize": {
+                        "value": "20",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "150",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Body Medium": {
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "fontSize": {
+                        "value": "16",
+                        "unit": "px"
+                    },
+                    "color": "#fff",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "150",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Body Small": {
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "150",
+                        "unit": "%"
+                    },
+                    "textTransform": "none",
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "fontSize": {
+                        "value": "14",
+                        "unit": "px"
+                    },
+                    "color": "#000000"
+                }
+            },
+            "colors": {
+                "Primary": "#5836F5",
+                "Primary Dark": "#3F22B8",
+                "Primary Subtle": "#C9BFFC",
+                "Primary Light": "#F7F5FF",
+                "Grey - 900": "#1F1F1F",
+                "Grey - 800": "#383838",
+                "Grey - 700": "#4C4C4C",
+                "Grey - 600": "#757575",
+                "Grey - 500": "#A5A5A5",
+                "Grey - 400": "#CECECE",
+                "Grey - 300": "#E9E9E9",
+                "Grey - 200": "#F4F4F4",
+                "Grey - 100": "#FBFBFB",
+                "Success": "#49AD7F",
+                "Notice": "#F2C441",
+                "Danger": "#F75A4F",
+                "White": "#FFFFFF",
+                "Black": "#000000"
+            }
+        }
+    },
+    "variants": [
+        {
+            "typename": "Text",
+            "parameters": {
+                "textStyle": "Body Medium"
+            },
+            "stateParamaters": {},
+            "stateTransitions": {}
+        },
+        {
+            "typename": "net.noodl.controls.button",
+            "parameters": {
+                "height": {
+                    "value": 40,
+                    "unit": "px"
+                },
+                "sizeMode": "contentWidth",
+                "backgroundColor": "Primary",
+                "iconIconSource": {
+                    "class": "material-icons",
+                    "code": "home"
+                },
+                "iconSpacing": {
+                    "value": 8,
+                    "unit": "px"
+                },
+                "borderRadius": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "textStyle": "Label Medium",
+                "paddingTop": {
+                    "value": 0,
+                    "unit": "px"
+                },
+                "paddingLeft": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "paddingRight": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "paddingBottom": {
+                    "value": 0,
+                    "unit": "px"
+                },
+                "color": "#FFFFFF",
+                "minWidth": {
+                    "value": 80,
+                    "unit": "px"
+                },
+                "useIcon": false,
+                "iconSize": {
+                    "value": 20,
+                    "unit": "px"
+                }
+            },
+            "stateParamaters": {
+                "hover": {
+                    "backgroundColor": "Primary Dark"
+                },
+                "pressed": {
+                    "backgroundColor": "Primary",
+                    "color": "White"
+                },
+                "disabled": {
+                    "backgroundColor": "Grey - 300",
+                    "color": "Grey - 600"
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "pressed": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.textinput",
+            "parameters": {
+                "useLabel": true,
+                "sizeMode": "explicit",
+                "height": {
+                    "value": 40,
+                    "unit": "px"
+                },
+                "textStyle": "Body Medium",
+                "borderStyle": "solid",
+                "borderRadius": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "borderWidth": {
+                    "value": 1,
+                    "unit": "px"
+                },
+                "borderColor": "Grey - 700",
+                "labeltextStyle": "Label Small",
+                "paddingLeft": {
+                    "value": 12,
+                    "unit": "px"
+                },
+                "paddingRight": {
+                    "value": 8,
+                    "unit": "px"
+                },
+                "labelSpacing": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "placeholder": "Type here",
+                "color": "Grey - 900",
+                "placeHolderOpacity": 0.65,
+                "enabled": true,
+                "blockTouch": false,
+                "useIcon": false,
+                "iconIconSource": {
+                    "class": "material-icons",
+                    "code": "home"
+                },
+                "iconSize": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "iconSpacing": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "iconColor": "Grey - 700",
+                "labelcolor": "Grey - 700"
+            },
+            "stateParamaters": {
+                "hover": {
+                    "labelcolor": "Grey - 700",
+                    "borderColor": "Grey - 700",
+                    "borderStyle": "solid",
+                    "color": "Grey - 900"
+                },
+                "focused": {
+                    "borderColor": "Primary",
+                    "labelcolor": "Primary",
+                    "borderWidth": {
+                        "value": 1,
+                        "unit": "px"
+                    },
+                    "boxShadowEnabled": false,
+                    "boxShadowColor": "Primary",
+                    "borderStyle": "solid"
+                },
+                "disabled": {
+                    "labelcolor": "Grey - 500",
+                    "backgroundColor": "Grey - 200",
+                    "borderWidth": {
+                        "value": 1,
+                        "unit": "px"
+                    },
+                    "borderColor": "Grey - 500",
+                    "color": "Grey - 600"
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "focused": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "disabled": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.options",
+            "parameters": {
+                "sizeMode": "explicit",
+                "height": {
+                    "value": 40,
+                    "unit": "px"
+                },
+                "borderWidth": {
+                    "value": 1,
+                    "unit": "px"
+                },
+                "borderRadius": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "borderColor": "Grey - 700",
+                "boxShadowColor": "Dark Gray",
+                "useIcon": true,
+                "iconIconSource": {
+                    "class": "material-icons",
+                    "code": "expand_more"
+                },
+                "iconPlacement": "right",
+                "iconSize": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "paddingRight": {
+                    "value": 12,
+                    "unit": "px"
+                },
+                "textStyle": "Body Medium",
+                "paddingLeft": {
+                    "value": 12,
+                    "unit": "px"
+                },
+                "marginTop": {
+                    "value": 0,
+                    "unit": "px"
+                },
+                "width": {
+                    "value": 100,
+                    "unit": "%"
+                },
+                "iconColor": "Grey - 700",
+                "placeholderOpacity": 0.65,
+                "placeholder": "Select option",
+                "useLabel": true,
+                "labelSpacing": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "labeltextStyle": "Label Small",
+                "labelcolor": "Grey - 700",
+                "items": "[\n    {\"Label\":\"Option 1\", \"Value\":\"1\"},\n    {\"Label\":\"Option 2\", \"Value\":\"2\"},\n    {\"Label\":\"Option 3\", \"Value\":\"3\"}\n]"
+            },
+            "stateParamaters": {
+                "hover": {
+                    "borderColor": "Grey - 700",
+                    "borderRadius": {
+                        "value": 4,
+                        "unit": "px"
+                    },
+                    "iconColor": "Grey - 900",
+                    "iconSize": {
+                        "value": 20,
+                        "unit": "px"
+                    },
+                    "iconPlacement": "right",
+                    "color": "Grey - 900",
+                    "labelcolor": "Grey - 700"
+                },
+                "focused": {
+                    "borderColor": "Primary",
+                    "boxShadowColor": "Primary",
+                    "borderRadius": {
+                        "value": 4,
+                        "unit": "px"
+                    },
+                    "useIcon": true,
+                    "iconColor": "Primary",
+                    "iconIconSource": {
+                        "class": "material-icons",
+                        "code": "keyboard_arrow_up"
+                    },
+                    "iconPlacement": "right",
+                    "color": "Grey - 900",
+                    "labelcolor": "Primary"
+                },
+                "pressed": {
+                    "borderRadius": {
+                        "value": 4,
+                        "unit": "px"
+                    }
+                },
+                "disabled": {
+                    "labelcolor": "Grey - 500",
+                    "iconColor": "Grey - 500",
+                    "borderColor": "Grey - 500",
+                    "color": "Grey - 600",
+                    "backgroundColor": "Grey - 200"
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "focused": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "pressed": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.range",
+            "parameters": {
+                "thumbColor": "Primary",
+                "thumbBorderRadius": {
+                    "value": 100,
+                    "unit": "%"
+                },
+                "trackHeight": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "trackActiveColor": "Primary",
+                "trackColor": "Primary Subtle",
+                "width": {
+                    "value": 100,
+                    "unit": "%"
+                },
+                "trackBorderRadius": {
+                    "value": 100,
+                    "unit": "px"
+                },
+                "thumbHeight": {
+                    "value": 16,
+                    "unit": "px"
+                },
+                "thumbWidth": {
+                    "value": 16,
+                    "unit": "px"
+                }
+            },
+            "stateParamaters": {
+                "hover": {
+                    "thumbColor": "Primary Dark",
+                    "trackActiveColor": "Primary Dark"
+                },
+                "disabled": {
+                    "trackActiveColor": "Grey - 500",
+                    "trackColor": "Grey - 300",
+                    "thumbColor": "Grey - 500"
+                }
+            },
+            "stateTransitions": {}
+        },
+        {
+            "typename": "net.noodl.controls.checkbox",
+            "parameters": {
+                "width": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "height": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "useIcon": false,
+                "borderWidth": {
+                    "value": 1,
+                    "unit": "px"
+                },
+                "useLabel": true,
+                "labeltextStyle": "Body Medium",
+                "borderRadius": {
+                    "value": 2,
+                    "unit": "px"
+                },
+                "borderColor": "Grey - 700",
+                "labelfontSize": {
+                    "value": 16,
+                    "unit": "px"
+                },
+                "labelcolor": "Grey - 900",
+                "labelSpacing": {
+                    "value": 12,
+                    "unit": "px"
+                }
+            },
+            "stateParamaters": {
+                "checked": {
+                    "useIcon": true,
+                    "iconIconSource": {
+                        "class": "material-icons",
+                        "code": "check"
+                    },
+                    "backgroundColor": "Primary",
+                    "borderColor": "Primary",
+                    "iconSize": {
+                        "value": 16,
+                        "unit": "px"
+                    }
+                },
+                "disabled": {
+                    "opacity": 0.5
+                },
+                "hover": {
+                    "borderColor": "Grey - 700"
+                },
+                "pressed": {}
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                },
+                "checked": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.radiobutton",
+            "parameters": {
+                "width": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "height": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "useLabel": true,
+                "labeltextStyle": "Body Large",
+                "borderWidth": {
+                    "value": 1,
+                    "unit": "px"
+                },
+                "value": "0",
+                "useIcon": false,
+                "fillColor": "transparent",
+                "borderColor": "Grey - 700",
+                "labelfontSize": {
+                    "value": 16,
+                    "unit": "px"
+                },
+                "marginBottom": {
+                    "value": 8,
+                    "unit": "px"
+                },
+                "labelcolor": "Grey - 900",
+                "labelSpacing": {
+                    "value": 12,
+                    "unit": "px"
+                }
+            },
+            "stateParamaters": {
+                "checked": {
+                    "fillColor": "Primary",
+                    "borderColor": "Primary",
+                    "borderWidth": {
+                        "value": 1,
+                        "unit": "px"
+                    },
+                    "backgroundColor": "transparent",
+                    "width": {
+                        "value": 20,
+                        "unit": "px"
+                    },
+                    "height": {
+                        "value": 20,
+                        "unit": "px"
+                    },
+                    "fillSpacing": {
+                        "value": 2,
+                        "unit": "px"
+                    }
+                },
+                "hover": {
+                    "backgroundColor": "transparent",
+                    "borderColor": "Grey - 700",
+                    "width": {
+                        "value": 20,
+                        "unit": "px"
+                    },
+                    "height": {
+                        "value": 20,
+                        "unit": "px"
+                    }
+                },
+                "disabled": {
+                    "borderColor": "Grey - 500",
+                    "labelcolor": "Grey - 500",
+                    "fillColor": "transparent"
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "checked": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                }
+            }
+        }
+    ]
+}
