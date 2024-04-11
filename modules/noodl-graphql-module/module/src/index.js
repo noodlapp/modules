@@ -124,10 +124,36 @@ const GraphQLQueryNode = Noodl.defineNode({
 		getResult: function(name) {
 			return this.results[name];
 		},
-		extractResult:function(name,json) {
-			const result = Noodl.Array.get();
-			result.set(json[name]);
-			return result;
+		extractResult: function(name, json) {
+			function findArray(obj, targetName) {
+				let resultArray = null;
+		
+				for (const key in obj) {
+					if (key === targetName && Array.isArray(obj[key])) {
+						resultArray = obj[key];
+					}
+		
+					if (typeof obj[key] === 'object') {
+						const nestedArray = findArray(obj[key], targetName);
+						if (nestedArray) {
+							resultArray = nestedArray; // Update the result only if a nested array is found
+						}
+					}
+				}
+		
+				return resultArray;
+			}
+		
+			const arrayToExtract = findArray(json, name);
+		
+			if (arrayToExtract) {
+				const result = Noodl.Array.get();
+				result.set(arrayToExtract);
+				return result;
+			} else {
+				console.error(`No array found for name '${name}'`);
+				return null;
+			}
 		}
 	},
 	setup: function (context, graphModel) {
